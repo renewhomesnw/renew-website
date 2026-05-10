@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renew Homes Northwest</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CG0BTVK3V3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CG0BTVK3V3');
+  </script>
+
+  <!-- reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
@@ -167,10 +180,7 @@
     }
 
     /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+    .about { display: grid; grid-template-columns: 1fr 1fr; }
     .about-image { position: relative; overflow: hidden; }
     .about-image img { width: 100%; height: 100%; object-fit: cover; }
     .about-placeholder {
@@ -357,6 +367,12 @@
     }
     .form-input:focus, .form-textarea:focus { border-color: var(--ink); }
     .form-textarea { resize: none; height: 100px; }
+    .form-error {
+      font-size: 12px;
+      color: #c0392b;
+      display: none;
+      margin-top: -16px;
+    }
     .form-submit {
       align-self: flex-start;
       font-family: 'DM Sans', sans-serif;
@@ -435,7 +451,7 @@
 <body>
 
   <nav id="nav">
-    <a href="#" class="nav-logo">Renew Homes Northwest</a>
+    <a href="#" class="nav-logo"><img src="logo.png" alt="Renew Homes Northwest" style="height:64px;width:auto;"></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#process">Process</a></li>
@@ -459,8 +475,7 @@
       <a href="#projects" class="cta-link">See our work &nbsp;→</a>
     </div>
     <div class="hero-right">
-      <!-- Replace with: <img src="your-photo.jpg" alt="4514 S Dawson"> -->
-      <div class="img-placeholder">Hero photo</div>
+      <img src="4514_aerial.webp" alt="4514 S Dawson St — Renew Homes Northwest">
       <div class="hero-tag">4514 S Dawson St &nbsp;·&nbsp; Columbia City &nbsp;·&nbsp; 2025</div>
     </div>
   </section>
@@ -488,8 +503,7 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-image">
-      <!-- Replace with: <img src="your-photo.jpg" alt="Renew Homes Northwest"> -->
-      <div class="about-placeholder">About photo</div>
+      <img src="4514_kitchen.webp" alt="4514 S Dawson — kitchen and dining">
     </div>
     <div class="about-content">
       <p class="section-label">About</p>
@@ -546,8 +560,7 @@
     </div>
     <div class="projects-grid">
       <div class="project-card">
-        <!-- Replace with: <img src="your-photo.jpg" alt="4514 S Dawson"> -->
-        <div class="project-placeholder large">Project photo</div>
+        <img src="4514_aerial.webp" alt="4514 S Dawson St — Renew Homes Northwest">
         <div class="project-info">
           <div class="project-address">4514 S Dawson St</div>
           <div class="project-meta">Columbia City &nbsp;·&nbsp; DADU &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; 1,274 sqft</div>
@@ -555,16 +568,14 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:2px;">
         <div class="project-card">
-          <!-- Replace with: <img src="your-photo.jpg" alt="4500 S Dawson"> -->
-          <div class="project-placeholder small">Project photo</div>
+          <div class="project-placeholder small" style="background:linear-gradient(135deg,#2a2926,#3a3835);color:#c8b89a;flex-direction:column;gap:8px;"><span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:0.04em;">In Progress</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Est. completion 2026</span></div>
           <div class="project-info">
-            <div class="project-address">4500 S Dawson St</div>
+            <div class="project-address">4504 S Dawson St</div>
             <div class="project-meta">Columbia City &nbsp;·&nbsp; Active</div>
           </div>
         </div>
         <div class="project-card">
-          <!-- Replace with: <img src="your-photo.jpg" alt="4502 S Dawson"> -->
-          <div class="project-placeholder small">Project photo</div>
+          <div class="project-placeholder small" style="background:linear-gradient(135deg,#2a2926,#3a3835);color:#c8b89a;flex-direction:column;gap:8px;"><span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:0.04em;">In Progress</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Est. completion 2026</span></div>
           <div class="project-info">
             <div class="project-address">4502 S Dawson St</div>
             <div class="project-meta">Columbia City &nbsp;·&nbsp; Active</div>
@@ -595,19 +606,21 @@
       </div>
     </div>
     <div class="contact-right">
-      <form class="contact-form" onsubmit="return false;">
+      <form class="contact-form" id="contactForm">
         <div class="form-field">
           <label class="form-label">Name</label>
-          <input class="form-input" type="text" placeholder="Your name">
+          <input class="form-input" type="text" id="name" placeholder="Your name" required>
         </div>
         <div class="form-field">
           <label class="form-label">Email</label>
-          <input class="form-input" type="email" placeholder="your@email.com">
+          <input class="form-input" type="email" id="email" placeholder="your@email.com" required>
         </div>
         <div class="form-field">
           <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell us about your property or project…"></textarea>
+          <textarea class="form-textarea" id="message" placeholder="Tell us about your property or project…" required></textarea>
         </div>
+        <div class="g-recaptcha" data-sitekey="6LeipOMsAAAAAPE4_R0U1QTICE0b4wrxDhIlcVtz"></div>
+        <p class="form-error" id="recaptchaError">Please complete the reCAPTCHA before submitting.</p>
         <button class="form-submit" type="submit">Send message &nbsp;→</button>
       </form>
     </div>
@@ -615,8 +628,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="footer-logo">Renew Homes Northwest</a>
-    <span class="footer-copy">© 2025 Renew Homes Northwest LLC</span>
+    <a href="#" class="footer-logo"><img src="logo.png" alt="Renew Homes Northwest" style="height:44px;width:auto;opacity:0.6;"></a>
+    <span class="footer-copy">© 2026 Renew Homes Northwest LLC</span>
     <ul class="footer-links">
       <li><a href="/privacy">Privacy</a></li>
       <li><a href="/terms">Terms</a></li>
@@ -624,9 +637,27 @@
   </footer>
 
   <script>
+    // Nav scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Form submit with reCAPTCHA validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const recaptchaResponse = grecaptcha.getResponse();
+      const errorEl = document.getElementById('recaptchaError');
+      if (!recaptchaResponse) {
+        errorEl.style.display = 'block';
+        return;
+      }
+      errorEl.style.display = 'none';
+      // Track form submission in GA4
+      gtag('event', 'form_submit', { event_category: 'contact', event_label: 'contact_form' });
+      alert('Thank you — we will be in touch shortly.');
+      this.reset();
+      grecaptcha.reset();
     });
   </script>
 
