@@ -497,6 +497,13 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
+      /* Improve text contrast on mobile */
+      body { font-weight: 400; }
+      :root { --muted: #6b6864; }
+      .hero-body, .section-body, .step-body, .tier-desc,
+      .project-meta, .footer-copy, .nav-links a,
+      .contact-item-value, .form-label { color: var(--muted); }
+
       nav { padding: 20px 24px; }
       .nav-links {
         display: none;
@@ -708,6 +715,10 @@
         <div class="form-field">
           <label class="form-label">Email</label>
           <input class="form-input" type="email" id="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Phone <span style="font-size:10px;letter-spacing:0.08em;color:var(--muted);text-transform:none;">optional</span></label>
+          <input class="form-input" type="tel" id="phone" placeholder="+1 (206) 555-0000">
         </div>
         <div class="form-field">
           <label class="form-label">Message</label>
