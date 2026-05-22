@@ -20,8 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --ink: #1a1916;
       --paper: #f5f3ef;
@@ -29,7 +31,9 @@
       --muted: #8a8680;
       --line: #e0ddd8;
     }
+
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--paper);
@@ -54,6 +58,7 @@
       transition: border-color 0.4s;
     }
     nav.scrolled { border-color: var(--line); }
+
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 17px;
@@ -63,6 +68,7 @@
       color: var(--ink);
       text-decoration: none;
     }
+
     .nav-links { display: flex; gap: 40px; list-style: none; }
     .nav-links a {
       font-size: 13px;
@@ -72,6 +78,29 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--ink); }
+
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
     /* HERO */
     .hero {
@@ -123,6 +152,7 @@
       transition: gap 0.2s, color 0.2s, border-color 0.2s;
     }
     .cta-link:hover { gap: 20px; color: var(--warm); border-color: var(--warm); }
+
     .hero-right {
       position: relative;
       overflow: hidden;
@@ -343,7 +373,13 @@
       color: var(--warm);
     }
     .contact-item-value { font-size: 15px; color: rgba(245,243,239,0.8); }
-    .contact-right { padding: 100px 60px; display: flex; flex-direction: column; justify-content: center; }
+
+    .contact-right {
+      padding: 100px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     .contact-form { display: flex; flex-direction: column; gap: 28px; }
     .form-field { display: flex; flex-direction: column; gap: 8px; }
     .form-label {
@@ -373,6 +409,35 @@
       display: none;
       margin-top: -16px;
     }
+
+    /* SMS consent */
+    .sms-consent {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .sms-consent input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--ink);
+    }
+    .sms-consent label {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+      cursor: pointer;
+    }
+    .sms-consent label a {
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .sms-consent label a:hover { border-color: var(--ink); }
+
     .form-submit {
       align-self: flex-start;
       font-family: 'DM Sans', sans-serif;
@@ -423,17 +488,32 @@
     /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeIn {
       from { opacity: 0; }
-      to { opacity: 1; }
+      to   { opacity: 1; }
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 20px 24px; }
-      .nav-links { display: none; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--paper);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        z-index: 150;
+        list-style: none;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 22px; letter-spacing: 0.08em; color: var(--ink); }
+      .nav-hamburger { display: flex; }
+
       .hero, .about, .contact { grid-template-columns: 1fr; }
       .hero-left, .about-content, .contact-left, .contact-right { padding: 48px 24px; }
       .img-placeholder { min-height: 60vw; }
@@ -451,8 +531,15 @@
 <body>
 
   <nav id="nav">
-    <a href="#" class="nav-logo"><img src="logo.png" alt="Renew Homes Northwest" style="height:64px;width:auto;"></a>
-    <ul class="nav-links">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Renew Homes Northwest" style="height:64px;width:auto;">
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -569,14 +656,20 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:2px;">
         <div class="project-card">
-          <div class="project-placeholder small" style="background:linear-gradient(135deg,#2a2926,#3a3835);color:#c8b89a;flex-direction:column;gap:8px;"><span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:0.04em;">In Progress</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Est. completion 2026</span></div>
+          <div class="project-placeholder small" style="background:linear-gradient(135deg,#2a2926,#3a3835);color:#c8b89a;flex-direction:column;gap:8px;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:0.04em;">In Progress</span>
+            <span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Est. completion 2026</span>
+          </div>
           <div class="project-info">
             <div class="project-address">4504 S Dawson St</div>
             <div class="project-meta">Columbia City &nbsp;·&nbsp; Active</div>
           </div>
         </div>
         <div class="project-card">
-          <div class="project-placeholder small" style="background:linear-gradient(135deg,#2a2926,#3a3835);color:#c8b89a;flex-direction:column;gap:8px;"><span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:0.04em;">In Progress</span><span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Est. completion 2026</span></div>
+          <div class="project-placeholder small" style="background:linear-gradient(135deg,#2a2926,#3a3835);color:#c8b89a;flex-direction:column;gap:8px;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:0.04em;">In Progress</span>
+            <span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">Est. completion 2026</span>
+          </div>
           <div class="project-info">
             <div class="project-address">4502 S Dawson St</div>
             <div class="project-meta">Columbia City &nbsp;·&nbsp; Active</div>
@@ -620,6 +713,15 @@
           <label class="form-label">Message</label>
           <textarea class="form-textarea" id="message" placeholder="Tell us about your property or project…" required></textarea>
         </div>
+        <div class="sms-consent">
+          <input type="checkbox" id="sms-consent" name="sms-consent">
+          <label for="sms-consent">
+            I agree to receive SMS text messages from Renew Homes Northwest LLC regarding my inquiry.
+            Message and data rates may apply. Message frequency varies.
+            Reply STOP to unsubscribe. Reply HELP for assistance.
+            See our <a href="/terms">Terms</a> for details.
+          </label>
+        </div>
         <div class="g-recaptcha" data-sitekey="6LeipOMsAAAAAPE4_R0U1QTICE0b4wrxDhIlcVtz"></div>
         <p class="form-error" id="recaptchaError">Please complete the reCAPTCHA before submitting.</p>
         <button class="form-submit" type="submit">Send message &nbsp;→</button>
@@ -629,7 +731,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="footer-logo"><img src="logo.png" alt="Renew Homes Northwest" style="height:44px;width:auto;opacity:0.6;"></a>
+    <a href="#" class="footer-logo">
+      <img src="logo.png" alt="Renew Homes Northwest" style="height:44px;width:auto;opacity:0.6;">
+    </a>
     <span class="footer-copy">© 2026 Renew Homes Northwest LLC</span>
     <ul class="footer-links">
       <li><a href="/privacy">Privacy</a></li>
@@ -638,10 +742,24 @@
   </footer>
 
   <script>
-    // Nav scroll
+    // Nav scroll border
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Hamburger toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', function() {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
 
     // Form submit with reCAPTCHA validation
@@ -654,7 +772,6 @@
         return;
       }
       errorEl.style.display = 'none';
-      // Track form submission in GA4
       gtag('event', 'form_submit', { event_category: 'contact', event_label: 'contact_form' });
       alert('Thank you — we will be in touch shortly.');
       this.reset();

@@ -1,563 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Renew Flooring — Vintage by Mirage | Renew Homes Northwest</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#1a1916;--paper:#f5f3ef;--warm:#c8b89a;--muted:#8a8680;--line:#e0ddd8;--forest:#1B4332;--forest-light:#2D6A4F}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-weight:300;line-height:1.6;overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renew Flooring — Vintage by Mirage | Renew Homes Northwest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 60px;background:rgba(245,243,239,0.95);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color 0.4s}
-nav.scrolled{border-color:var(--line)}
-.nav-logo img{height:64px;width:auto}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{font-size:13px;letter-spacing:0.06em;color:var(--muted);text-decoration:none;transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* HERO */
-.hero{min-height:72vh;display:grid;grid-template-columns:1fr 1fr;padding-top:90px;border-bottom:1px solid var(--line)}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 60px;animation:fadeUp 0.9s ease both}
-.hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm);margin-bottom:28px}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,4.5vw,66px);font-weight:300;line-height:1.1;margin-bottom:28px}
-.hero-title em{font-style:italic;color:var(--muted)}
-.hero-body{font-size:15px;color:var(--muted);max-width:400px;line-height:1.8;margin-bottom:40px}
-.cta-link{display:inline-flex;align-items:center;gap:12px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;transition:gap 0.2s,color 0.2s,border-color 0.2s}
-.cta-link:hover{gap:20px;color:var(--warm);border-color:var(--warm)}
-.hero-right{position:relative;overflow:hidden;background:linear-gradient(160deg,#e8e4dc 0%,#c8c0b0 60%,#b8b0a4 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;padding:60px;animation:fadeIn 1.2s ease both 0.2s}
-.hero-species{display:flex;flex-direction:column;gap:12px;width:100%}
-.species-row{display:flex;align-items:center;gap:16px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-.species-bar{height:2px;background:var(--warm);flex:1;opacity:0.6}
-.species-name{white-space:nowrap}
-.vintage-badge{background:var(--ink);border:1px solid var(--ink);padding:12px 24px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm);text-align:center;font-weight:400}
+    :root {
+      --ink: #1a1916;
+      --paper: #f5f3ef;
+      --warm: #c8b89a;
+      --muted: #8a8680;
+      --line: #e0ddd8;
+      --forest: #1B4332;
+      --forest-light: #2D6A4F;
+    }
 
-/* WHY VINTAGE */
-.why{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
-.why-item{padding:48px 40px;border-right:1px solid var(--line)}
-.why-item:last-child{border-right:none}
-.why-number{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;line-height:1;margin-bottom:8px;color:var(--forest)}
-.why-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.why-desc{font-size:13px;color:var(--muted);line-height:1.6}
+    html { scroll-behavior: smooth; }
 
-/* SECTION COMMON */
-.section-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm);margin-bottom:20px}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1.15;margin-bottom:24px}
-.section-title em{font-style:italic;color:var(--muted)}
-.section-body{font-size:15px;color:var(--muted);line-height:1.9}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-/* BUILDER PROGRAM */
-.builder{padding:100px 60px;border-bottom:1px solid var(--line)}
-.builder-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:64px}
-.builder-note{background:var(--ink);color:var(--paper);padding:14px 20px;font-size:12px;letter-spacing:0.06em;margin-top:24px;display:inline-block}
-.builder-note span{color:var(--warm)}
-.builder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
-.tier-card{background:var(--paper);padding:44px 36px;transition:background 0.2s;position:relative;overflow:hidden}
-.tier-card:hover{background:#efede8}
-.tier-number{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--line);position:absolute;top:20px;right:24px;line-height:1}
-.tier-tag{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm);margin-bottom:16px}
-.tier-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;line-height:1.2;margin-bottom:12px}
-.tier-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px}
-.tier-colors{margin-bottom:20px}
-.tier-colors-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.color-pills{display:flex;flex-wrap:wrap;gap:6px}
-.color-pill{font-size:11px;padding:3px 10px;border:1px solid var(--line);color:var(--muted);letter-spacing:0.03em}
-.tier-spec{font-size:11px;color:var(--muted);letter-spacing:0.05em;border-top:1px solid var(--line);padding-top:16px;margin-top:4px}
-.tier-spec strong{color:var(--ink)}
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 60px;
+      background: rgba(245,243,239,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.4s;
+    }
+    nav.scrolled { border-color: var(--line); }
 
-/* FULL CATALOG */
-.catalog{padding:100px 60px;border-bottom:1px solid var(--line)}
-.catalog-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:64px}
-.catalog-specs{display:flex;flex-direction:column;gap:12px}
-.spec-row{display:flex;gap:20px;font-size:13px;padding:12px 0;border-bottom:1px solid var(--line)}
-.spec-key{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);min-width:120px}
-.spec-val{color:var(--ink)}
+    .nav-logo img { height: 64px; width: auto; }
 
-/* REQUEST FORM */
-.request{padding:100px 60px;background:var(--ink);color:var(--paper);border-bottom:1px solid var(--line)}
-.request-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
-.request .section-label{color:var(--warm)}
-.request .section-title{color:var(--paper)}
-.request .section-title em{color:var(--warm)}
-.request .section-body{color:rgba(245,243,239,0.65)}
-.request-note{margin-top:32px;font-size:12px;color:rgba(245,243,239,0.4);letter-spacing:0.04em;line-height:1.8}
-.request-note a{color:var(--warm);text-decoration:none}
-.request-note a:hover{text-decoration:underline}
-.req-form{display:flex;flex-direction:column;gap:28px}
-.req-field{display:flex;flex-direction:column;gap:8px}
-.req-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm)}
-.req-input,.req-select,.req-textarea{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.2);padding:12px 0;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:var(--paper);outline:none;width:100%;transition:border-color 0.2s;appearance:none;-webkit-appearance:none}
-.req-input::placeholder,.req-textarea::placeholder{color:rgba(245,243,239,0.3)}
-.req-input:focus,.req-select:focus,.req-textarea:focus{border-color:var(--warm)}
-.req-select option{background:var(--ink);color:var(--paper)}
-.req-textarea{resize:none;height:80px}
-.req-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.form-submit-btn{align-self:flex-start;font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);background:none;border:none;border-bottom:1px solid var(--warm);padding-bottom:4px;cursor:pointer;display:inline-flex;align-items:center;gap:12px;transition:gap 0.2s,color 0.2s;margin-top:8px}
-.form-submit-btn:hover{gap:20px;color:var(--warm)}
-.autofill-block{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:16px 20px;display:none;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:-12px}
-.af-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,243,239,0.4);margin-bottom:4px}
-.af-val{font-size:14px;font-weight:400;color:var(--paper)}
-.af-badge{font-size:10px;color:var(--warm);margin-top:2px}
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
 
-/* FOOTER */
-footer{border-top:1px solid var(--line);padding:32px 60px;display:flex;justify-content:space-between;align-items:center}
-.footer-logo img{height:44px;width:auto;opacity:0.6}
-.footer-copy{font-size:12px;color:var(--muted)}
-.footer-links{display:flex;gap:32px;list-style:none}
-.footer-links a{font-size:12px;letter-spacing:0.06em;color:var(--muted);text-decoration:none;transition:color 0.2s}
-.footer-links a:hover{color:var(--ink)}
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    /* HERO */
+    .hero {
+      min-height: 72vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 90px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px;
+      animation: fadeUp 0.9s ease both;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 4.5vw, 66px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+    .hero-title em { font-style: italic; color: var(--muted); }
+    .hero-body {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 4px;
+      transition: gap 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .cta-link:hover { gap: 20px; color: var(--warm); border-color: var(--warm); }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:20px 24px}.nav-links{display:none}
-  .hero,.builder-header,.catalog-header,.request-inner{grid-template-columns:1fr}
-  .hero-left,.builder,.catalog,.request{padding:48px 24px}
-  .hero-right{min-height:50vw;padding:40px 24px}
-  .why{grid-template-columns:1fr 1fr}
-  .why-item{padding:32px 24px}
-  .builder-grid{grid-template-columns:1fr}
-  .req-row{grid-template-columns:1fr}
-  footer{padding:24px;flex-direction:column;gap:16px;text-align:center}
-}
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #e8e4dc 0%, #c8c0b0 60%, #b8b0a4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 60px;
+      animation: fadeIn 1.2s ease both 0.2s;
+    }
+    .hero-species { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+    .species-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .species-bar { height: 2px; background: var(--warm); flex: 1; opacity: 0.6; }
+    .species-name { white-space: nowrap; }
+    .vintage-badge {
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      padding: 12px 24px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm);
+      text-align: center;
+      font-weight: 400;
+    }
 
-/* HOW WE WORK */
-.howwework{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.hww-image{position:relative;overflow:hidden;min-height:600px}
-.hww-image img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hww-tag{position:absolute;bottom:32px;left:32px;background:var(--paper);padding:12px 20px;font-size:12px;letter-spacing:0.06em;color:var(--muted)}
-.hww-content{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;gap:36px}
-.hww-steps{display:flex;flex-direction:column;gap:24px}
-.hww-step{display:flex;gap:24px;align-items:flex-start}
-.hww-step-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--warm);line-height:1;flex-shrink:0;width:36px}
-.hww-step-title{font-size:14px;font-weight:400;letter-spacing:0.02em;margin-bottom:4px}
-.hww-step-body{font-size:13px;color:var(--muted);line-height:1.7}
+    /* WHY VINTAGE */
+    .why {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .why-item {
+      padding: 48px 40px;
+      border-right: 1px solid var(--line);
+    }
+    .why-item:last-child { border-right: none; }
+    .why-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--forest);
+    }
+    .why-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .why-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-@media(max-width:900px){
-  .howwework{grid-template-columns:1fr}
-  .hww-image{min-height:70vw}
-  .hww-content{padding:48px 24px;gap:28px}
-}
+    /* SECTION COMMON */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3vw, 48px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .section-title em { font-style: italic; color: var(--muted); }
+    .section-body { font-size: 15px; color: var(--muted); line-height: 1.9; }
 
-</style>
+    /* BUILDER PROGRAM */
+    .builder {
+      padding: 100px 60px;
+      border-bottom: 1px solid var(--line);
+    }
+    .builder-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .builder-note {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 20px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      margin-top: 24px;
+      display: inline-block;
+    }
+    .builder-note span { color: var(--warm); }
+    .builder-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+    }
+    .tier-card {
+      background: var(--paper);
+      padding: 44px 36px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .tier-card:hover { background: #efede8; }
+    .tier-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--line);
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      line-height: 1;
+    }
+    .tier-tag {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 16px;
+    }
+    .tier-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .tier-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .tier-colors { margin-bottom: 20px; }
+    .tier-colors-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .color-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .color-pill {
+      font-size: 11px;
+      padding: 3px 10px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+    .tier-spec {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      margin-top: 4px;
+    }
+    .tier-spec strong { color: var(--ink); }
+
+    /* FULL CATALOG */
+    .catalog {
+      padding: 100px 60px;
+      border-bottom: 1px solid var(--line);
+    }
+    .catalog-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .catalog-specs { display: flex; flex-direction: column; gap: 12px; }
+    .spec-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .spec-key {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 120px;
+    }
+    .spec-val { color: var(--ink); }
+
+    /* HOW WE WORK */
+    .howwework {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .hww-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+    }
+    .hww-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hww-tag {
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+      background: var(--paper);
+      padding: 12px 20px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .hww-content {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 36px;
+    }
+    .hww-steps { display: flex; flex-direction: column; gap: 24px; }
+    .hww-step { display: flex; gap: 24px; align-items: flex-start; }
+    .hww-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--warm);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 36px;
+    }
+    .hww-step-title {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+    .hww-step-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* REQUEST FORM */
+    .request {
+      padding: 100px 60px;
+      background: var(--ink);
+      color: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .request-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+    .request .section-label { color: var(--warm); }
+    .request .section-title { color: var(--paper); }
+    .request .section-title em { color: var(--warm); }
+    .request .section-body { color: rgba(245,243,239,0.65); }
+    .request-note {
+      margin-top: 32px;
+      font-size: 12px;
+      color: rgba(245,243,239,0.4);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+    }
+    .request-note a { color: var(--warm); text-decoration: none; }
+    .request-note a:hover { text-decoration: underline; }
+
+    .req-form { display: flex; flex-direction: column; gap: 28px; }
+    .req-field { display: flex; flex-direction: column; gap: 8px; }
+    .req-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm);
+    }
+    .req-input,
+    .req-select,
+    .req-textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 12px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--paper);
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .req-input::placeholder,
+    .req-textarea::placeholder { color: rgba(245,243,239,0.3); }
+    .req-input:focus,
+    .req-select:focus,
+    .req-textarea:focus { border-color: var(--warm); }
+    .req-select option { background: var(--ink); color: var(--paper); }
+    .req-textarea { resize: none; height: 80px; }
+    .req-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    .form-submit-btn {
+      align-self: flex-start;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--warm);
+      padding-bottom: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: gap 0.2s, color 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit-btn:hover { gap: 20px; color: var(--warm); }
+
+    .autofill-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 20px;
+      display: none;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: -12px;
+    }
+    .af-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,243,239,0.4);
+      margin-bottom: 4px;
+    }
+    .af-val { font-size: 14px; font-weight: 400; color: var(--paper); }
+    .af-badge { font-size: 10px; color: var(--warm); margin-top: 2px; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo img { height: 44px; width: auto; opacity: 0.6; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+    .footer-links { display: flex; gap: 32px; list-style: none; }
+    .footer-links a {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--paper);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        z-index: 150;
+        list-style: none;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 22px; letter-spacing: 0.08em; color: var(--ink); }
+      .nav-hamburger { display: flex; }
+
+      .hero,
+      .builder-header,
+      .catalog-header,
+      .request-inner,
+      .howwework { grid-template-columns: 1fr; }
+
+      .hero-left,
+      .hww-content { padding: 48px 24px; gap: 28px; }
+      .builder,
+      .catalog,
+      .request { padding: 48px 24px; }
+      .hero-right { min-height: 50vw; padding: 40px 24px; }
+
+      .why { grid-template-columns: 1fr 1fr; }
+      .why-item { padding: 32px 24px; }
+
+      .builder-grid { grid-template-columns: 1fr; }
+      .req-row { grid-template-columns: 1fr; }
+      .hww-image { min-height: 70vw; }
+
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="/" class="nav-logo"><img src="logo.png" alt="Renew Homes Northwest"></a>
-  <ul class="nav-links">
-    <li><a href="/#about">About</a></li>
-    <li><a href="/#process">Process</a></li>
-    <li><a href="/#projects">Projects</a></li>
-    <li><a href="/flooring" class="active">Flooring</a></li>
-    <li><a href="/#contact">Contact</a></li>
-  </ul>
-</nav>
+  <nav id="nav">
+    <a href="/" class="nav-logo">
+      <img src="logo.png" alt="Renew Homes Northwest">
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#process">Process</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/flooring" class="active">Flooring</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Renew Flooring</p>
-    <h1 class="hero-title">Floors built for<br>the <em>Pacific Northwest</em></h1>
-    <p class="hero-body">We source and supply the full Vintage by Mirage engineered hardwood catalog — five species, every texture, every width — with program pricing for builders and developers who demand consistency and quality at scale.</p>
-    <a href="#request" class="cta-link">Request a quote &nbsp;→</a>
-  </div>
-  <div class="hero-right">
-    <div class="vintage-badge">Authorized Dealer · Vintage by Mirage</div>
-    <div class="hero-species">
-      <div class="species-row"><span class="species-name">White Oak</span><span class="species-bar"></span></div>
-      <div class="species-row"><span class="species-name">Oak</span><span class="species-bar" style="flex:0.7"></span></div>
-      <div class="species-row"><span class="species-name">Maple</span><span class="species-bar" style="flex:0.5"></span></div>
-      <div class="species-row"><span class="species-name">Hickory</span><span class="species-bar" style="flex:0.8"></span></div>
-      <div class="species-row"><span class="species-name">Black Walnut</span><span class="species-bar" style="flex:0.6"></span></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Renew Flooring</p>
+      <h1 class="hero-title">Floors built for<br>the <em>Pacific Northwest</em></h1>
+      <p class="hero-body">We source and supply the full Vintage by Mirage engineered hardwood catalog — five species, every texture, every width — with program pricing for builders and developers who demand consistency and quality at scale.</p>
+      <a href="#request" class="cta-link">Request a quote &nbsp;→</a>
     </div>
-    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center">
-      5 species · 1,300+ SKUs · Nail · Glue · Float
-    </div>
-  </div>
-</section>
-
-<!-- WHY VINTAGE -->
-<div class="why">
-  <div class="why-item">
-    <div class="why-number">35yr</div>
-    <div class="why-label">Residential warranty</div>
-    <div class="why-desc">Industry-leading finish wear-through warranty on all residential applications</div>
-  </div>
-  <div class="why-item">
-    <div class="why-number">4mm</div>
-    <div class="why-label">Sawn wear layer</div>
-    <div class="why-desc">Real sawn hardwood face — can be professionally sanded and refinished 3–4 times</div>
-  </div>
-  <div class="why-item">
-    <div class="why-number">3–4×</div>
-    <div class="why-label">Can be refinished</div>
-    <div class="why-desc">Northern Solid Sawn® 3-layer construction — engineered stability, solid wood feel</div>
-  </div>
-  <div class="why-item">
-    <div class="why-number">✓</div>
-    <div class="why-label">Radiant heat approved</div>
-    <div class="why-desc">Approved for radiant heat systems — ideal for Seattle's modern high-performance homes</div>
-  </div>
-</div>
-
-<!-- BUILDER PROGRAM -->
-<section class="builder" id="builder">
-  <div class="builder-header">
-    <div>
-      <p class="section-label">Builder Program</p>
-      <h2 class="section-title">Curated for<br><em>volume projects</em></h2>
-      <div class="builder-note">Minimum order <span>2,000 sf</span> · Selected colors · Consistent supply</div>
-    </div>
-    <div class="section-body">
-      <p>Our builder program offers three curated tiers of Vintage by Mirage engineered hardwood — each with a hand-selected palette, volume pricing, and reliable availability. Designed for builders, developers, and designers who need a consistent spec they can rely on project after project.</p>
-      <p style="margin-top:16px">Available to meet in person to review samples and walk through specifications. Reach out to <a href="mailto:flooring@renew.design" style="color:var(--ink);border-bottom:1px solid var(--warm)">flooring@renew.design</a> to schedule.</p>
-    </div>
-  </div>
-
-  <div class="builder-grid">
-    <!-- Tier 1 -->
-    <div class="tier-card">
-      <div class="tier-number">01</div>
-      <div class="tier-tag">Entry tier · Active Grade</div>
-      <div class="tier-name">Active Grade<br>White Oak</div>
-      <div class="tier-desc">Character-grade white oak celebrating natural knots, burls, checks and pronounced grain variation. The most authentic Pacific Northwest aesthetic — at the most accessible price point of the program.</div>
-      <div class="tier-colors">
-        <div class="tier-colors-label">Vintage · Smooth UVF · 3/4"</div>
-        <div class="color-pills">
-          <span class="color-pill">Desert Sky</span><span class="color-pill">Luna</span><span class="color-pill">Americano</span><span class="color-pill">Valley</span><span class="color-pill">Equinox</span><span class="color-pill">Polaris</span>
+    <div class="hero-right">
+      <div class="vintage-badge">Authorized Dealer · Vintage by Mirage</div>
+      <div class="hero-species">
+        <div class="species-row">
+          <span class="species-name">White Oak</span>
+          <span class="species-bar"></span>
+        </div>
+        <div class="species-row">
+          <span class="species-name">Oak</span>
+          <span class="species-bar" style="flex:0.7"></span>
+        </div>
+        <div class="species-row">
+          <span class="species-name">Maple</span>
+          <span class="species-bar" style="flex:0.5"></span>
+        </div>
+        <div class="species-row">
+          <span class="species-name">Hickory</span>
+          <span class="species-bar" style="flex:0.8"></span>
+        </div>
+        <div class="species-row">
+          <span class="species-name">Black Walnut</span>
+          <span class="species-bar" style="flex:0.6"></span>
         </div>
       </div>
-      <div class="tier-colors">
-        <div class="tier-colors-label">Lakeside · Brushed Low Gloss · 3/4" & 9/16"</div>
-        <div class="color-pills">
-          <span class="color-pill">Natural</span><span class="color-pill">Williston</span><span class="color-pill">Mistassini</span><span class="color-pill">Nipigon</span><span class="color-pill">Moraine</span><span class="color-pill">Melville</span>
-        </div>
+      <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center;">
+        5 species · 1,300+ SKUs · Nail · Glue · Float
       </div>
-      <div class="tier-spec">Widths: <strong>5" · 6½" · 7¾"</strong> (9/16" available in 5" & 7" via Lakeside)</div>
     </div>
+  </section>
 
-    <!-- Tier 2 -->
-    <div class="tier-card">
-      <div class="tier-number">02</div>
-      <div class="tier-tag">Mid tier · Character Grade</div>
-      <div class="tier-name">DreamVille<br>Collection</div>
-      <div class="tier-desc">Character grade TruBalance Lite engineered hardwood — versatile tones that work across a wide range of interior palettes. The go-to spec for projects where consistent, refined character is the brief.</div>
-      <div class="tier-colors">
-        <div class="tier-colors-label">Approved colors · TruBalance Lite 9/16"</div>
-        <div class="color-pills">
-          <span class="color-pill">Aspen</span><span class="color-pill">Hermosa</span><span class="color-pill">Tofino</span><span class="color-pill">Bow Valley</span>
-        </div>
-      </div>
-      <div class="tier-spec">Widths: <strong>5" · 7"</strong> · Volume pricing at <strong>5,000+ sf</strong></div>
+  <!-- WHY VINTAGE -->
+  <div class="why">
+    <div class="why-item">
+      <div class="why-number">35yr</div>
+      <div class="why-label">Residential warranty</div>
+      <div class="why-desc">Industry-leading finish wear-through warranty on all residential applications</div>
     </div>
-
-    <!-- Tier 3 -->
-    <div class="tier-card">
-      <div class="tier-number">03</div>
-      <div class="tier-tag">Premium tier · Character Grade</div>
-      <div class="tier-name">Muse & Blanc<br>Collections</div>
-      <div class="tier-desc">Mirage's premium character-grade collections. Muse brings warmth and depth; Blanc delivers cooler, lighter tones. Both offer the refined finish quality that buyers notice and remember.</div>
-      <div class="tier-colors">
-        <div class="tier-colors-label">Muse · TruBalance Lite 9/16"</div>
-        <div class="color-pills">
-          <span class="color-pill">Hattie</span><span class="color-pill">Rachel</span>
-        </div>
-      </div>
-      <div class="tier-colors">
-        <div class="tier-colors-label">Blanc · TruBalance Lite 9/16"</div>
-        <div class="color-pills">
-          <span class="color-pill">White Mist</span><span class="color-pill">Bubble Bath</span>
-        </div>
-      </div>
-      <div class="tier-spec">Widths: <strong>5" · 7"</strong> · Volume pricing at <strong>5,000+ sf</strong></div>
+    <div class="why-item">
+      <div class="why-number">4mm</div>
+      <div class="why-label">Sawn wear layer</div>
+      <div class="why-desc">Real sawn hardwood face — can be professionally sanded and refinished 3–4 times</div>
+    </div>
+    <div class="why-item">
+      <div class="why-number">3–4×</div>
+      <div class="why-label">Can be refinished</div>
+      <div class="why-desc">Northern Solid Sawn® 3-layer construction — engineered stability, solid wood feel</div>
+    </div>
+    <div class="why-item">
+      <div class="why-number">✓</div>
+      <div class="why-label">Radiant heat approved</div>
+      <div class="why-desc">Approved for radiant heat systems — ideal for Seattle's modern high-performance homes</div>
     </div>
   </div>
-</section>
 
-<!-- FULL CATALOG -->
-<section class="catalog" id="catalog">
-  <div class="catalog-header">
-    <div>
-      <p class="section-label">Full Collection</p>
-      <h2 class="section-title">The complete<br><em>Vintage catalog</em></h2>
-      <p class="section-body" style="margin-top:0">We carry every species, texture, grade and width in the Vintage by Mirage lineup — not just our builder program colors. If Vintage makes it, we can source it.</p>
-      <a href="https://www.vintageflooring.com/ENG/" target="_blank" rel="noopener" class="cta-link" style="margin-top:28px">Explore Vintage collection &nbsp;→</a>
+  <!-- BUILDER PROGRAM -->
+  <section class="builder" id="builder">
+    <div class="builder-header">
+      <div>
+        <p class="section-label">Builder Program</p>
+        <h2 class="section-title">Curated for<br><em>volume projects</em></h2>
+        <div class="builder-note">Minimum order <span>2,000 sf</span> · Selected colors · Consistent supply</div>
+      </div>
+      <div class="section-body">
+        <p>Our builder program offers three curated tiers of Vintage by Mirage engineered hardwood — each with a hand-selected palette, volume pricing, and reliable availability. Designed for builders, developers, and designers who need a consistent spec they can rely on project after project.</p>
+        <p style="margin-top:16px">Available to meet in person to review samples and walk through specifications. Reach out to <a href="mailto:flooring@renew.design" style="color:var(--ink);border-bottom:1px solid var(--warm)">flooring@renew.design</a> to schedule.</p>
+      </div>
     </div>
-    <div class="catalog-specs">
-      <div class="spec-row"><span class="spec-key">Species</span><span class="spec-val">White Oak · Oak · Maple · Hickory · Black Walnut</span></div>
-      <div class="spec-row"><span class="spec-key">Textures</span><span class="spec-val">Smooth · Brushed · Sculpted · Blade · Edgesawn</span></div>
-      <div class="spec-row"><span class="spec-key">Grades</span><span class="spec-val">Select · Character · Select R&Q · Character R&Q</span></div>
-      <div class="spec-row"><span class="spec-key">Widths</span><span class="spec-val">2¼" · 3¼" · 4¼" · 5" · 6½" · 7¾" · 9" · Chevron · Herringbone</span></div>
-      <div class="spec-row"><span class="spec-key">Construction</span><span class="spec-val">Northern Solid Sawn® 3-layer structured engineered</span></div>
-      <div class="spec-row"><span class="spec-key">Installation</span><span class="spec-val">Nail · Glue · Float · At, above or below grade</span></div>
-      <div class="spec-row"><span class="spec-key">Radiant heat</span><span class="spec-val">Approved</span></div>
-    </div>
-  </div>
-</section>
+    <div class="builder-grid">
 
+      <!-- Tier 1 -->
+      <div class="tier-card">
+        <div class="tier-number">01</div>
+        <div class="tier-tag">Entry tier · Active Grade</div>
+        <div class="tier-name">Active Grade<br>White Oak</div>
+        <div class="tier-desc">Character-grade white oak celebrating natural knots, burls, checks and pronounced grain variation. The most authentic Pacific Northwest aesthetic — at the most accessible price point of the program.</div>
+        <div class="tier-colors">
+          <div class="tier-colors-label">Vintage · Smooth UVF · 3/4"</div>
+          <div class="color-pills">
+            <span class="color-pill">Desert Sky</span>
+            <span class="color-pill">Luna</span>
+            <span class="color-pill">Americano</span>
+            <span class="color-pill">Valley</span>
+            <span class="color-pill">Equinox</span>
+            <span class="color-pill">Polaris</span>
+          </div>
+        </div>
+        <div class="tier-colors">
+          <div class="tier-colors-label">Lakeside · Brushed Low Gloss · 3/4" & 9/16"</div>
+          <div class="color-pills">
+            <span class="color-pill">Natural</span>
+            <span class="color-pill">Williston</span>
+            <span class="color-pill">Mistassini</span>
+            <span class="color-pill">Nipigon</span>
+            <span class="color-pill">Moraine</span>
+            <span class="color-pill">Melville</span>
+          </div>
+        </div>
+        <div class="tier-spec">Widths: <strong>5" · 6½" · 7¾"</strong> (9/16" available in 5" & 7" via Lakeside)</div>
+      </div>
 
-<!-- HOW WE WORK -->
-<section class="howwework" id="visit">
-  <div class="hww-image">
-    <img src="showroom.jpeg" alt="Renew Flooring — SoDo sample collection">
-    <div class="hww-tag">SoDo &nbsp;·&nbsp; By appointment</div>
-  </div>
-  <div class="hww-content">
-    <p class="section-label">How we work</p>
-    <h2 class="section-title">No showroom markup.<br>Just <em>real pricing.</em></h2>
-    <div class="section-body">
-      <p>We operate lean — a workshop in SoDo stocked with the full Vintage by Mirage display collection. No retail overhead, no showroom lease passed to your budget. The savings go directly to your project.</p>
-      <p style="margin-top:16px">We come to you first. Not sure what you want? Need to see more samples before committing? Come see the full collection in person — it's the best way to find the right floor.</p>
+      <!-- Tier 2 -->
+      <div class="tier-card">
+        <div class="tier-number">02</div>
+        <div class="tier-tag">Mid tier · Character Grade</div>
+        <div class="tier-name">DreamVille<br>Collection</div>
+        <div class="tier-desc">Character grade TruBalance Lite engineered hardwood — versatile tones that work across a wide range of interior palettes. The go-to spec for projects where consistent, refined character is the brief.</div>
+        <div class="tier-colors">
+          <div class="tier-colors-label">Approved colors · TruBalance Lite 9/16"</div>
+          <div class="color-pills">
+            <span class="color-pill">Aspen</span>
+            <span class="color-pill">Hermosa</span>
+            <span class="color-pill">Tofino</span>
+            <span class="color-pill">Bow Valley</span>
+          </div>
+        </div>
+        <div class="tier-spec">Widths: <strong>5" · 7"</strong> · Volume pricing at <strong>5,000+ sf</strong></div>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="tier-card">
+        <div class="tier-number">03</div>
+        <div class="tier-tag">Premium tier · Character Grade</div>
+        <div class="tier-name">Muse & Blanc<br>Collections</div>
+        <div class="tier-desc">Mirage's premium character-grade collections. Muse brings warmth and depth; Blanc delivers cooler, lighter tones. Both offer the refined finish quality that buyers notice and remember.</div>
+        <div class="tier-colors">
+          <div class="tier-colors-label">Muse · TruBalance Lite 9/16"</div>
+          <div class="color-pills">
+            <span class="color-pill">Hattie</span>
+            <span class="color-pill">Rachel</span>
+          </div>
+        </div>
+        <div class="tier-colors">
+          <div class="tier-colors-label">Blanc · TruBalance Lite 9/16"</div>
+          <div class="color-pills">
+            <span class="color-pill">White Mist</span>
+            <span class="color-pill">Bubble Bath</span>
+          </div>
+        </div>
+        <div class="tier-spec">Widths: <strong>5" · 7"</strong> · Volume pricing at <strong>5,000+ sf</strong></div>
+      </div>
+
     </div>
-    <div class="hww-steps">
-      <div class="hww-step">
-        <div class="hww-step-num">01</div>
-        <div>
-          <div class="hww-step-title">We come to you</div>
-          <div class="hww-step-body">Sample visit to your job site, office, or wherever works — at no cost.</div>
+  </section>
+
+  <!-- FULL CATALOG -->
+  <section class="catalog" id="catalog">
+    <div class="catalog-header">
+      <div>
+        <p class="section-label">Full Collection</p>
+        <h2 class="section-title">The complete<br><em>Vintage catalog</em></h2>
+        <p class="section-body" style="margin-top:0">We carry every species, texture, grade and width in the Vintage by Mirage lineup — not just our builder program colors. If Vintage makes it, we can source it.</p>
+        <a href="https://www.vintageflooring.com/ENG/" target="_blank" rel="noopener" class="cta-link" style="margin-top:28px">Explore Vintage collection &nbsp;→</a>
+      </div>
+      <div class="catalog-specs">
+        <div class="spec-row"><span class="spec-key">Species</span><span class="spec-val">White Oak · Oak · Maple · Hickory · Black Walnut</span></div>
+        <div class="spec-row"><span class="spec-key">Textures</span><span class="spec-val">Smooth · Brushed · Sculpted · Blade · Edgesawn</span></div>
+        <div class="spec-row"><span class="spec-key">Grades</span><span class="spec-val">Select · Character · Select R&Q · Character R&Q</span></div>
+        <div class="spec-row"><span class="spec-key">Widths</span><span class="spec-val">2¼" · 3¼" · 4¼" · 5" · 6½" · 7¾" · 9" · Chevron · Herringbone</span></div>
+        <div class="spec-row"><span class="spec-key">Construction</span><span class="spec-val">Northern Solid Sawn® 3-layer structured engineered</span></div>
+        <div class="spec-row"><span class="spec-key">Installation</span><span class="spec-val">Nail · Glue · Float · At, above or below grade</span></div>
+        <div class="spec-row"><span class="spec-key">Radiant heat</span><span class="spec-val">Approved</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="howwework" id="visit">
+    <div class="hww-image">
+      <img src="showroom.jpeg" alt="Renew Flooring — SoDo sample collection">
+      <div class="hww-tag">SoDo &nbsp;·&nbsp; By appointment</div>
+    </div>
+    <div class="hww-content">
+      <p class="section-label">How we work</p>
+      <h2 class="section-title">No showroom markup.<br>Just <em>real pricing.</em></h2>
+      <div class="section-body">
+        <p>We operate lean — a workshop in SoDo stocked with the full Vintage by Mirage display collection. No retail overhead, no showroom lease passed to your budget. The savings go directly to your project.</p>
+        <p style="margin-top:16px">We come to you first. Not sure what you want? Need to see more samples before committing? Come see the full collection in person — it's the best way to find the right floor.</p>
+      </div>
+      <div class="hww-steps">
+        <div class="hww-step">
+          <div class="hww-step-num">01</div>
+          <div>
+            <div class="hww-step-title">We come to you</div>
+            <div class="hww-step-body">Sample visit to your job site, office, or wherever works — at no cost.</div>
+          </div>
+        </div>
+        <div class="hww-step">
+          <div class="hww-step-num">02</div>
+          <div>
+            <div class="hww-step-title">See the full collection</div>
+            <div class="hww-step-body">Not sure what you want? Come see every board in person at our SoDo workshop — by appointment.</div>
+          </div>
+        </div>
+        <div class="hww-step">
+          <div class="hww-step-num">03</div>
+          <div>
+            <div class="hww-step-title">Quote within 24 hours</div>
+            <div class="hww-step-body">Detailed quote with item codes, lead times, and delivery options — same day or next.</div>
+          </div>
         </div>
       </div>
-      <div class="hww-step">
-        <div class="hww-step-num">02</div>
-        <div>
-          <div class="hww-step-title">See the full collection</div>
-          <div class="hww-step-body">Not sure what you want? Come see every board in person at our SoDo workshop — by appointment.</div>
+      <a href="#request" class="cta-link" style="margin-top:8px">Book a visit or request a quote &nbsp;→</a>
+    </div>
+  </section>
+
+  <!-- REQUEST FORM -->
+  <section class="request" id="request">
+    <div class="request-inner">
+      <div>
+        <p class="section-label">Get a quote</p>
+        <h2 class="section-title">Tell us about<br><em>your project</em></h2>
+        <p class="section-body">Select your species, texture, color and width — or describe what you're looking for — and we'll put together a detailed quote with lead times and delivery options.</p>
+        <div class="request-note">
+          Builder program inquiries: <a href="mailto:flooring@renew.design">flooring@renew.design</a><br>
+          Minimum 2,000 sf for builder program pricing.<br>
+          Full catalog available for all order sizes.<br><br>
+          Product resources: <a href="https://www.vintageflooring.com/ENG/" target="_blank" rel="noopener">vintageflooring.com</a>
         </div>
       </div>
-      <div class="hww-step">
-        <div class="hww-step-num">03</div>
-        <div>
-          <div class="hww-step-title">Quote within 24 hours</div>
-          <div class="hww-step-body">Detailed quote with item codes, lead times, and delivery options — same day or next.</div>
+
+      <form class="req-form" id="requestForm">
+        <div class="req-row">
+          <div class="req-field">
+            <label class="req-label">Name</label>
+            <input class="req-input" type="text" id="req-name" placeholder="Your name" required>
+          </div>
+          <div class="req-field">
+            <label class="req-label">Email</label>
+            <input class="req-input" type="email" id="req-email" placeholder="your@email.com" required>
+          </div>
         </div>
-      </div>
-    </div>
-    <a href="#request" class="cta-link" style="margin-top:8px">Book a visit or request a quote &nbsp;→</a>
-  </div>
-</section>
-
-<!-- REQUEST FORM -->
-<section class="request" id="request">
-  <div class="request-inner">
-    <div>
-      <p class="section-label">Get a quote</p>
-      <h2 class="section-title">Tell us about<br><em>your project</em></h2>
-      <p class="section-body">Select your species, texture, color and width — or describe what you're looking for — and we'll put together a detailed quote with lead times and delivery options.</p>
-      <div class="request-note">
-        Builder program inquiries: <a href="mailto:flooring@renew.design">flooring@renew.design</a><br>
-        Minimum 2,000 sf for builder program pricing.<br>
-        Full catalog available for all order sizes.<br><br>
-        Product resources: <a href="https://www.vintageflooring.com/ENG/" target="_blank" rel="noopener">vintageflooring.com</a>
-      </div>
-    </div>
-
-    <form class="req-form" id="requestForm">
-      <div class="req-row">
+        <div class="req-row">
+          <div class="req-field">
+            <label class="req-label">Company <span style="opacity:.5;font-size:10px">optional</span></label>
+            <input class="req-input" type="text" id="req-company" placeholder="Builder / Developer">
+          </div>
+          <div class="req-field">
+            <label class="req-label">Square footage</label>
+            <input class="req-input" type="number" id="req-sqft" placeholder="e.g. 2000">
+          </div>
+        </div>
+        <div class="req-row">
+          <div class="req-field">
+            <label class="req-label">Species</label>
+            <select class="req-select" id="req-sp" onchange="cascade('sp')">
+              <option value="">— Select —</option>
+            </select>
+          </div>
+          <div class="req-field">
+            <label class="req-label">Texture</label>
+            <select class="req-select" id="req-tx" onchange="cascade('tx')">
+              <option value="">— Select species first —</option>
+            </select>
+          </div>
+        </div>
+        <div class="req-row">
+          <div class="req-field">
+            <label class="req-label">Color</label>
+            <select class="req-select" id="req-co" onchange="cascade('co')">
+              <option value="">— Select texture first —</option>
+            </select>
+          </div>
+          <div class="req-field">
+            <label class="req-label">Grade</label>
+            <select class="req-select" id="req-gr" onchange="cascade('gr')">
+              <option value="">— Select color first —</option>
+            </select>
+          </div>
+        </div>
         <div class="req-field">
-          <label class="req-label">Name</label>
-          <input class="req-input" type="text" id="req-name" placeholder="Your name" required>
-        </div>
-        <div class="req-field">
-          <label class="req-label">Email</label>
-          <input class="req-input" type="email" id="req-email" placeholder="your@email.com" required>
-        </div>
-      </div>
-
-      <div class="req-row">
-        <div class="req-field">
-          <label class="req-label">Company <span style="opacity:.5;font-size:10px">optional</span></label>
-          <input class="req-input" type="text" id="req-company" placeholder="Builder / Developer">
-        </div>
-        <div class="req-field">
-          <label class="req-label">Square footage</label>
-          <input class="req-input" type="number" id="req-sqft" placeholder="e.g. 2000">
-        </div>
-      </div>
-
-      <div class="req-row">
-        <div class="req-field">
-          <label class="req-label">Species</label>
-          <select class="req-select" id="req-sp" onchange="cascade('sp')">
-            <option value="">— Select —</option>
+          <label class="req-label">Width</label>
+          <select class="req-select" id="req-wi" onchange="autofill()">
+            <option value="">— Select grade first —</option>
           </select>
         </div>
-        <div class="req-field">
-          <label class="req-label">Texture</label>
-          <select class="req-select" id="req-tx" onchange="cascade('tx')">
-            <option value="">— Select species first —</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="req-row">
-        <div class="req-field">
-          <label class="req-label">Color</label>
-          <select class="req-select" id="req-co" onchange="cascade('co')">
-            <option value="">— Select texture first —</option>
-          </select>
+        <div class="autofill-block" id="autofill-block">
+          <div><div class="af-label">Finish</div><div class="af-val" id="af-fin">—</div></div>
+          <div><div class="af-label">Item code</div><div class="af-val" id="af-cod">—</div><div class="af-badge">✓ from price list</div></div>
+          <div><div class="af-label">Structure</div><div class="af-val" id="af-str">—</div></div>
         </div>
         <div class="req-field">
-          <label class="req-label">Grade</label>
-          <select class="req-select" id="req-gr" onchange="cascade('gr')">
-            <option value="">— Select color first —</option>
-          </select>
+          <label class="req-label">Additional notes <span style="opacity:.5;font-size:10px">optional</span></label>
+          <textarea class="req-textarea" id="req-notes" placeholder="Project address, timeline, builder program interest…"></textarea>
         </div>
-      </div>
+        <button class="form-submit-btn" type="submit">Send request &nbsp;→</button>
+      </form>
+    </div>
+  </section>
 
-      <div class="req-field">
-        <label class="req-label">Width</label>
-        <select class="req-select" id="req-wi" onchange="autofill()">
-          <option value="">— Select grade first —</option>
-        </select>
-      </div>
+  <!-- FOOTER -->
+  <footer>
+    <a href="/" class="footer-logo">
+      <img src="logo.png" alt="Renew Homes Northwest">
+    </a>
+    <span class="footer-copy">© 2026 Renew Homes Northwest LLC</span>
+    <ul class="footer-links">
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/terms">Terms</a></li>
+    </ul>
+  </footer>
 
-      <div class="autofill-block" id="autofill-block">
-        <div><div class="af-label">Finish</div><div class="af-val" id="af-fin">—</div></div>
-        <div><div class="af-label">Item code</div><div class="af-val" id="af-cod">—</div><div class="af-badge">✓ from price list</div></div>
-        <div><div class="af-label">Structure</div><div class="af-val" id="af-str">—</div></div>
-      </div>
+  <script>
+    var SP  = ['Black Walnut','Hickory','Maple','Oak','White Oak'];
+    var TX  = ['Blade','Brushed','Edgesawn','Sculpted','Smooth'];
+    var GR  = ['Character','Character R&Q','Select','Select R&Q'];
+    var ST_ = ['NSS','Solid'];
+    var FN  = ['Pearl','UVF'];
+    var WO_ORDER = ['2 1/4"','3 1/4"','4 1/4"','5"','6 1/2"','7 3/4"','9"','Chevron 5"x24.4"','Herringbone 3 1/4"x16.54"','Herringbone 5"x30"'];
+    var SKUS=[[3,4,"Natural",2,"2 1/4\"",0,"63161",4.5,1],[2,4,"Natural",2,"2 1/4\"",0,"63161",4.5,1],[1,4,"Natural",2,"2 1/4\"",0,"63161",4.85,1],[3,4,"Natural",2,"3 1/4\"",0,"63144",5.1,1],[2,4,"Natural",2,"3 1/4\"",0,"63144",5.1,1],[1,4,"Natural",2,"3 1/4\"",0,"63144",6.15,1],[3,4,"Natural",2,"4 1/4\"",0,"66093",5.3,1],[2,4,"Natural",2,"4 1/4\"",0,"66093",5.7,1],[1,4,"Natural",2,"4 1/4\"",0,"66093",6.45,1],[3,4,"Natural",2,"3 1/4\"",0,"68564",5.6,0],[2,4,"Natural",2,"3 1/4\"",0,"68564",5.7,0],[3,4,"Natural",2,"5\"",0,"59119",7.15,0],[2,4,"Natural",2,"5\"",0,"59119",0,0],[3,4,"Natural",2,"6 1/2\"",0,"89631",8.2,0],[3,4,"Natural",0,"5\"",0,"44344",6.65,0],[2,4,"Natural",0,"5\"",0,"44344",6.7,0],[1,4,"Natural",0,"5\"",0,"44344",7.3,0],[0,4,"Natural",0,"5\"",0,"44344",9.0,0],[3,4,"Natural",0,"6 1/2\"",0,"44353",7.15,0],[2,4,"Natural",0,"6 1/2\"",0,"44353",7.3,0],[1,4,"Natural",0,"6 1/2\"",0,"44353",8.0,0],[0,4,"Natural",0,"6 1/2\"",0,"44353",10.25,0],[3,4,"Natural",0,"7 3/4\"",0,"49294",7.35,0],[3,4,"Natural",2,"9\"",0,"88118",8.1,0],[3,4,"Algarve",2,"2 1/4\"",0,"87980",4.5,1],[2,4,"Algarve",2,"2 1/4\"",0,"87980",4.5,1],[1,4,"Algarve",2,"2 1/4\"",0,"87980",4.85,1],[3,4,"Algarve",2,"3 1/4\"",0,"87847",5.1,1],[2,4,"Algarve",2,"3 1/4\"",0,"87847",5.1,1],[1,4,"Algarve",2,"3 1/4\"",0,"87847",6.15,1],[3,4,"Algarve",2,"4 1/4\"",0,"87981",5.3,1],[2,4,"Algarve",2,"4 1/4\"",0,"87981",5.7,1],[1,4,"Algarve",2,"4 1/4\"",0,"87981",6.45,1],[3,4,"Algarve",2,"3 1/4\"",0,"87989",5.6,0],[2,4,"Algarve",2,"3 1/4\"",0,"87989",5.7,0],[3,4,"Algarve",2,"5\"",0,"87991",7.15,0],[2,4,"Algarve",2,"5\"",0,"87991",0,0],[3,4,"Algarve",2,"6 1/2\"",0,"89642",8.2,0],[3,4,"Algarve",0,"5\"",0,"87842",6.65,0],[2,4,"Algarve",0,"5\"",0,"87842",6.7,0],[1,4,"Algarve",0,"5\"",0,"87842",7.3,0],[0,4,"Algarve",0,"5\"",0,"87842",9.0,0],[3,4,"Algarve",0,"6 1/2\"",0,"87993",7.15,0],[2,4,"Algarve",0,"6 1/2\"",0,"87993",7.3,0],[1,4,"Algarve",0,"6 1/2\"",0,"87993",8.0,0],[0,4,"Algarve",0,"6 1/2\"",0,"87993",10.25,0],[3,4,"Algarve",0,"7 3/4\"",0,"87998",7.35,0],[3,4,"Algarve",2,"9\"",0,"87846",8.1,0],[3,4,"Angora",2,"2 1/4\"",0,"44785",4.5,1],[2,4,"Angora",2,"2 1/4\"",0,"44785",4.5,1],[1,4,"Angora",2,"2 1/4\"",0,"44785",4.85,1],[3,4,"Angora",2,"3 1/4\"",0,"44786",5.1,1],[2,4,"Angora",2,"3 1/4\"",0,"44786",5.1,1],[1,4,"Angora",2,"3 1/4\"",0,"44786",6.15,1],[3,4,"Angora",2,"4 1/4\"",0,"44787",5.3,1],[2,4,"Angora",2,"4 1/4\"",0,"44787",5.7,1],[1,4,"Angora",2,"4 1/4\"",0,"44787",6.45,1],[3,4,"Angora",2,"3 1/4\"",0,"47246",5.6,0],[2,4,"Angora",2,"3 1/4\"",0,"47246",5.7,0],[3,4,"Angora",2,"5\"",0,"55027",7.15,0],[2,4,"Angora",2,"5\"",0,"55027",0,0],[3,4,"Angora",2,"6 1/2\"",0,"89644",8.2,0],[3,4,"Angora",0,"5\"",0,"44790",6.65,0],[2,4,"Angora",0,"5\"",0,"44790",6.7,0],[1,4,"Angora",0,"5\"",0,"44790",7.3,0],[0,4,"Angora",0,"5\"",0,"44790",9.0,0],[3,4,"Angora",0,"6 1/2\"",0,"44791",7.15,0],[2,4,"Angora",0,"6 1/2\"",0,"44791",7.3,0],[1,4,"Angora",0,"6 1/2\"",0,"44791",8.0,0],[0,4,"Angora",0,"6 1/2\"",0,"44791",10.25,0],[3,4,"Angora",0,"7 3/4\"",0,"49295",7.35,0],[3,4,"Angora",2,"9\"",0,"88119",8.1,0],[3,4,"Baja",2,"2 1/4\"",0,"69828",4.5,1],[2,4,"Baja",2,"2 1/4\"",0,"69828",4.5,1],[1,4,"Baja",2,"2 1/4\"",0,"69828",4.85,1],[3,4,"Baja",2,"3 1/4\"",0,"69829",5.1,1],[2,4,"Baja",2,"3 1/4\"",0,"69829",5.1,1],[1,4,"Baja",2,"3 1/4\"",0,"69829",6.15,1],[3,4,"Baja",2,"4 1/4\"",0,"69830",5.3,1],[2,4,"Baja",2,"4 1/4\"",0,"69830",5.7,1],[1,4,"Baja",2,"4 1/4\"",0,"69830",6.45,1],[3,4,"Baja",2,"3 1/4\"",0,"69822",5.6,0],[2,4,"Baja",2,"3 1/4\"",0,"69822",5.7,0],[3,4,"Baja",2,"5\"",0,"54828",7.15,0],[2,4,"Baja",2,"5\"",0,"54828",0,0],[3,4,"Baja",2,"6 1/2\"",0,"89645",8.2,0],[3,4,"Baja",0,"5\"",0,"44345",6.65,0],[2,4,"Baja",0,"5\"",0,"44345",6.7,0],[1,4,"Baja",0,"5\"",0,"44345",7.3,0],[0,4,"Baja",0,"5\"",0,"44345",9.0,0],[3,4,"Baja",0,"6 1/2\"",0,"44354",7.15,0],[2,4,"Baja",0,"6 1/2\"",0,"44354",7.3,0],[1,4,"Baja",0,"6 1/2\"",0,"44354",8.0,0],[0,4,"Baja",0,"6 1/2\"",0,"44354",10.25,0],[3,4,"Baja",0,"7 3/4\"",0,"47397",7.35,0],[3,4,"Baja",2,"9\"",0,"88120",8.1,0],[3,4,"Barista",2,"2 1/4\"",0,"50528",4.5,1],[2,4,"Barista",2,"2 1/4\"",0,"50528",4.5,1],[1,4,"Barista",2,"2 1/4\"",0,"50528",4.85,1],[3,4,"Barista",2,"3 1/4\"",0,"50529",5.1,1],[2,4,"Barista",2,"3 1/4\"",0,"50529",5.1,1],[1,4,"Barista",2,"3 1/4\"",0,"50529",6.15,1],[3,4,"Barista",2,"4 1/4\"",0,"50530",5.3,1],[2,4,"Barista",2,"4 1/4\"",0,"50530",5.7,1],[1,4,"Barista",2,"4 1/4\"",0,"50530",6.45,1],[3,4,"Barista",2,"3 1/4\"",0,"50557",5.6,0],[2,4,"Barista",2,"3 1/4\"",0,"50557",5.7,0],[3,4,"Barista",2,"5\"",0,"55260",7.15,0],[2,4,"Barista",2,"5\"",0,"55260",0,0],[3,4,"Barista",2,"6 1/2\"",0,"89646",8.2,0],[3,4,"Barista",0,"5\"",0,"50188",6.65,0],[2,4,"Barista",0,"5\"",0,"50188",6.7,0],[1,4,"Barista",0,"5\"",0,"50188",7.3,0],[0,4,"Barista",0,"5\"",0,"50188",9.0,0],[3,4,"Barista",0,"6 1/2\"",0,"50198",7.15,0],[2,4,"Barista",0,"6 1/2\"",0,"50198",7.3,0],[1,4,"Barista",0,"6 1/2\"",0,"50198",8.0,0],[0,4,"Barista",0,"6 1/2\"",0,"50198",10.25,0],[3,4,"Barista",0,"7 3/4\"",0,"50245",7.35,0],[3,4,"Barista",2,"9\"",0,"88121",8.1,0],[3,4,"Brownstone",2,"2 1/4\"",0,"73030",4.5,1],[2,4,"Brownstone",2,"2 1/4\"",0,"73030",4.5,1],[1,4,"Brownstone",2,"2 1/4\"",0,"73030",4.85,1],[3,4,"Brownstone",2,"3 1/4\"",0,"72647",5.1,1],[2,4,"Brownstone",2,"3 1/4\"",0,"72647",5.1,1],[1,4,"Brownstone",2,"3 1/4\"",0,"72647",6.15,1],[3,4,"Brownstone",2,"4 1/4\"",0,"73031",5.3,1],[2,4,"Brownstone",2,"4 1/4\"",0,"73031",5.7,1],[1,4,"Brownstone",2,"4 1/4\"",0,"73031",6.45,1],[3,4,"Brownstone",2,"3 1/4\"",0,"72595",5.6,0],[2,4,"Brownstone",2,"3 1/4\"",0,"72595",5.7,0],[3,4,"Brownstone",2,"5\"",0,"88097",7.15,0],[2,4,"Brownstone",2,"5\"",0,"88097",0,0],[3,4,"Brownstone",2,"6 1/2\"",0,"89647",8.2,0],[3,4,"Brownstone",0,"5\"",0,"72646",6.65,0],[2,4,"Brownstone",0,"5\"",0,"72646",6.7,0],[1,4,"Brownstone",0,"5\"",0,"72646",7.3,0],[0,4,"Brownstone",0,"5\"",0,"72646",9.0,0],[3,4,"Brownstone",0,"6 1/2\"",0,"72679",7.15,0],[2,4,"Brownstone",0,"6 1/2\"",0,"72679",7.3,0],[1,4,"Brownstone",0,"6 1/2\"",0,"72679",8.0,0],[0,4,"Brownstone",0,"6 1/2\"",0,"72679",10.25,0],[3,4,"Brownstone",0,"7 3/4\"",0,"72678",7.35,0],[3,4,"Brownstone",2,"9\"",0,"88122",8.1,0],[3,4,"Cocoa",2,"2 1/4\"",0,"63750",4.5,1],[2,4,"Cocoa",2,"2 1/4\"",0,"63750",4.5,1],[1,4,"Cocoa",2,"2 1/4\"",0,"63750",4.85,1],[3,4,"Cocoa",2,"3 1/4\"",0,"62943",5.1,1],[2,4,"Cocoa",2,"3 1/4\"",0,"62943",5.1,1],[1,4,"Cocoa",2,"3 1/4\"",0,"62943",6.15,1],[3,4,"Cocoa",2,"4 1/4\"",0,"63155",5.3,1],[2,4,"Cocoa",2,"4 1/4\"",0,"63155",5.7,1],[1,4,"Cocoa",2,"4 1/4\"",0,"63155",6.45,1],[3,4,"Cocoa",2,"3 1/4\"",0,"46907",5.6,0],[2,4,"Cocoa",2,"3 1/4\"",0,"46907",5.7,0],[3,4,"Cocoa",2,"5\"",0,"55261",7.15,0],[2,4,"Cocoa",2,"5\"",0,"55261",0,0],[3,4,"Cocoa",2,"6 1/2\"",0,"89648",8.2,0],[3,4,"Cocoa",0,"5\"",0,"44348",6.65,0],[2,4,"Cocoa",0,"5\"",0,"44348",6.7,0],[1,4,"Cocoa",0,"5\"",0,"44348",7.3,0],[0,4,"Cocoa",0,"5\"",0,"44348",9.0,0],[3,4,"Cocoa",0,"6 1/2\"",0,"44357",7.15,0],[2,4,"Cocoa",0,"6 1/2\"",0,"44357",7.3,0],[1,4,"Cocoa",0,"6 1/2\"",0,"44357",8.0,0],[0,4,"Cocoa",0,"6 1/2\"",0,"44357",10.25,0],[3,4,"Cocoa",0,"7 3/4\"",0,"49296",7.35,0],[3,4,"Cocoa",2,"9\"",0,"88123",8.1,0],[3,4,"Dover",2,"2 1/4\"",0,"69645",4.5,1],[2,4,"Dover",2,"2 1/4\"",0,"69645",4.5,1],[1,4,"Dover",2,"2 1/4\"",0,"69645",4.85,1],[3,4,"Dover",2,"3 1/4\"",0,"69646",5.1,1],[2,4,"Dover",2,"3 1/4\"",0,"69646",5.1,1],[1,4,"Dover",2,"3 1/4\"",0,"69646",6.15,1],[3,4,"Dover",2,"4 1/4\"",0,"69647",5.3,1],[2,4,"Dover",2,"4 1/4\"",0,"69647",5.7,1],[1,4,"Dover",2,"4 1/4\"",0,"69647",6.45,1],[3,4,"Dover",2,"3 1/4\"",0,"40027",5.6,0],[2,4,"Dover",2,"3 1/4\"",0,"40027",5.7,0],[3,4,"Dover",2,"5\"",0,"55208",7.15,0],[2,4,"Dover",2,"5\"",0,"55208",0,0],[3,4,"Dover",2,"6 1/2\"",0,"89649",8.2,0],[3,4,"Dover",0,"5\"",0,"44349",6.65,0],[2,4,"Dover",0,"5\"",0,"44349",6.7,0],[1,4,"Dover",0,"5\"",0,"44349",7.3,0],[0,4,"Dover",0,"5\"",0,"44349",9.0,0],[3,4,"Dover",0,"6 1/2\"",0,"44358",7.15,0],[2,4,"Dover",0,"6 1/2\"",0,"44358",7.3,0],[1,4,"Dover",0,"6 1/2\"",0,"44358",8.0,0],[0,4,"Dover",0,"6 1/2\"",0,"44358",10.25,0],[3,4,"Dover",0,"7 3/4\"",0,"47394",7.35,0],[3,4,"Dover",2,"9\"",0,"88124",8.1,0],[3,4,"Faro",2,"2 1/4\"",0,"87789",4.5,1],[2,4,"Faro",2,"2 1/4\"",0,"87789",4.5,1],[1,4,"Faro",2,"2 1/4\"",0,"87789",4.85,1],[3,4,"Faro",2,"3 1/4\"",0,"87790",5.1,1],[2,4,"Faro",2,"3 1/4\"",0,"87790",5.1,1],[1,4,"Faro",2,"3 1/4\"",0,"87790",6.15,1],[3,4,"Faro",2,"4 1/4\"",0,"87791",5.3,1],[2,4,"Faro",2,"4 1/4\"",0,"87791",5.7,1],[1,4,"Faro",2,"4 1/4\"",0,"87791",6.45,1],[3,4,"Faro",2,"3 1/4\"",0,"87799",5.6,0],[2,4,"Faro",2,"3 1/4\"",0,"87799",5.7,0],[3,4,"Faro",2,"5\"",0,"87801",7.15,0],[2,4,"Faro",2,"5\"",0,"87801",0,0],[3,4,"Faro",2,"6 1/2\"",0,"89650",8.2,0],[3,4,"Faro",0,"5\"",0,"87802",6.65,0],[2,4,"Faro",0,"5\"",0,"87802",6.7,0],[1,4,"Faro",0,"5\"",0,"87802",7.3,0],[0,4,"Faro",0,"5\"",0,"87802",9.0,0],[3,4,"Faro",0,"6 1/2\"",0,"87808",7.15,0],[2,4,"Faro",0,"6 1/2\"",0,"87808",7.3,0],[1,4,"Faro",0,"6 1/2\"",0,"87808",8.0,0],[0,4,"Faro",0,"6 1/2\"",0,"87808",10.25,0],[3,4,"Faro",0,"7 3/4\"",0,"87812",7.35,0],[3,4,"Faro",2,"9\"",0,"87818",8.1,0],[3,4,"Gryphon",2,"2 1/4\"",0,"68313",4.5,1],[2,4,"Gryphon",2,"2 1/4\"",0,"68313",4.5,1],[1,4,"Gryphon",2,"2 1/4\"",0,"68313",4.85,1],[3,4,"Gryphon",2,"3 1/4\"",0,"66091",5.1,1],[2,4,"Gryphon",2,"3 1/4\"",0,"66091",5.1,1],[1,4,"Gryphon",2,"3 1/4\"",0,"66091",6.15,1],[3,4,"Gryphon",2,"4 1/4\"",0,"66097",5.3,1],[2,4,"Gryphon",2,"4 1/4\"",0,"66097",5.7,1],[1,4,"Gryphon",2,"4 1/4\"",0,"66097",6.45,1],[3,4,"Gryphon",2,"3 1/4\"",0,"68993",5.6,0],[2,4,"Gryphon",2,"3 1/4\"",0,"68993",5.7,0],[3,4,"Gryphon",2,"5\"",0,"55184",7.15,0],[2,4,"Gryphon",2,"5\"",0,"55184",0,0],[3,4,"Gryphon",2,"6 1/2\"",0,"89651",8.2,0],[3,4,"Gryphon",0,"5\"",0,"44350",6.65,0],[2,4,"Gryphon",0,"5\"",0,"44350",6.7,0],[1,4,"Gryphon",0,"5\"",0,"44350",7.3,0],[0,4,"Gryphon",0,"5\"",0,"44350",9.0,0],[3,4,"Gryphon",0,"6 1/2\"",0,"44359",7.15,0],[2,4,"Gryphon",0,"6 1/2\"",0,"44359",7.3,0],[1,4,"Gryphon",0,"6 1/2\"",0,"44359",8.0,0],[0,4,"Gryphon",0,"6 1/2\"",0,"44359",10.25,0],[3,4,"Gryphon",0,"7 3/4\"",0,"47403",7.35,0],[3,4,"Gryphon",2,"9\"",0,"88125",8.1,0],[3,4,"Kahlua",2,"2 1/4\"",0,"68314",4.5,1],[2,4,"Kahlua",2,"2 1/4\"",0,"68314",4.5,1],[1,4,"Kahlua",2,"2 1/4\"",0,"68314",4.85,1],[3,4,"Kahlua",2,"3 1/4\"",0,"65798",5.1,1],[2,4,"Kahlua",2,"3 1/4\"",0,"65798",5.1,1],[1,4,"Kahlua",2,"3 1/4\"",0,"65798",6.15,1],[3,4,"Kahlua",2,"4 1/4\"",0,"66096",5.3,1],[2,4,"Kahlua",2,"4 1/4\"",0,"66096",5.7,1],[1,4,"Kahlua",2,"4 1/4\"",0,"66096",6.45,1],[3,4,"Kahlua",2,"3 1/4\"",0,"46909",5.6,0],[2,4,"Kahlua",2,"3 1/4\"",0,"46909",5.7,0],[3,4,"Kahlua",2,"5\"",0,"55188",7.15,0],[2,4,"Kahlua",2,"5\"",0,"55188",0,0],[3,4,"Kahlua",2,"6 1/2\"",0,"89652",8.2,0],[3,4,"Kahlua",0,"5\"",0,"69696",6.65,0],[2,4,"Kahlua",0,"5\"",0,"69696",6.7,0],[1,4,"Kahlua",0,"5\"",0,"69696",7.3,0],[0,4,"Kahlua",0,"5\"",0,"69696",9.0,0],[3,4,"Kahlua",0,"6 1/2\"",0,"44360",7.15,0],[2,4,"Kahlua",0,"6 1/2\"",0,"44360",7.3,0],[1,4,"Kahlua",0,"6 1/2\"",0,"44360",8.0,0],[0,4,"Kahlua",0,"6 1/2\"",0,"44360",10.25,0],[3,4,"Kahlua",0,"7 3/4\"",0,"47402",7.35,0],[3,4,"Kahlua",2,"9\"",0,"88126",8.1,0],[3,4,"Mocha",2,"2 1/4\"",0,"64008",4.5,1],[2,4,"Mocha",2,"2 1/4\"",0,"64008",4.5,1],[1,4,"Mocha",2,"2 1/4\"",0,"64008",4.85,1],[3,4,"Mocha",2,"3 1/4\"",0,"64908",5.1,1],[2,4,"Mocha",2,"3 1/4\"",0,"64908",5.1,1],[1,4,"Mocha",2,"3 1/4\"",0,"64908",6.15,1],[3,4,"Mocha",2,"4 1/4\"",0,"66098",5.3,1],[2,4,"Mocha",2,"4 1/4\"",0,"66098",5.7,1],[1,4,"Mocha",2,"4 1/4\"",0,"66098",6.45,1],[3,4,"Mocha",2,"3 1/4\"",0,"46910",5.6,0],[2,4,"Mocha",2,"3 1/4\"",0,"46910",5.7,0],[3,4,"Mocha",2,"5\"",0,"55876",7.15,0],[2,4,"Mocha",2,"5\"",0,"55876",0,0],[3,4,"Mocha",2,"6 1/2\"",0,"89653",8.2,0],[3,4,"Mocha",0,"5\"",0,"44351",6.65,0],[2,4,"Mocha",0,"5\"",0,"44351",6.7,0],[1,4,"Mocha",0,"5\"",0,"44351",7.3,0],[0,4,"Mocha",0,"5\"",0,"44351",9.0,0],[3,4,"Mocha",0,"6 1/2\"",0,"44361",7.15,0],[2,4,"Mocha",0,"6 1/2\"",0,"44361",7.3,0],[1,4,"Mocha",0,"6 1/2\"",0,"44361",8.0,0],[0,4,"Mocha",0,"6 1/2\"",0,"44361",10.25,0],[3,4,"Mocha",0,"7 3/4\"",0,"49297",7.35,0],[3,4,"Mocha",2,"9\"",0,"88127",8.1,0],[3,4,"Oasis",2,"2 1/4\"",0,"44721",4.5,1],[2,4,"Oasis",2,"2 1/4\"",0,"44721",4.5,1],[1,4,"Oasis",2,"2 1/4\"",0,"44721",4.85,1],[3,4,"Oasis",2,"3 1/4\"",0,"44722",5.1,1],[2,4,"Oasis",2,"3 1/4\"",0,"44722",5.1,1],[1,4,"Oasis",2,"3 1/4\"",0,"44722",6.15,1],[3,4,"Oasis",2,"4 1/4\"",0,"44723",5.3,1],[2,4,"Oasis",2,"4 1/4\"",0,"44723",5.7,1],[1,4,"Oasis",2,"4 1/4\"",0,"44723",6.45,1],[3,4,"Oasis",2,"3 1/4\"",0,"46911",5.6,0],[2,4,"Oasis",2,"3 1/4\"",0,"46911",5.7,0],[3,4,"Oasis",2,"5\"",0,"53533",7.15,0],[2,4,"Oasis",2,"5\"",0,"53533",0,0],[3,4,"Oasis",2,"6 1/2\"",0,"89654",8.2,0],[3,4,"Oasis",0,"5\"",0,"44726",6.65,0],[2,4,"Oasis",0,"5\"",0,"44726",6.7,0],[1,4,"Oasis",0,"5\"",0,"44726",7.3,0],[0,4,"Oasis",0,"5\"",0,"44726",9.0,0],[3,4,"Oasis",0,"6 1/2\"",0,"44727",7.15,0],[2,4,"Oasis",0,"6 1/2\"",0,"44727",7.3,0],[1,4,"Oasis",0,"6 1/2\"",0,"44727",8.0,0],[0,4,"Oasis",0,"6 1/2\"",0,"44727",10.25,0],[3,4,"Oasis",0,"7 3/4\"",0,"47401",7.35,0],[3,4,"Oasis",2,"9\"",0,"88128",8.1,0],[3,4,"Ophelia",2,"2 1/4\"",0,"44743",4.5,1],[2,4,"Ophelia",2,"2 1/4\"",0,"44743",4.5,1],[1,4,"Ophelia",2,"2 1/4\"",0,"44743",4.85,1],[3,4,"Ophelia",2,"3 1/4\"",0,"44744",5.1,1],[2,4,"Ophelia",2,"3 1/4\"",0,"44744",5.1,1],[1,4,"Ophelia",2,"3 1/4\"",0,"44744",6.15,1],[3,4,"Ophelia",2,"4 1/4\"",0,"44745",5.3,1],[2,4,"Ophelia",2,"4 1/4\"",0,"44745",5.7,1],[1,4,"Ophelia",2,"4 1/4\"",0,"44745",6.45,1],[3,4,"Ophelia",2,"3 1/4\"",0,"46888",5.6,0],[2,4,"Ophelia",2,"3 1/4\"",0,"46888",5.7,0],[3,4,"Ophelia",2,"5\"",0,"55036",7.15,0],[2,4,"Ophelia",2,"5\"",0,"55036",0,0],[3,4,"Ophelia",2,"6 1/2\"",0,"89655",8.2,0],[3,4,"Ophelia",0,"5\"",0,"44751",6.65,0],[2,4,"Ophelia",0,"5\"",0,"44751",6.7,0],[1,4,"Ophelia",0,"5\"",0,"44751",7.3,0],[0,4,"Ophelia",0,"5\"",0,"44751",9.0,0],[3,4,"Ophelia",0,"6 1/2\"",0,"44752",7.15,0],[2,4,"Ophelia",0,"6 1/2\"",0,"44752",7.3,0],[1,4,"Ophelia",0,"6 1/2\"",0,"44752",8.0,0],[0,4,"Ophelia",0,"6 1/2\"",0,"44752",10.25,0],[3,4,"Ophelia",0,"7 3/4\"",0,"47400",7.35,0],[3,4,"Ophelia",2,"9\"",0,"88129",8.1,0],[3,4,"Pewter",2,"2 1/4\"",0,"63714",4.5,1],[2,4,"Pewter",2,"2 1/4\"",0,"63714",4.5,1],[1,4,"Pewter",2,"2 1/4\"",0,"63714",4.85,1],[3,4,"Pewter",2,"3 1/4\"",0,"66092",5.1,1],[2,4,"Pewter",2,"3 1/4\"",0,"66092",5.1,1],[1,4,"Pewter",2,"3 1/4\"",0,"66092",6.15,1],[3,4,"Pewter",2,"4 1/4\"",0,"66099",5.3,1],[2,4,"Pewter",2,"4 1/4\"",0,"66099",5.7,1],[1,4,"Pewter",2,"4 1/4\"",0,"66099",6.45,1],[3,4,"Pewter",2,"3 1/4\"",0,"46913",5.6,0],[2,4,"Pewter",2,"3 1/4\"",0,"46913",5.7,0],[3,4,"Pewter",2,"5\"",0,"55076",7.15,0],[2,4,"Pewter",2,"5\"",0,"55076",0,0],[3,4,"Pewter",2,"6 1/2\"",0,"89656",8.2,0],[3,4,"Pewter",0,"5\"",0,"44352",6.65,0],[2,4,"Pewter",0,"5\"",0,"44352",6.7,0],[1,4,"Pewter",0,"5\"",0,"44352",7.3,0],[0,4,"Pewter",0,"5\"",0,"44352",9.0,0],[3,4,"Pewter",0,"6 1/2\"",0,"44362",7.15,0],[2,4,"Pewter",0,"6 1/2\"",0,"44362",7.3,0],[1,4,"Pewter",0,"6 1/2\"",0,"44362",8.0,0],[0,4,"Pewter",0,"6 1/2\"",0,"44362",10.25,0],[3,4,"Pewter",0,"7 3/4\"",0,"47399",7.35,0],[3,4,"Pewter",2,"9\"",0,"88130",8.1,0],[3,4,"Serengeti",2,"2 1/4\"",0,"88154",4.5,1],[2,4,"Serengeti",2,"2 1/4\"",0,"88154",4.5,1],[1,4,"Serengeti",2,"2 1/4\"",0,"88154",4.85,1],[3,4,"Serengeti",2,"3 1/4\"",0,"80506",5.1,1],[2,4,"Serengeti",2,"3 1/4\"",0,"80506",5.1,1],[1,4,"Serengeti",2,"3 1/4\"",0,"80506",6.15,1],[3,4,"Serengeti",2,"4 1/4\"",0,"86376",5.3,1],[2,4,"Serengeti",2,"4 1/4\"",0,"86376",5.7,1],[1,4,"Serengeti",2,"4 1/4\"",0,"86376",6.45,1],[3,4,"Serengeti",2,"3 1/4\"",0,"80485",5.6,0],[2,4,"Serengeti",2,"3 1/4\"",0,"80485",5.7,0],[3,4,"Serengeti",2,"5\"",0,"88098",7.15,0],[2,4,"Serengeti",2,"5\"",0,"88098",0,0],[3,4,"Serengeti",2,"6 1/2\"",0,"89657",8.2,0],[3,4,"Serengeti",0,"5\"",0,"80117",6.65,0],[2,4,"Serengeti",0,"5\"",0,"80117",6.7,0],[1,4,"Serengeti",0,"5\"",0,"80117",7.3,0],[0,4,"Serengeti",0,"5\"",0,"80117",9.0,0],[3,4,"Serengeti",0,"6 1/2\"",0,"80487",7.15,0],[2,4,"Serengeti",0,"6 1/2\"",0,"80487",7.3,0],[1,4,"Serengeti",0,"6 1/2\"",0,"80487",8.0,0],[0,4,"Serengeti",0,"6 1/2\"",0,"80487",10.25,0],[3,4,"Serengeti",0,"7 3/4\"",0,"80494",7.35,0],[3,4,"Serengeti",2,"9\"",0,"88131",8.1,0],[3,4,"Shale",2,"2 1/4\"",0,"70257",4.5,1],[2,4,"Shale",2,"2 1/4\"",0,"70257",4.5,1],[1,4,"Shale",2,"2 1/4\"",0,"70257",4.85,1],[3,4,"Shale",2,"3 1/4\"",0,"56338",5.1,1],[2,4,"Shale",2,"3 1/4\"",0,"56338",5.1,1],[1,4,"Shale",2,"3 1/4\"",0,"56338",6.15,1],[3,4,"Shale",2,"4 1/4\"",0,"88155",5.3,1],[2,4,"Shale",2,"4 1/4\"",0,"88155",5.7,1],[1,4,"Shale",2,"4 1/4\"",0,"88155",6.45,1],[3,4,"Shale",2,"3 1/4\"",0,"56339",5.6,0],[2,4,"Shale",2,"3 1/4\"",0,"56339",5.7,0],[3,4,"Shale",2,"5\"",0,"71833",7.15,0],[2,4,"Shale",2,"5\"",0,"71833",0,0],[3,4,"Shale",2,"6 1/2\"",0,"89658",8.2,0],[3,4,"Shale",0,"5\"",0,"56090",6.65,0],[2,4,"Shale",0,"5\"",0,"56090",6.7,0],[1,4,"Shale",0,"5\"",0,"56090",7.3,0],[0,4,"Shale",0,"5\"",0,"56090",9.0,0],[3,4,"Shale",0,"6 1/2\"",0,"56340",7.15,0],[2,4,"Shale",0,"6 1/2\"",0,"56340",7.3,0],[1,4,"Shale",0,"6 1/2\"",0,"56340",8.0,0],[0,4,"Shale",0,"6 1/2\"",0,"56340",10.25,0],[3,4,"Shale",0,"7 3/4\"",0,"56341",7.35,0],[3,4,"Shale",2,"9\"",0,"88132",8.1,0],[3,4,"Titanium",2,"2 1/4\"",0,"41538",4.5,1],[2,4,"Titanium",2,"2 1/4\"",0,"41538",4.5,1],[1,4,"Titanium",2,"2 1/4\"",0,"41538",4.85,1],[3,4,"Titanium",2,"3 1/4\"",0,"41539",5.1,1],[2,4,"Titanium",2,"3 1/4\"",0,"41539",5.1,1],[1,4,"Titanium",2,"3 1/4\"",0,"41539",6.15,1],[3,4,"Titanium",2,"4 1/4\"",0,"41540",5.3,1],[2,4,"Titanium",2,"4 1/4\"",0,"41540",5.7,1],[1,4,"Titanium",2,"4 1/4\"",0,"41540",6.45,1],[3,4,"Titanium",2,"3 1/4\"",0,"46914",5.6,0],[2,4,"Titanium",2,"3 1/4\"",0,"46914",5.7,0],[3,4,"Titanium",2,"5\"",0,"53592",7.15,0],[2,4,"Titanium",2,"5\"",0,"53592",0,0],[3,4,"Titanium",2,"6 1/2\"",0,"89659",8.2,0],[3,4,"Titanium",0,"5\"",0,"44173",6.65,0],[2,4,"Titanium",0,"5\"",0,"44173",6.7,0],[1,4,"Titanium",0,"5\"",0,"44173",7.3,0],[0,4,"Titanium",0,"5\"",0,"44173",9.0,0],[3,4,"Titanium",0,"6 1/2\"",0,"44363",7.15,0],[2,4,"Titanium",0,"6 1/2\"",0,"44363",7.3,0],[1,4,"Titanium",0,"6 1/2\"",0,"44363",8.0,0],[0,4,"Titanium",0,"6 1/2\"",0,"44363",10.25,0],[3,4,"Titanium",0,"7 3/4\"",0,"47398",7.35,0],[3,4,"Titanium",2,"9\"",0,"88133",8.1,0],[3,1,"Natural",2,"3 1/4\"",1,"49258",5.1,1],[2,1,"Natural",2,"3 1/4\"",1,"49258",5.1,1],[1,1,"Natural",2,"3 1/4\"",1,"49258",6.15,1],[3,1,"Natural",2,"3 1/4\"",1,"49436",5.6,0],[2,1,"Natural",2,"3 1/4\"",1,"49436",5.7,0],[3,1,"Natural",2,"5\"",1,"88099",7.15,0],[2,1,"Natural",2,"5\"",1,"88099",0,0],[3,1,"Natural",2,"6 1/2\"",1,"89660",8.2,0],[3,1,"Natural",0,"5\"",1,"49445",6.65,0],[2,1,"Natural",0,"5\"",1,"49445",6.7,0],[1,1,"Natural",0,"5\"",1,"49445",7.3,0],[0,1,"Natural",0,"5\"",1,"49445",9.0,0],[3,1,"Natural",0,"6 1/2\"",1,"49453",7.15,0],[2,1,"Natural",0,"6 1/2\"",1,"49453",7.3,0],[1,1,"Natural",0,"6 1/2\"",1,"49453",8.0,0],[0,1,"Natural",0,"6 1/2\"",1,"49453",10.25,0],[3,1,"Natural",0,"7 3/4\"",1,"49304",7.35,0],[3,1,"Natural",2,"9\"",1,"88106",8.1,0],[3,1,"Algarve",2,"3 1/4\"",1,"87982",5.1,1],[2,1,"Algarve",2,"3 1/4\"",1,"87982",5.1,1],[1,1,"Algarve",2,"3 1/4\"",1,"87982",6.15,1],[3,1,"Algarve",2,"3 1/4\"",1,"87990",5.6,0],[2,1,"Algarve",2,"3 1/4\"",1,"87990",5.7,0],[3,1,"Algarve",2,"5\"",1,"87843",7.15,0],[2,1,"Algarve",2,"5\"",1,"87843",0,0],[3,1,"Algarve",2,"6 1/2\"",1,"89661",8.2,0],[3,1,"Algarve",0,"5\"",1,"87844",6.65,0],[2,1,"Algarve",0,"5\"",1,"87844",6.7,0],[1,1,"Algarve",0,"5\"",1,"87844",7.3,0],[0,1,"Algarve",0,"5\"",1,"87844",9.0,0],[3,1,"Algarve",0,"6 1/2\"",1,"87994",7.15,0],[2,1,"Algarve",0,"6 1/2\"",1,"87994",7.3,0],[1,1,"Algarve",0,"6 1/2\"",1,"87994",8.0,0],[0,1,"Algarve",0,"6 1/2\"",1,"87994",10.25,0],[3,1,"Algarve",0,"7 3/4\"",1,"87999",7.35,0],[3,1,"Algarve",2,"9\"",1,"88002",8.1,0],[3,1,"Angora",2,"3 1/4\"",1,"49259",5.1,1],[2,1,"Angora",2,"3 1/4\"",1,"49259",5.1,1],[1,1,"Angora",2,"3 1/4\"",1,"49259",6.15,1],[3,1,"Angora",2,"3 1/4\"",1,"44763",5.6,0],[2,1,"Angora",2,"3 1/4\"",1,"44763",5.7,0],[3,1,"Angora",2,"5\"",1,"54380",7.15,0],[2,1,"Angora",2,"5\"",1,"54380",0,0],[3,1,"Angora",2,"6 1/2\"",1,"89662",8.2,0],[3,1,"Angora",0,"5\"",1,"44765",6.65,0],[2,1,"Angora",0,"5\"",1,"44765",6.7,0],[1,1,"Angora",0,"5\"",1,"44765",7.3,0],[0,1,"Angora",0,"5\"",1,"44765",9.0,0],[3,1,"Angora",0,"6 1/2\"",1,"44779",7.15,0],[2,1,"Angora",0,"6 1/2\"",1,"44779",7.3,0],[1,1,"Angora",0,"6 1/2\"",1,"44779",8.0,0],[0,1,"Angora",0,"6 1/2\"",1,"44779",10.25,0],[3,1,"Angora",0,"7 3/4\"",1,"49311",7.35,0],[3,1,"Angora",2,"9\"",1,"88107",8.1,0],[3,1,"Barista",2,"3 1/4\"",1,"50564",5.1,1],[2,1,"Barista",2,"3 1/4\"",1,"50564",5.1,1],[1,1,"Barista",2,"3 1/4\"",1,"50564",6.15,1],[3,1,"Barista",2,"3 1/4\"",1,"50559",5.6,0],[2,1,"Barista",2,"3 1/4\"",1,"50559",5.7,0],[3,1,"Barista",2,"5\"",1,"88101",7.15,0],[2,1,"Barista",2,"5\"",1,"88101",0,0],[3,1,"Barista",2,"6 1/2\"",1,"89663",8.2,0],[3,1,"Barista",0,"5\"",1,"50189",6.65,0],[2,1,"Barista",0,"5\"",1,"50189",6.7,0],[1,1,"Barista",0,"5\"",1,"50189",7.3,0],[0,1,"Barista",0,"5\"",1,"50189",9.0,0],[3,1,"Barista",0,"6 1/2\"",1,"50196",7.15,0],[2,1,"Barista",0,"6 1/2\"",1,"50196",7.3,0],[1,1,"Barista",0,"6 1/2\"",1,"50196",8.0,0],[0,1,"Barista",0,"6 1/2\"",1,"50196",10.25,0],[3,1,"Barista",0,"7 3/4\"",1,"50246",7.35,0],[3,1,"Barista",2,"9\"",1,"88108",8.1,0],[3,1,"Brownstone",2,"3 1/4\"",1,"72597",5.1,1],[2,1,"Brownstone",2,"3 1/4\"",1,"72597",5.1,1],[1,1,"Brownstone",2,"3 1/4\"",1,"72597",6.15,1],[3,1,"Brownstone",2,"3 1/4\"",1,"73032",5.6,0],[2,1,"Brownstone",2,"3 1/4\"",1,"73032",5.7,0],[3,1,"Brownstone",2,"5\"",1,"74624",7.15,0],[2,1,"Brownstone",2,"5\"",1,"74624",0,0],[3,1,"Brownstone",2,"6 1/2\"",1,"89664",8.2,0],[3,1,"Brownstone",0,"5\"",1,"72596",6.65,0],[2,1,"Brownstone",0,"5\"",1,"72596",6.7,0],[1,1,"Brownstone",0,"5\"",1,"72596",7.3,0],[0,1,"Brownstone",0,"5\"",1,"72596",9.0,0],[3,1,"Brownstone",0,"6 1/2\"",1,"72680",7.15,0],[2,1,"Brownstone",0,"6 1/2\"",1,"72680",7.3,0],[1,1,"Brownstone",0,"6 1/2\"",1,"72680",8.0,0],[0,1,"Brownstone",0,"6 1/2\"",1,"72680",10.25,0],[3,1,"Brownstone",0,"7 3/4\"",1,"72681",7.35,0],[3,1,"Brownstone",2,"9\"",1,"88109",8.1,0],[3,1,"Dover",2,"3 1/4\"",1,"49261",5.1,1],[2,1,"Dover",2,"3 1/4\"",1,"49261",5.1,1],[1,1,"Dover",2,"3 1/4\"",1,"49261",6.15,1],[3,1,"Dover",2,"3 1/4\"",1,"49440",5.6,0],[2,1,"Dover",2,"3 1/4\"",1,"49440",5.7,0],[3,1,"Dover",2,"5\"",1,"88102",7.15,0],[2,1,"Dover",2,"5\"",1,"88102",0,0],[3,1,"Dover",2,"6 1/2\"",1,"89665",8.2,0],[3,1,"Dover",0,"5\"",1,"49450",6.65,0],[2,1,"Dover",0,"5\"",1,"49450",6.7,0],[1,1,"Dover",0,"5\"",1,"49450",7.3,0],[0,1,"Dover",0,"5\"",1,"49450",9.0,0],[3,1,"Dover",0,"6 1/2\"",1,"49458",7.15,0],[2,1,"Dover",0,"6 1/2\"",1,"49458",7.3,0],[1,1,"Dover",0,"6 1/2\"",1,"49458",8.0,0],[0,1,"Dover",0,"6 1/2\"",1,"49458",10.25,0],[3,1,"Dover",0,"7 3/4\"",1,"49309",7.35,0],[3,1,"Dover",2,"9\"",1,"88110",8.1,0],[3,1,"Faro",2,"3 1/4\"",1,"87792",5.1,1],[2,1,"Faro",2,"3 1/4\"",1,"87792",5.1,1],[1,1,"Faro",2,"3 1/4\"",1,"87792",6.15,1],[3,1,"Faro",2,"3 1/4\"",1,"87800",5.6,0],[2,1,"Faro",2,"3 1/4\"",1,"87800",5.7,0],[3,1,"Faro",2,"5\"",1,"87803",7.15,0],[2,1,"Faro",2,"5\"",1,"87803",0,0],[3,1,"Faro",2,"6 1/2\"",1,"89666",8.2,0],[3,1,"Faro",0,"5\"",1,"87804",6.65,0],[2,1,"Faro",0,"5\"",1,"87804",6.7,0],[1,1,"Faro",0,"5\"",1,"87804",7.3,0],[0,1,"Faro",0,"5\"",1,"87804",9.0,0],[3,1,"Faro",0,"6 1/2\"",1,"87809",7.15,0],[2,1,"Faro",0,"6 1/2\"",1,"87809",7.3,0],[1,1,"Faro",0,"6 1/2\"",1,"87809",8.0,0],[0,1,"Faro",0,"6 1/2\"",1,"87809",10.25,0],[3,1,"Faro",0,"7 3/4\"",1,"87813",7.35,0],[3,1,"Faro",2,"9\"",1,"87819",8.1,0],[3,1,"Gryphon",2,"3 1/4\"",1,"49262",5.1,1],[2,1,"Gryphon",2,"3 1/4\"",1,"49262",5.1,1],[1,1,"Gryphon",2,"3 1/4\"",1,"49262",6.15,1],[3,1,"Gryphon",2,"3 1/4\"",1,"49437",5.6,0],[2,1,"Gryphon",2,"3 1/4\"",1,"49437",5.7,0],[3,1,"Gryphon",2,"5\"",1,"53425",7.15,0],[2,1,"Gryphon",2,"5\"",1,"53425",0,0],[3,1,"Gryphon",2,"6 1/2\"",1,"89667",8.2,0],[3,1,"Gryphon",0,"5\"",1,"49447",6.65,0],[2,1,"Gryphon",0,"5\"",1,"49447",6.7,0],[1,1,"Gryphon",0,"5\"",1,"49447",7.3,0],[0,1,"Gryphon",0,"5\"",1,"49447",9.0,0],[3,1,"Gryphon",0,"6 1/2\"",1,"49455",7.15,0],[2,1,"Gryphon",0,"6 1/2\"",1,"49455",7.3,0],[1,1,"Gryphon",0,"6 1/2\"",1,"49455",8.0,0],[0,1,"Gryphon",0,"6 1/2\"",1,"49455",10.25,0],[3,1,"Gryphon",0,"7 3/4\"",1,"49306",7.35,0],[3,1,"Gryphon",2,"9\"",1,"88111",8.1,0],[3,1,"Hillside",2,"3 1/4\"",1,"50565",5.1,1],[2,1,"Hillside",2,"3 1/4\"",1,"50565",5.1,1],[1,1,"Hillside",2,"3 1/4\"",1,"50565",6.15,1],[3,1,"Hillside",2,"3 1/4\"",1,"50533",5.6,0],[2,1,"Hillside",2,"3 1/4\"",1,"50533",5.7,0],[3,1,"Hillside",2,"5\"",1,"76112",7.15,0],[2,1,"Hillside",2,"5\"",1,"76112",0,0],[3,1,"Hillside",2,"6 1/2\"",1,"89668",8.2,0],[3,1,"Hillside",0,"5\"",1,"50190",6.65,0],[2,1,"Hillside",0,"5\"",1,"50190",6.7,0],[1,1,"Hillside",0,"5\"",1,"50190",7.3,0],[0,1,"Hillside",0,"5\"",1,"50190",9.0,0],[3,1,"Hillside",0,"6 1/2\"",1,"50197",7.15,0],[2,1,"Hillside",0,"6 1/2\"",1,"50197",7.3,0],[1,1,"Hillside",0,"6 1/2\"",1,"50197",8.0,0],[0,1,"Hillside",0,"6 1/2\"",1,"50197",10.25,0],[3,1,"Hillside",0,"7 3/4\"",1,"50247",7.35,0],[3,1,"Hillside",2,"9\"",1,"88112",8.1,0],[3,1,"Oasis",2,"3 1/4\"",1,"49263",5.1,1],[2,1,"Oasis",2,"3 1/4\"",1,"49263",5.1,1],[1,1,"Oasis",2,"3 1/4\"",1,"49263",6.15,1],[3,1,"Oasis",2,"3 1/4\"",1,"44714",5.6,0],[2,1,"Oasis",2,"3 1/4\"",1,"44714",5.7,0],[3,1,"Oasis",2,"5\"",1,"52045",7.15,0],[2,1,"Oasis",2,"5\"",1,"52045",0,0],[3,1,"Oasis",2,"6 1/2\"",1,"74151",8.2,0],[3,1,"Oasis",0,"5\"",1,"44715",6.65,0],[2,1,"Oasis",0,"5\"",1,"44715",6.7,0],[1,1,"Oasis",0,"5\"",1,"44715",7.3,0],[0,1,"Oasis",0,"5\"",1,"44715",9.0,0],[3,1,"Oasis",0,"6 1/2\"",1,"44716",7.15,0],[2,1,"Oasis",0,"6 1/2\"",1,"44716",7.3,0],[1,1,"Oasis",0,"6 1/2\"",1,"44716",8.0,0],[0,1,"Oasis",0,"6 1/2\"",1,"44716",10.25,0],[3,1,"Oasis",0,"7 3/4\"",1,"49312",7.35,0],[3,1,"Oasis",2,"9\"",1,"88113",8.1,0],[3,1,"Ophelia",2,"3 1/4\"",1,"49264",5.1,1],[2,1,"Ophelia",2,"3 1/4\"",1,"49264",5.1,1],[1,1,"Ophelia",2,"3 1/4\"",1,"49264",6.15,1],[3,1,"Ophelia",2,"3 1/4\"",1,"44736",5.6,0],[2,1,"Ophelia",2,"3 1/4\"",1,"44736",5.7,0],[3,1,"Ophelia",2,"5\"",1,"54349",7.15,0],[2,1,"Ophelia",2,"5\"",1,"54349",0,0],[3,1,"Ophelia",2,"6 1/2\"",1,"89669",8.2,0],[3,1,"Ophelia",0,"5\"",1,"44737",6.65,0],[2,1,"Ophelia",0,"5\"",1,"44737",6.7,0],[1,1,"Ophelia",0,"5\"",1,"44737",7.3,0],[0,1,"Ophelia",0,"5\"",1,"44737",9.0,0],[3,1,"Ophelia",0,"6 1/2\"",1,"44738",7.15,0],[2,1,"Ophelia",0,"6 1/2\"",1,"44738",7.3,0],[1,1,"Ophelia",0,"6 1/2\"",1,"44738",8.0,0],[0,1,"Ophelia",0,"6 1/2\"",1,"44738",10.25,0],[3,1,"Ophelia",0,"7 3/4\"",1,"49313",7.35,0],[3,1,"Ophelia",2,"9\"",1,"88114",8.1,0],[3,1,"Pewter",2,"3 1/4\"",1,"49265",5.1,1],[2,1,"Pewter",2,"3 1/4\"",1,"49265",5.1,1],[1,1,"Pewter",2,"3 1/4\"",1,"49265",6.15,1],[3,1,"Pewter",2,"3 1/4\"",1,"49438",5.6,0],[2,1,"Pewter",2,"3 1/4\"",1,"49438",5.7,0],[3,1,"Pewter",2,"5\"",1,"53495",7.15,0],[2,1,"Pewter",2,"5\"",1,"53495",0,0],[3,1,"Pewter",2,"6 1/2\"",1,"89670",8.2,0],[3,1,"Pewter",0,"5\"",1,"49448",6.65,0],[2,1,"Pewter",0,"5\"",1,"49448",6.7,0],[1,1,"Pewter",0,"5\"",1,"49448",7.3,0],[0,1,"Pewter",0,"5\"",1,"49448",9.0,0],[3,1,"Pewter",0,"6 1/2\"",1,"49456",7.15,0],[2,1,"Pewter",0,"6 1/2\"",1,"49456",7.3,0],[1,1,"Pewter",0,"6 1/2\"",1,"49456",8.0,0],[0,1,"Pewter",0,"6 1/2\"",1,"49456",10.25,0],[3,1,"Pewter",0,"7 3/4\"",1,"49307",7.35,0],[3,1,"Pewter",2,"9\"",1,"88115",8.1,0],[3,1,"Serengeti",2,"3 1/4\"",1,"84674",5.1,1],[2,1,"Serengeti",2,"3 1/4\"",1,"84674",5.1,1],[1,1,"Serengeti",2,"3 1/4\"",1,"84674",6.15,1],[3,1,"Serengeti",2,"3 1/4\"",1,"88272",5.6,0],[2,1,"Serengeti",2,"3 1/4\"",1,"88272",5.7,0],[3,1,"Serengeti",2,"5\"",1,"88105",7.15,0],[2,1,"Serengeti",2,"5\"",1,"88105",0,0],[3,1,"Serengeti",2,"6 1/2\"",1,"89671",8.2,0],[3,1,"Serengeti",0,"5\"",1,"80118",6.65,0],[2,1,"Serengeti",0,"5\"",1,"80118",6.7,0],[1,1,"Serengeti",0,"5\"",1,"80118",7.3,0],[0,1,"Serengeti",0,"5\"",1,"80118",9.0,0],[3,1,"Serengeti",0,"6 1/2\"",1,"80490",7.15,0],[2,1,"Serengeti",0,"6 1/2\"",1,"80490",7.3,0],[1,1,"Serengeti",0,"6 1/2\"",1,"80490",8.0,0],[0,1,"Serengeti",0,"6 1/2\"",1,"80490",10.25,0],[3,1,"Serengeti",0,"7 3/4\"",1,"80495",7.35,0],[3,1,"Serengeti",2,"9\"",1,"87860",8.1,0],[3,1,"Shale",2,"3 1/4\"",1,"88271",5.1,1],[2,1,"Shale",2,"3 1/4\"",1,"88271",5.1,1],[1,1,"Shale",2,"3 1/4\"",1,"88271",6.15,1],[3,1,"Shale",2,"3 1/4\"",1,"59207",5.6,0],[2,1,"Shale",2,"3 1/4\"",1,"59207",5.7,0],[3,1,"Shale",2,"5\"",1,"74625",7.15,0],[2,1,"Shale",2,"5\"",1,"74625",0,0],[3,1,"Shale",2,"6 1/2\"",1,"89672",8.2,0],[3,1,"Shale",0,"5\"",1,"56367",6.65,0],[2,1,"Shale",0,"5\"",1,"56367",6.7,0],[1,1,"Shale",0,"5\"",1,"56367",7.3,0],[0,1,"Shale",0,"5\"",1,"56367",9.0,0],[3,1,"Shale",0,"6 1/2\"",1,"56369",7.15,0],[2,1,"Shale",0,"6 1/2\"",1,"56369",7.3,0],[1,1,"Shale",0,"6 1/2\"",1,"56369",8.0,0],[0,1,"Shale",0,"6 1/2\"",1,"56369",10.25,0],[3,1,"Shale",0,"7 3/4\"",1,"56370",7.35,0],[3,1,"Shale",2,"9\"",1,"88116",8.1,0],[3,1,"Titanium",2,"3 1/4\"",1,"49432",5.1,1],[2,1,"Titanium",2,"3 1/4\"",1,"49432",5.1,1],[1,1,"Titanium",2,"3 1/4\"",1,"49432",6.15,1],[3,1,"Titanium",2,"3 1/4\"",1,"49443",5.6,0],[2,1,"Titanium",2,"3 1/4\"",1,"49443",5.7,0],[3,1,"Titanium",2,"5\"",1,"55957",7.15,0],[2,1,"Titanium",2,"5\"",1,"55957",0,0],[3,1,"Titanium",2,"6 1/2\"",1,"89673",8.2,0],[3,1,"Titanium",0,"5\"",1,"49452",6.65,0],[2,1,"Titanium",0,"5\"",1,"49452",6.7,0],[1,1,"Titanium",0,"5\"",1,"49452",7.3,0],[0,1,"Titanium",0,"5\"",1,"49452",9.0,0],[3,1,"Titanium",0,"6 1/2\"",1,"49461",7.15,0],[2,1,"Titanium",0,"6 1/2\"",1,"49461",7.3,0],[1,1,"Titanium",0,"6 1/2\"",1,"49461",8.0,0],[0,1,"Titanium",0,"6 1/2\"",1,"49461",10.25,0],[3,1,"Titanium",0,"7 3/4\"",1,"49314",7.35,0],[3,1,"Titanium",2,"9\"",1,"88117",8.1,0],[3,3,"Natural",0,"4 1/4\"",1,"45611",5.2,1],[3,3,"Natural",0,"5\"",1,"44525",7.05,0],[2,3,"Natural",0,"5\"",1,"44525",6.7,0],[1,3,"Natural",0,"5\"",1,"44525",7.3,0],[0,3,"Natural",0,"5\"",1,"44525",9.0,0],[3,3,"Natural",0,"6 1/2\"",1,"44533",7.55,0],[2,3,"Natural",0,"6 1/2\"",1,"44533",7.3,0],[1,3,"Natural",0,"6 1/2\"",1,"44533",8.0,0],[0,3,"Natural",0,"6 1/2\"",1,"44533",10.25,0],[3,3,"Natural",0,"7 3/4\"",1,"49333",7.75,0],[3,3,"Algarve",0,"4 1/4\"",1,"87983",5.2,1],[3,3,"Algarve",0,"5\"",1,"87845",7.05,0],[2,3,"Algarve",0,"5\"",1,"87845",6.7,0],[1,3,"Algarve",0,"5\"",1,"87845",7.3,0],[0,3,"Algarve",0,"5\"",1,"87845",9.0,0],[3,3,"Algarve",0,"6 1/2\"",1,"87995",7.55,0],[2,3,"Algarve",0,"6 1/2\"",1,"87995",7.3,0],[1,3,"Algarve",0,"6 1/2\"",1,"87995",8.0,0],[0,3,"Algarve",0,"6 1/2\"",1,"87995",10.25,0],[3,3,"Algarve",0,"7 3/4\"",1,"88000",7.75,0],[3,3,"Angora",0,"4 1/4\"",1,"44760",5.2,1],[3,3,"Angora",0,"5\"",1,"44755",7.05,0],[2,3,"Angora",0,"5\"",1,"44755",6.7,0],[1,3,"Angora",0,"5\"",1,"44755",7.3,0],[0,3,"Angora",0,"5\"",1,"44755",9.0,0],[3,3,"Angora",0,"6 1/2\"",1,"44758",7.55,0],[2,3,"Angora",0,"6 1/2\"",1,"44758",7.3,0],[1,3,"Angora",0,"6 1/2\"",1,"44758",8.0,0],[0,3,"Angora",0,"6 1/2\"",1,"44758",10.25,0],[3,3,"Angora",0,"7 3/4\"",1,"49334",7.75,0],[3,3,"Barista",0,"4 1/4\"",1,"50525",5.2,1],[3,3,"Barista",0,"5\"",1,"50191",7.05,0],[2,3,"Barista",0,"5\"",1,"50191",6.7,0],[1,3,"Barista",0,"5\"",1,"50191",7.3,0],[0,3,"Barista",0,"5\"",1,"50191",9.0,0],[3,3,"Barista",0,"6 1/2\"",1,"50199",7.55,0],[2,3,"Barista",0,"6 1/2\"",1,"50199",7.3,0],[1,3,"Barista",0,"6 1/2\"",1,"50199",8.0,0],[0,3,"Barista",0,"6 1/2\"",1,"50199",10.25,0],[3,3,"Barista",0,"7 3/4\"",1,"50244",7.75,0],[3,3,"Brownstone",0,"4 1/4\"",1,"72676",5.2,1],[3,3,"Brownstone",0,"5\"",1,"72682",7.05,0],[2,3,"Brownstone",0,"5\"",1,"72682",6.7,0],[1,3,"Brownstone",0,"5\"",1,"72682",7.3,0],[0,3,"Brownstone",0,"5\"",1,"72682",9.0,0],[3,3,"Brownstone",0,"6 1/2\"",1,"72683",7.55,0],[2,3,"Brownstone",0,"6 1/2\"",1,"72683",7.3,0],[1,3,"Brownstone",0,"6 1/2\"",1,"72683",8.0,0],[0,3,"Brownstone",0,"6 1/2\"",1,"72683",10.25,0],[3,3,"Brownstone",0,"7 3/4\"",1,"72684",7.75,0],[3,3,"Dover",0,"4 1/4\"",1,"69837",5.2,1],[3,3,"Dover",0,"5\"",1,"69840",7.05,0],[2,3,"Dover",0,"5\"",1,"69840",6.7,0],[1,3,"Dover",0,"5\"",1,"69840",7.3,0],[0,3,"Dover",0,"5\"",1,"69840",9.0,0],[3,3,"Dover",0,"6 1/2\"",1,"69949",7.55,0],[2,3,"Dover",0,"6 1/2\"",1,"69949",7.3,0],[1,3,"Dover",0,"6 1/2\"",1,"69949",8.0,0],[0,3,"Dover",0,"6 1/2\"",1,"69949",10.25,0],[3,3,"Dover",0,"7 3/4\"",1,"49335",7.75,0],[3,3,"Faro",0,"4 1/4\"",1,"87793",5.2,1],[3,3,"Faro",0,"5\"",1,"87805",7.05,0],[2,3,"Faro",0,"5\"",1,"87805",6.7,0],[1,3,"Faro",0,"5\"",1,"87805",7.3,0],[0,3,"Faro",0,"5\"",1,"87805",9.0,0],[3,3,"Faro",0,"6 1/2\"",1,"87810",7.55,0],[2,3,"Faro",0,"6 1/2\"",1,"87810",7.3,0],[1,3,"Faro",0,"6 1/2\"",1,"87810",8.0,0],[0,3,"Faro",0,"6 1/2\"",1,"87810",10.25,0],[3,3,"Faro",0,"7 3/4\"",1,"87814",7.75,0],[3,3,"Hillside",0,"4 1/4\"",1,"69182",5.2,1],[3,3,"Hillside",0,"5\"",1,"69406",7.05,0],[2,3,"Hillside",0,"5\"",1,"69406",6.7,0],[1,3,"Hillside",0,"5\"",1,"69406",7.3,0],[0,3,"Hillside",0,"5\"",1,"69406",9.0,0],[3,3,"Hillside",0,"6 1/2\"",1,"69967",7.55,0],[2,3,"Hillside",0,"6 1/2\"",1,"69967",7.3,0],[1,3,"Hillside",0,"6 1/2\"",1,"69967",8.0,0],[0,3,"Hillside",0,"6 1/2\"",1,"69967",10.25,0],[3,3,"Hillside",0,"7 3/4\"",1,"49338",7.75,0],[3,3,"Oasis",0,"4 1/4\"",1,"44712",5.2,1],[3,3,"Oasis",0,"5\"",1,"44708",7.05,0],[2,3,"Oasis",0,"5\"",1,"44708",6.7,0],[1,3,"Oasis",0,"5\"",1,"44708",7.3,0],[0,3,"Oasis",0,"5\"",1,"44708",9.0,0],[3,3,"Oasis",0,"6 1/2\"",1,"44710",7.55,0],[2,3,"Oasis",0,"6 1/2\"",1,"44710",7.3,0],[1,3,"Oasis",0,"6 1/2\"",1,"44710",8.0,0],[0,3,"Oasis",0,"6 1/2\"",1,"44710",10.25,0],[3,3,"Oasis",0,"7 3/4\"",1,"49339",7.75,0],[3,3,"Ophelia",0,"4 1/4\"",1,"44734",5.2,1],[3,3,"Ophelia",0,"5\"",1,"44730",7.05,0],[2,3,"Ophelia",0,"5\"",1,"44730",6.7,0],[1,3,"Ophelia",0,"5\"",1,"44730",7.3,0],[0,3,"Ophelia",0,"5\"",1,"44730",9.0,0],[3,3,"Ophelia",0,"6 1/2\"",1,"44732",7.55,0],[2,3,"Ophelia",0,"6 1/2\"",1,"44732",7.3,0],[1,3,"Ophelia",0,"6 1/2\"",1,"44732",8.0,0],[0,3,"Ophelia",0,"6 1/2\"",1,"44732",10.25,0],[3,3,"Ophelia",0,"7 3/4\"",1,"49340",7.75,0],[3,3,"Pewter",0,"4 1/4\"",1,"69187",5.2,1],[3,3,"Pewter",0,"5\"",1,"69414",7.05,0],[2,3,"Pewter",0,"5\"",1,"69414",6.7,0],[1,3,"Pewter",0,"5\"",1,"69414",7.3,0],[0,3,"Pewter",0,"5\"",1,"69414",9.0,0],[3,3,"Pewter",0,"6 1/2\"",1,"69968",7.55,0],[2,3,"Pewter",0,"6 1/2\"",1,"69968",7.3,0],[1,3,"Pewter",0,"6 1/2\"",1,"69968",8.0,0],[0,3,"Pewter",0,"6 1/2\"",1,"69968",10.25,0],[3,3,"Pewter",0,"7 3/4\"",1,"49341",7.75,0],[3,3,"Serengeti",0,"4 1/4\"",1,"80508",5.2,1],[3,3,"Serengeti",0,"5\"",1,"80120",7.05,0],[2,3,"Serengeti",0,"5\"",1,"80120",6.7,0],[1,3,"Serengeti",0,"5\"",1,"80120",7.3,0],[0,3,"Serengeti",0,"5\"",1,"80120",9.0,0],[3,3,"Serengeti",0,"6 1/2\"",1,"80491",7.55,0],[2,3,"Serengeti",0,"6 1/2\"",1,"80491",7.3,0],[1,3,"Serengeti",0,"6 1/2\"",1,"80491",8.0,0],[0,3,"Serengeti",0,"6 1/2\"",1,"80491",10.25,0],[3,3,"Serengeti",0,"7 3/4\"",1,"80497",7.75,0],[3,3,"Shale",0,"4 1/4\"",1,"71908",5.2,1],[3,3,"Shale",0,"5\"",1,"71698",7.05,0],[2,3,"Shale",0,"5\"",1,"71698",6.7,0],[1,3,"Shale",0,"5\"",1,"71698",7.3,0],[0,3,"Shale",0,"5\"",1,"71698",9.0,0],[3,3,"Shale",0,"6 1/2\"",1,"71697",7.55,0],[2,3,"Shale",0,"6 1/2\"",1,"71697",7.3,0],[1,3,"Shale",0,"6 1/2\"",1,"71697",8.0,0],[0,3,"Shale",0,"6 1/2\"",1,"71697",10.25,0],[3,3,"Shale",0,"7 3/4\"",1,"71699",7.75,0],[3,3,"Titanium",0,"4 1/4\"",1,"56315",5.2,1],[3,3,"Titanium",0,"5\"",1,"56317",7.05,0],[2,3,"Titanium",0,"5\"",1,"56317",6.7,0],[1,3,"Titanium",0,"5\"",1,"56317",7.3,0],[0,3,"Titanium",0,"5\"",1,"56317",9.0,0],[3,3,"Titanium",0,"6 1/2\"",1,"56318",7.55,0],[2,3,"Titanium",0,"6 1/2\"",1,"56318",7.3,0],[1,3,"Titanium",0,"6 1/2\"",1,"56318",8.0,0],[0,3,"Titanium",0,"6 1/2\"",1,"56318",10.25,0],[3,3,"Titanium",0,"7 3/4\"",1,"56319",7.75,0],[3,0,"Barista",0,"4 1/4\"",1,"50520",5.2,1],[3,0,"Barista",0,"5\"",1,"50249",7.05,0],[2,0,"Barista",0,"5\"",1,"50249",6.7,0],[1,0,"Barista",0,"5\"",1,"50249",7.3,0],[0,0,"Barista",0,"5\"",1,"50249",9.0,0],[3,0,"Barista",0,"6 1/2\"",1,"50252",7.55,0],[2,0,"Barista",0,"6 1/2\"",1,"50252",7.3,0],[1,0,"Barista",0,"6 1/2\"",1,"50252",8.0,0],[0,0,"Barista",0,"6 1/2\"",1,"50252",10.25,0],[3,0,"Hillside",0,"4 1/4\"",1,"50521",5.2,1],[3,0,"Hillside",0,"5\"",1,"50250",7.05,0],[2,0,"Hillside",0,"5\"",1,"50250",6.7,0],[1,0,"Hillside",0,"5\"",1,"50250",7.3,0],[0,0,"Hillside",0,"5\"",1,"50250",9.0,0],[3,0,"Hillside",0,"6 1/2\"",1,"50253",7.55,0],[2,0,"Hillside",0,"6 1/2\"",1,"50253",7.3,0],[1,0,"Hillside",0,"6 1/2\"",1,"50253",8.0,0],[0,0,"Hillside",0,"6 1/2\"",1,"50253",10.25,0],[3,0,"Pewter",0,"4 1/4\"",1,"50522",5.2,1],[3,0,"Pewter",0,"5\"",1,"48929",7.05,0],[2,0,"Pewter",0,"5\"",1,"48929",6.7,0],[1,0,"Pewter",0,"5\"",1,"48929",7.3,0],[0,0,"Pewter",0,"5\"",1,"48929",9.0,0],[3,0,"Pewter",0,"6 1/2\"",1,"48934",7.55,0],[2,0,"Pewter",0,"6 1/2\"",1,"48934",7.3,0],[1,0,"Pewter",0,"6 1/2\"",1,"48934",8.0,0],[0,0,"Pewter",0,"6 1/2\"",1,"48934",10.25,0],[3,0,"Titanium",0,"4 1/4\"",1,"50524",5.2,1],[3,0,"Titanium",0,"5\"",1,"48930",7.05,0],[2,0,"Titanium",0,"5\"",1,"48930",6.7,0],[1,0,"Titanium",0,"5\"",1,"48930",7.3,0],[0,0,"Titanium",0,"5\"",1,"48930",9.0,0],[3,0,"Titanium",0,"6 1/2\"",1,"48935",7.55,0],[2,0,"Titanium",0,"6 1/2\"",1,"48935",7.3,0],[1,0,"Titanium",0,"6 1/2\"",1,"48935",8.0,0],[0,0,"Titanium",0,"6 1/2\"",1,"48935",10.25,0],[3,2,"Barista",0,"5\"",1,"89040",7.05,0],[2,2,"Barista",0,"5\"",1,"89040",6.7,0],[1,2,"Barista",0,"5\"",1,"89040",7.3,0],[0,2,"Barista",0,"5\"",1,"89040",9.0,0],[3,2,"Barista",0,"6 1/2\"",1,"89048",7.55,0],[2,2,"Barista",0,"6 1/2\"",1,"89048",7.3,0],[1,2,"Barista",0,"6 1/2\"",1,"89048",8.0,0],[0,2,"Barista",0,"6 1/2\"",1,"89048",10.25,0],[3,2,"Brownstone",0,"5\"",1,"89042",7.05,0],[2,2,"Brownstone",0,"5\"",1,"89042",6.7,0],[1,2,"Brownstone",0,"5\"",1,"89042",7.3,0],[0,2,"Brownstone",0,"5\"",1,"89042",9.0,0],[3,2,"Brownstone",0,"6 1/2\"",1,"89050",7.55,0],[2,2,"Brownstone",0,"6 1/2\"",1,"89050",7.3,0],[1,2,"Brownstone",0,"6 1/2\"",1,"89050",8.0,0],[0,2,"Brownstone",0,"6 1/2\"",1,"89050",10.25,0],[3,2,"Faro",0,"5\"",1,"89041",7.05,0],[2,2,"Faro",0,"5\"",1,"89041",6.7,0],[1,2,"Faro",0,"5\"",1,"89041",7.3,0],[0,2,"Faro",0,"5\"",1,"89041",9.0,0],[3,2,"Faro",0,"6 1/2\"",1,"89049",7.55,0],[2,2,"Faro",0,"6 1/2\"",1,"89049",7.3,0],[1,2,"Faro",0,"6 1/2\"",1,"89049",8.0,0],[0,2,"Faro",0,"6 1/2\"",1,"89049",10.25,0],[4,4,"Natural",2,"3 1/4\"",0,"68268",6.3,0],[4,4,"Natural",2,"5\"",0,"43258",8.75,0],[4,4,"Natural",2,"6 1/2\"",0,"46188",10.0,0],[4,4,"Natural",0,"5\"",0,"64659",7.75,0],[4,4,"Natural",0,"6 1/2\"",0,"69992",8.3,0],[4,4,"Natural",0,"7 3/4\"",0,"48942",8.55,0],[4,4,"Natural",0,"Chevron 5\"x24.4\"",0,"56410",10.75,0],[4,4,"Natural",2,"Herringbone 3 1/4\"x16.54\"",0,"88885",8.3,0],[4,4,"Natural",0,"Herringbone 5\"x30\"",0,"68416",9.75,0],[4,4,"Natural",2,"3 1/4\"",1,"80537",6.3,0],[4,4,"Natural",2,"5\"",1,"84306",8.75,0],[4,4,"Natural",2,"6 1/2\"",1,"89679",10.0,0],[4,4,"Natural",0,"5\"",1,"45463",7.75,0],[4,4,"Natural",0,"6 1/2\"",1,"49380",8.3,0],[4,4,"Natural",0,"7 3/4\"",1,"48818",8.55,0],[4,4,"Natural",0,"Chevron 5\"x24.4\"",1,"56411",10.75,0],[4,4,"Natural",2,"Herringbone 3 1/4\"x16.54\"",1,"88832",8.3,0],[4,4,"Natural",0,"Herringbone 5\"x30\"",1,"49383",9.75,0],[4,4,"Alabaster",2,"3 1/4\"",1,"80538",6.3,0],[4,4,"Alabaster",2,"5\"",1,"88150",8.75,0],[4,4,"Alabaster",2,"6 1/2\"",1,"89681",10.0,0],[4,4,"Alabaster",0,"5\"",1,"56373",7.75,0],[4,4,"Alabaster",0,"6 1/2\"",1,"56382",8.3,0],[4,4,"Alabaster",0,"7 3/4\"",1,"56383",8.55,0],[4,4,"Alabaster",0,"Chevron 5\"x24.4\"",1,"56412",10.75,0],[4,4,"Alabaster",2,"Herringbone 3 1/4\"x16.54\"",1,"88842",8.3,0],[4,4,"Alabaster",0,"Herringbone 5\"x30\"",1,"56386",9.75,0],[4,4,"Apollo",2,"3 1/4\"",1,"80539",6.3,0],[4,4,"Apollo",2,"5\"",1,"54820",8.75,0],[4,4,"Apollo",2,"6 1/2\"",1,"48909",10.0,0],[4,4,"Apollo",0,"5\"",1,"49152",7.75,0],[4,4,"Apollo",0,"6 1/2\"",1,"49382",8.3,0],[4,4,"Apollo",0,"7 3/4\"",1,"49300",8.55,0],[4,4,"Apollo",0,"Chevron 5\"x24.4\"",1,"56460",10.75,0],[4,4,"Apollo",2,"Herringbone 3 1/4\"x16.54\"",1,"88843",8.3,0],[4,4,"Apollo",0,"Herringbone 5\"x30\"",1,"49151",9.75,0],[4,4,"Athena",2,"3 1/4\"",1,"80540",6.3,0],[4,4,"Athena",2,"5\"",1,"56302",8.75,0],[4,4,"Athena",2,"6 1/2\"",1,"72556",10.0,0],[4,4,"Athena",0,"5\"",1,"49379",7.75,0],[4,4,"Athena",0,"6 1/2\"",1,"42376",8.3,0],[4,4,"Athena",0,"7 3/4\"",1,"49301",8.55,0],[4,4,"Athena",0,"Chevron 5\"x24.4\"",1,"56463",10.75,0],[4,4,"Athena",2,"Herringbone 3 1/4\"x16.54\"",1,"88844",8.3,0],[4,4,"Athena",0,"Herringbone 5\"x30\"",1,"49384",9.75,0],[4,4,"Baroque",2,"3 1/4\"",0,"68372",6.3,0],[4,4,"Baroque",2,"5\"",0,"51815",8.75,0],[4,4,"Baroque",2,"6 1/2\"",0,"89675",10.0,0],[4,4,"Baroque",0,"5\"",0,"64660",7.75,0],[4,4,"Baroque",0,"6 1/2\"",0,"69993",8.3,0],[4,4,"Baroque",0,"7 3/4\"",0,"47632",8.55,0],[4,4,"Baroque",0,"Chevron 5\"x24.4\"",0,"56464",10.75,0],[4,4,"Baroque",2,"Herringbone 3 1/4\"x16.54\"",0,"88886",8.3,0],[4,4,"Baroque",0,"Herringbone 5\"x30\"",0,"68418",9.75,0],[4,4,"Buckingham",2,"3 1/4\"",0,"68373",6.3,0],[4,4,"Buckingham",2,"5\"",0,"41522",8.75,0],[4,4,"Buckingham",2,"6 1/2\"",0,"86441",10.0,0],[4,4,"Buckingham",0,"5\"",0,"64661",7.75,0],[4,4,"Buckingham",0,"6 1/2\"",0,"69994",8.3,0],[4,4,"Buckingham",0,"7 3/4\"",0,"48945",8.55,0],[4,4,"Buckingham",0,"Chevron 5\"x24.4\"",0,"56466",10.75,0],[4,4,"Buckingham",2,"Herringbone 3 1/4\"x16.54\"",0,"88887",8.3,0],[4,4,"Buckingham",0,"Herringbone 5\"x30\"",0,"69795",9.75,0],[4,4,"Canvas",2,"3 1/4\"",0,"50531",6.3,0],[4,4,"Canvas",2,"5\"",0,"71619",8.75,0],[4,4,"Canvas",2,"6 1/2\"",0,"89676",10.0,0],[4,4,"Canvas",0,"5\"",0,"50176",7.75,0],[4,4,"Canvas",0,"6 1/2\"",0,"50183",8.3,0],[4,4,"Canvas",0,"7 3/4\"",0,"50184",8.55,0],[4,4,"Canvas",0,"Chevron 5\"x24.4\"",0,"56467",10.75,0],[4,4,"Canvas",2,"Herringbone 3 1/4\"x16.54\"",0,"88888",8.3,0],[4,4,"Canvas",0,"Herringbone 5\"x30\"",0,"50545",9.75,0],[4,4,"Gotham",2,"3 1/4\"",0,"66147",6.3,0],[4,4,"Gotham",2,"5\"",0,"51812",8.75,0],[4,4,"Gotham",2,"6 1/2\"",0,"89678",10.0,0],[4,4,"Gotham",0,"5\"",0,"64662",7.75,0],[4,4,"Gotham",0,"6 1/2\"",0,"69995",8.3,0],[4,4,"Gotham",0,"7 3/4\"",0,"48946",8.55,0],[4,4,"Gotham",0,"Chevron 5\"x24.4\"",0,"56468",10.75,0],[4,4,"Gotham",2,"Herringbone 3 1/4\"x16.54\"",0,"88889",8.3,0],[4,4,"Gotham",0,"Herringbone 5\"x30\"",0,"68420",9.75,0],[4,4,"Nautilus",2,"3 1/4\"",0,"68371",6.3,0],[4,4,"Nautilus",2,"5\"",0,"69383",8.75,0],[4,4,"Nautilus",2,"6 1/2\"",0,"48865",10.0,0],[4,4,"Nautilus",0,"5\"",0,"68379",7.75,0],[4,4,"Nautilus",0,"6 1/2\"",0,"69996",8.3,0],[4,4,"Nautilus",0,"7 3/4\"",0,"47635",8.55,0],[4,4,"Nautilus",0,"Chevron 5\"x24.4\"",0,"56469",10.75,0],[4,4,"Nautilus",2,"Herringbone 3 1/4\"x16.54\"",0,"88890",8.3,0],[4,4,"Nautilus",0,"Herringbone 5\"x30\"",0,"68417",9.75,0],[4,4,"Nautilus",2,"3 1/4\"",1,"80541",6.3,0],[4,4,"Nautilus",2,"5\"",1,"70173",8.75,0],[4,4,"Nautilus",2,"6 1/2\"",1,"54404",10.0,0],[4,4,"Nautilus",0,"5\"",1,"47963",7.75,0],[4,4,"Nautilus",0,"6 1/2\"",1,"49381",8.3,0],[4,4,"Nautilus",0,"7 3/4\"",1,"49299",8.55,0],[4,4,"Nautilus",0,"Chevron 5\"x24.4\"",1,"56470",10.75,0],[4,4,"Nautilus",2,"Herringbone 3 1/4\"x16.54\"",1,"88845",8.3,0],[4,4,"Nautilus",0,"Herringbone 5\"x30\"",1,"47965",9.75,0],[4,4,"Oracle",2,"3 1/4\"",0,"68374",6.3,0],[4,4,"Oracle",2,"5\"",0,"53213",8.75,0],[4,4,"Oracle",2,"6 1/2\"",0,"72010",10.0,0],[4,4,"Oracle",0,"5\"",0,"64663",7.75,0],[4,4,"Oracle",0,"6 1/2\"",0,"69997",8.3,0],[4,4,"Oracle",0,"7 3/4\"",0,"48947",8.55,0],[4,4,"Oracle",0,"Chevron 5\"x24.4\"",0,"56471",10.75,0],[4,4,"Oracle",2,"Herringbone 3 1/4\"x16.54\"",0,"88891",8.3,0],[4,4,"Oracle",0,"Herringbone 5\"x30\"",0,"68421",9.75,0],[4,4,"Safari",2,"3 1/4\"",1,"72527",6.3,0],[4,4,"Safari",2,"5\"",1,"75803",8.75,0],[4,4,"Safari",2,"6 1/2\"",1,"89682",10.0,0],[4,4,"Safari",0,"5\"",1,"72505",7.75,0],[4,4,"Safari",0,"6 1/2\"",1,"72522",8.3,0],[4,4,"Safari",0,"7 3/4\"",1,"72524",8.55,0],[4,4,"Safari",0,"Chevron 5\"x24.4\"",1,"72518",10.75,0],[4,4,"Safari",2,"Herringbone 3 1/4\"x16.54\"",1,"88831",8.3,0],[4,4,"Safari",0,"Herringbone 5\"x30\"",1,"72520",9.75,0],[4,4,"Sandbar",2,"3 1/4\"",1,"80542",6.3,0],[4,4,"Sandbar",2,"5\"",1,"73843",8.75,0],[4,4,"Sandbar",2,"6 1/2\"",1,"70251",10.0,0],[4,4,"Sandbar",0,"5\"",1,"56387",7.75,0],[4,4,"Sandbar",0,"6 1/2\"",1,"56388",8.3,0],[4,4,"Sandbar",0,"7 3/4\"",1,"56389",8.55,0],[4,4,"Sandbar",0,"Chevron 5\"x24.4\"",1,"56472",10.75,0],[4,4,"Sandbar",2,"Herringbone 3 1/4\"x16.54\"",1,"88846",8.3,0],[4,4,"Sandbar",0,"Herringbone 5\"x30\"",1,"56398",9.75,0],[4,4,"Thatch",2,"3 1/4\"",1,"80426",6.3,0],[4,4,"Thatch",2,"5\"",1,"88151",8.75,0],[4,4,"Thatch",2,"6 1/2\"",1,"89683",10.0,0],[4,4,"Thatch",0,"5\"",1,"80060",7.75,0],[4,4,"Thatch",0,"6 1/2\"",1,"80444",8.3,0],[4,4,"Thatch",0,"7 3/4\"",1,"80464",8.55,0],[4,4,"Thatch",0,"Chevron 5\"x24.4\"",1,"80441",10.75,0],[4,4,"Thatch",2,"Herringbone 3 1/4\"x16.54\"",1,"88847",8.3,0],[4,4,"Thatch",0,"Herringbone 5\"x30\"",1,"80442",9.75,0],[4,1,"Natural",2,"3 1/4\"",1,"49513",6.3,0],[4,1,"Natural",2,"5\"",1,"57008",8.75,0],[4,1,"Natural",2,"6 1/2\"",1,"89685",10.0,0],[4,1,"Natural",3,"5\"",1,"44289",10.4,0],[4,1,"Natural",3,"6 1/2\"",1,"44297",11.05,0],[4,1,"Natural",0,"5\"",1,"49525",7.75,0],[4,1,"Natural",0,"6 1/2\"",1,"49536",8.3,0],[4,1,"Natural",0,"7 3/4\"",1,"49321",8.55,0],[4,1,"Natural",1,"5\"",1,"49582",8.35,0],[4,1,"Natural",1,"6 1/2\"",1,"49590",8.9,0],[4,1,"Natural",0,"Chevron 5\"x24.4\"",1,"56473",10.75,0],[4,1,"Natural",2,"Herringbone 3 1/4\"x16.54\"",1,"88848",8.3,0],[4,1,"Natural",0,"Herringbone 5\"x30\"",1,"49569",9.75,0],[4,1,"Alabaster",2,"3 1/4\"",1,"72574",6.3,0],[4,1,"Alabaster",2,"5\"",1,"75502",8.75,0],[4,1,"Alabaster",2,"6 1/2\"",1,"83219",10.0,0],[4,1,"Alabaster",0,"5\"",1,"59076",7.75,0],[4,1,"Alabaster",0,"6 1/2\"",1,"71909",8.3,0],[4,1,"Alabaster",0,"7 3/4\"",1,"71910",8.55,0],[4,1,"Alabaster",0,"Chevron 5\"x24.4\"",1,"72106",10.75,0],[4,1,"Alabaster",2,"Herringbone 3 1/4\"x16.54\"",1,"88849",8.3,0],[4,1,"Alabaster",0,"Herringbone 5\"x30\"",1,"72110",9.75,0],[4,1,"Atlantis",2,"3 1/4\"",1,"49514",6.3,0],[4,1,"Atlantis",2,"5\"",1,"73540",8.75,0],[4,1,"Atlantis",2,"6 1/2\"",1,"72593",10.0,0],[4,1,"Atlantis",3,"5\"",1,"44294",10.4,0],[4,1,"Atlantis",3,"6 1/2\"",1,"44302",11.05,0],[4,1,"Atlantis",0,"5\"",1,"49405",7.75,0],[4,1,"Atlantis",0,"6 1/2\"",1,"48727",8.3,0],[4,1,"Atlantis",0,"7 3/4\"",1,"49322",8.55,0],[4,1,"Atlantis",1,"5\"",1,"49585",8.35,0],[4,1,"Atlantis",1,"6 1/2\"",1,"49592",8.9,0],[4,1,"Atlantis",0,"Chevron 5\"x24.4\"",1,"56475",10.75,0],[4,1,"Atlantis",2,"Herringbone 3 1/4\"x16.54\"",1,"88850",8.3,0],[4,1,"Atlantis",0,"Herringbone 5\"x30\"",1,"49570",9.75,0],[4,1,"Baroque",2,"3 1/4\"",1,"49516",6.3,0],[4,1,"Baroque",2,"5\"",1,"73542",8.75,0],[4,1,"Baroque",2,"6 1/2\"",1,"89686",10.0,0],[4,1,"Baroque",0,"5\"",1,"49526",7.75,0],[4,1,"Baroque",0,"6 1/2\"",1,"49539",8.3,0],[4,1,"Baroque",0,"7 3/4\"",1,"49323",8.55,0],[4,1,"Baroque",0,"Chevron 5\"x24.4\"",1,"56476",10.75,0],[4,1,"Baroque",2,"Herringbone 3 1/4\"x16.54\"",1,"88851",8.3,0],[4,1,"Baroque",0,"Herringbone 5\"x30\"",1,"49571",9.75,0],[4,1,"Canvas",2,"3 1/4\"",1,"50560",6.3,0],[4,1,"Canvas",2,"5\"",1,"56293",8.75,0],[4,1,"Canvas",2,"6 1/2\"",1,"89687",10.0,0],[4,1,"Canvas",3,"5\"",1,"80523",10.4,0],[4,1,"Canvas",3,"6 1/2\"",1,"80527",11.05,0],[4,1,"Canvas",0,"5\"",1,"50173",7.75,0],[4,1,"Canvas",0,"6 1/2\"",1,"50179",8.3,0],[4,1,"Canvas",0,"7 3/4\"",1,"50185",8.55,0],[4,1,"Canvas",1,"5\"",1,"53118",8.35,0],[4,1,"Canvas",1,"6 1/2\"",1,"80530",8.9,0],[4,1,"Canvas",0,"Chevron 5\"x24.4\"",1,"56478",10.75,0],[4,1,"Canvas",2,"Herringbone 3 1/4\"x16.54\"",1,"88852",8.3,0],[4,1,"Canvas",0,"Herringbone 5\"x30\"",1,"50547",9.75,0],[4,1,"Gotham",2,"3 1/4\"",1,"49517",6.3,0],[4,1,"Gotham",2,"5\"",1,"73541",8.75,0],[4,1,"Gotham",2,"6 1/2\"",1,"89312",10.0,0],[4,1,"Gotham",3,"5\"",1,"44292",10.4,0],[4,1,"Gotham",3,"6 1/2\"",1,"44300",11.05,0],[4,1,"Gotham",0,"5\"",1,"49527",7.75,0],[4,1,"Gotham",0,"6 1/2\"",1,"49540",8.3,0],[4,1,"Gotham",0,"7 3/4\"",1,"49325",8.55,0],[4,1,"Gotham",1,"5\"",1,"49586",8.35,0],[4,1,"Gotham",1,"6 1/2\"",1,"49593",8.9,0],[4,1,"Gotham",0,"Chevron 5\"x24.4\"",1,"56479",10.75,0],[4,1,"Gotham",2,"Herringbone 3 1/4\"x16.54\"",1,"88853",8.3,0],[4,1,"Gotham",0,"Herringbone 5\"x30\"",1,"49572",9.75,0],[4,1,"Nautilus",2,"3 1/4\"",1,"49518",6.3,0],[4,1,"Nautilus",2,"5\"",1,"54881",8.75,0],[4,1,"Nautilus",2,"6 1/2\"",1,"53505",10.0,0],[4,1,"Nautilus",3,"5\"",1,"44293",10.4,0],[4,1,"Nautilus",3,"6 1/2\"",1,"44301",11.05,0],[4,1,"Nautilus",0,"5\"",1,"47810",7.75,0],[4,1,"Nautilus",0,"6 1/2\"",1,"49541",8.3,0],[4,1,"Nautilus",0,"7 3/4\"",1,"49326",8.55,0],[4,1,"Nautilus",1,"5\"",1,"49587",8.35,0],[4,1,"Nautilus",1,"6 1/2\"",1,"49594",8.9,0],[4,1,"Nautilus",0,"Chevron 5\"x24.4\"",1,"56480",10.75,0],[4,1,"Nautilus",2,"Herringbone 3 1/4\"x16.54\"",1,"88854",8.3,0],[4,1,"Nautilus",0,"Herringbone 5\"x30\"",1,"70117",9.75,0],[4,1,"Orion",2,"3 1/4\"",1,"49519",6.3,0],[4,1,"Orion",2,"5\"",1,"59058",8.75,0],[4,1,"Orion",2,"6 1/2\"",1,"50602",10.0,0],[4,1,"Orion",3,"5\"",1,"44295",10.4,0],[4,1,"Orion",3,"6 1/2\"",1,"44303",11.05,0],[4,1,"Orion",0,"5\"",1,"49528",7.75,0],[4,1,"Orion",0,"6 1/2\"",1,"49542",8.3,0],[4,1,"Orion",0,"7 3/4\"",1,"49327",8.55,0],[4,1,"Orion",1,"5\"",1,"49588",8.35,0],[4,1,"Orion",1,"6 1/2\"",1,"49595",8.9,0],[4,1,"Orion",0,"Chevron 5\"x24.4\"",1,"56481",10.75,0],[4,1,"Orion",2,"Herringbone 3 1/4\"x16.54\"",1,"88855",8.3,0],[4,1,"Orion",0,"Herringbone 5\"x30\"",1,"49574",9.75,0],[4,1,"Safari",2,"3 1/4\"",1,"72531",6.3,0],[4,1,"Safari",2,"5\"",1,"74623",8.75,0],[4,1,"Safari",2,"6 1/2\"",1,"89688",10.0,0],[4,1,"Safari",3,"5\"",1,"80524",10.4,0],[4,1,"Safari",3,"6 1/2\"",1,"80528",11.05,0],[4,1,"Safari",0,"5\"",1,"72506",7.75,0],[4,1,"Safari",0,"6 1/2\"",1,"72523",8.3,0],[4,1,"Safari",0,"7 3/4\"",1,"72528",8.55,0],[4,1,"Safari",1,"5\"",1,"74930",8.35,0],[4,1,"Safari",1,"6 1/2\"",1,"80531",8.9,0],[4,1,"Safari",0,"Chevron 5\"x24.4\"",1,"72519",10.75,0],[4,1,"Safari",2,"Herringbone 3 1/4\"x16.54\"",1,"88856",8.3,0],[4,1,"Safari",0,"Herringbone 5\"x30\"",1,"72521",9.75,0],[4,1,"Sandbar",2,"3 1/4\"",1,"73034",6.3,0],[4,1,"Sandbar",2,"5\"",1,"74622",8.75,0],[4,1,"Sandbar",2,"6 1/2\"",1,"80162",10.0,0],[4,1,"Sandbar",3,"5\"",1,"80525",10.4,0],[4,1,"Sandbar",3,"6 1/2\"",1,"80529",11.05,0],[4,1,"Sandbar",0,"5\"",1,"71911",7.75,0],[4,1,"Sandbar",0,"6 1/2\"",1,"70624",8.3,0],[4,1,"Sandbar",0,"7 3/4\"",1,"59448",8.55,0],[4,1,"Sandbar",1,"5\"",1,"80526",8.35,0],[4,1,"Sandbar",1,"6 1/2\"",1,"80532",8.9,0],[4,1,"Sandbar",0,"Chevron 5\"x24.4\"",1,"72107",10.75,0],[4,1,"Sandbar",2,"Herringbone 3 1/4\"x16.54\"",1,"88857",8.3,0],[4,1,"Sandbar",0,"Herringbone 5\"x30\"",1,"59483",9.75,0],[4,1,"Thatch",2,"3 1/4\"",1,"80430",6.3,0],[4,1,"Thatch",2,"5\"",1,"86366",8.75,0],[4,1,"Thatch",2,"6 1/2\"",1,"89689",10.0,0],[4,1,"Thatch",3,"5\"",1,"80125",10.4,0],[4,1,"Thatch",3,"6 1/2\"",1,"80449",11.05,0],[4,1,"Thatch",0,"5\"",1,"80061",7.75,0],[4,1,"Thatch",0,"6 1/2\"",1,"80447",8.3,0],[4,1,"Thatch",0,"7 3/4\"",1,"80466",8.55,0],[4,1,"Thatch",1,"5\"",1,"80126",8.35,0],[4,1,"Thatch",1,"6 1/2\"",1,"80450",8.9,0],[4,1,"Thatch",0,"Chevron 5\"x24.4\"",1,"80119",10.75,0],[4,1,"Thatch",2,"Herringbone 3 1/4\"x16.54\"",1,"88858",8.3,0],[4,1,"Thatch",0,"Herringbone 5\"x30\"",1,"80124",9.75,0],[4,1,"Zeus",2,"3 1/4\"",1,"49521",6.3,0],[4,1,"Zeus",2,"5\"",1,"53082",8.75,0],[4,1,"Zeus",2,"6 1/2\"",1,"89690",10.0,0],[4,1,"Zeus",0,"5\"",1,"39139",7.75,0],[4,1,"Zeus",0,"6 1/2\"",1,"49544",8.3,0],[4,1,"Zeus",0,"7 3/4\"",1,"49329",8.55,0],[4,1,"Zeus",0,"Chevron 5\"x24.4\"",1,"56483",10.75,0],[4,1,"Zeus",2,"Herringbone 3 1/4\"x16.54\"",1,"88859",8.3,0],[4,1,"Zeus",0,"Herringbone 5\"x30\"",1,"49575",9.75,0],[4,3,"Natural",0,"5\"",1,"44527",7.75,0],[4,3,"Natural",0,"6 1/2\"",1,"44535",8.3,0],[4,3,"Natural",0,"7 3/4\"",1,"49356",8.55,0],[4,3,"Natural",0,"Herringbone 5\"x30\"",1,"44618",9.75,0],[4,3,"Alabaster",0,"5\"",1,"71702",7.75,0],[4,3,"Alabaster",0,"6 1/2\"",1,"71309",8.3,0],[4,3,"Alabaster",0,"7 3/4\"",1,"71700",8.55,0],[4,3,"Alabaster",0,"Herringbone 5\"x30\"",1,"72108",9.75,0],[4,3,"Apollo",0,"5\"",1,"41200",7.75,0],[4,3,"Apollo",0,"6 1/2\"",1,"41198",8.3,0],[4,3,"Apollo",0,"7 3/4\"",1,"49079",8.55,0],[4,3,"Apollo",0,"Herringbone 5\"x30\"",1,"44619",9.75,0],[4,3,"Athena",0,"5\"",1,"41195",7.75,0],[4,3,"Athena",0,"6 1/2\"",1,"41193",8.3,0],[4,3,"Athena",0,"7 3/4\"",1,"49357",8.55,0],[4,3,"Athena",0,"Herringbone 5\"x30\"",1,"44620",9.75,0],[4,3,"Baroque",0,"5\"",1,"69545",7.75,0],[4,3,"Baroque",0,"6 1/2\"",1,"69978",8.3,0],[4,3,"Baroque",0,"7 3/4\"",1,"49358",8.55,0],[4,3,"Baroque",0,"Herringbone 5\"x30\"",1,"44621",9.75,0],[4,3,"Buckingham",0,"5\"",1,"69544",7.75,0],[4,3,"Buckingham",0,"6 1/2\"",1,"69980",8.3,0],[4,3,"Buckingham",0,"7 3/4\"",1,"49360",8.55,0],[4,3,"Buckingham",0,"Herringbone 5\"x30\"",1,"44623",9.75,0],[4,3,"Canvas",0,"5\"",1,"50177",7.75,0],[4,3,"Canvas",0,"6 1/2\"",1,"50181",8.3,0],[4,3,"Canvas",0,"7 3/4\"",1,"50187",8.55,0],[4,3,"Canvas",0,"Herringbone 5\"x30\"",1,"50542",9.75,0],[4,3,"Gotham",0,"5\"",1,"69546",7.75,0],[4,3,"Gotham",0,"6 1/2\"",1,"69981",8.3,0],[4,3,"Gotham",0,"7 3/4\"",1,"49361",8.55,0],[4,3,"Gotham",0,"Herringbone 5\"x30\"",1,"44624",9.75,0],[4,3,"Nautilus",0,"5\"",1,"69542",7.75,0],[4,3,"Nautilus",0,"6 1/2\"",1,"69982",8.3,0],[4,3,"Nautilus",0,"7 3/4\"",1,"49163",8.55,0],[4,3,"Nautilus",0,"Herringbone 5\"x30\"",1,"44625",9.75,0],[4,3,"Safari",0,"5\"",1,"72507",7.75,0],[4,3,"Safari",0,"6 1/2\"",1,"72536",8.3,0],[4,3,"Safari",0,"7 3/4\"",1,"72537",8.55,0],[4,3,"Safari",0,"Herringbone 5\"x30\"",1,"72535",9.75,0],[4,3,"Sandbar",0,"5\"",1,"71444",7.75,0],[4,3,"Sandbar",0,"6 1/2\"",1,"71446",8.3,0],[4,3,"Sandbar",0,"7 3/4\"",1,"71701",8.55,0],[4,3,"Sandbar",0,"Herringbone 5\"x30\"",1,"72109",9.75,0],[4,3,"Thatch",0,"5\"",1,"80123",7.75,0],[4,3,"Thatch",0,"6 1/2\"",1,"80452",8.3,0],[4,3,"Thatch",0,"7 3/4\"",1,"80468",8.55,0],[4,3,"Thatch",0,"Herringbone 5\"x30\"",1,"80443",9.75,0],[4,2,"Buckingham",0,"5\"",1,"89047",7.75,0],[4,2,"Buckingham",0,"6 1/2\"",1,"89055",8.3,0],[4,2,"Safari",0,"5\"",1,"89046",7.75,0],[4,2,"Safari",0,"6 1/2\"",1,"89054",8.3,0],[1,4,"Natural",2,"2 1/4\"",0,"54534",4.85,1],[1,4,"Natural",2,"3 1/4\"",0,"54547",6.15,1],[1,4,"Natural",2,"4 1/4\"",0,"54561",6.45,1],[1,4,"Natural",2,"5\"",0,"48150",7.3,1],[1,4,"Natural",2,"6 1/2\"",0,"48139",8.0,1],[1,1,"Bronzite",2,"2 1/4\"",0,"80448",4.85,1],[1,1,"Bronzite",2,"3 1/4\"",0,"80451",6.15,1],[1,1,"Bronzite",2,"4 1/4\"",0,"80453",6.45,1],[1,1,"Bronzite",2,"5\"",0,"80062",7.3,1],[1,1,"Bronzite",2,"6 1/2\"",0,"80445",8.0,1],[1,3,"Winchester",2,"2 1/4\"",0,"54543",4.85,1],[1,3,"Winchester",2,"3 1/4\"",0,"54556",6.15,1],[1,3,"Winchester",2,"4 1/4\"",0,"54570",6.45,1],[1,3,"Winchester",2,"5\"",0,"48158",7.3,1],[1,3,"Winchester",2,"6 1/2\"",0,"48146",8.0,1],[0,4,"Natural",0,"5\"",0,"64724",9.0,0],[0,4,"Natural",0,"6 1/2\"",0,"41257",10.25,0],[0,1,"Natural",0,"5\"",1,"50725",9.0,0],[0,1,"Natural",0,"6 1/2\"",1,"50726",10.25,0],[0,3,"Natural",0,"5\"",1,"69905",9.0,0],[0,3,"Natural",0,"6 1/2\"",1,"41218",10.25,0],[2,4,"Natural",2,"2 1/4\"",0,"67086",4.5,1],[2,4,"Natural",2,"3 1/4\"",0,"64364",5.1,1],[2,4,"Natural",2,"4 1/4\"",0,"64355",5.7,1],[2,4,"Natural",2,"3 1/4\"",0,"64522",5.7,0],[2,4,"Natural",0,"5\"",0,"64526",6.7,0],[2,4,"Natural",0,"6 1/2\"",0,"42054",7.3,0],[2,4,"Citrine",2,"2 1/4\"",0,"87876",4.5,1],[2,4,"Citrine",2,"3 1/4\"",0,"87848",5.1,1],[2,4,"Citrine",2,"4 1/4\"",0,"87881",5.7,1],[2,4,"Citrine",2,"3 1/4\"",0,"87885",5.7,0],[2,4,"Citrine",0,"5\"",0,"87849",6.7,0],[2,4,"Citrine",0,"6 1/2\"",0,"87890",7.3,0],[2,4,"Moonstone",2,"2 1/4\"",0,"80456",4.5,1],[2,4,"Moonstone",2,"3 1/4\"",0,"80457",5.1,1],[2,4,"Moonstone",2,"4 1/4\"",0,"80458",5.7,1],[2,4,"Moonstone",2,"3 1/4\"",0,"80437",5.7,0],[2,4,"Moonstone",0,"5\"",0,"80115",6.7,0],[2,4,"Moonstone",0,"6 1/2\"",0,"80446",7.3,0],[2,4,"Sahara",2,"2 1/4\"",0,"69807",4.5,1],[2,4,"Sahara",2,"3 1/4\"",0,"69808",5.1,1],[2,4,"Sahara",2,"4 1/4\"",0,"69809",5.7,1],[2,4,"Sahara",2,"3 1/4\"",0,"69800",5.7,0],[2,4,"Sahara",0,"5\"",0,"69802",6.7,0],[2,4,"Sahara",0,"6 1/2\"",0,"41255",7.3,0],[2,4,"Sparrow",2,"2 1/4\"",0,"87877",4.5,1],[2,4,"Sparrow",2,"3 1/4\"",0,"87851",5.1,1],[2,4,"Sparrow",2,"4 1/4\"",0,"87882",5.7,1],[2,4,"Sparrow",2,"3 1/4\"",0,"87886",5.7,0],[2,4,"Sparrow",0,"5\"",0,"87852",6.7,0],[2,4,"Sparrow",0,"6 1/2\"",0,"87891",7.3,0],[2,4,"Tundra",2,"2 1/4\"",0,"87875",4.5,1],[2,4,"Tundra",2,"3 1/4\"",0,"87861",5.1,1],[2,4,"Tundra",2,"4 1/4\"",0,"87880",5.7,1],[2,4,"Tundra",2,"3 1/4\"",0,"87884",5.7,0],[2,4,"Tundra",0,"5\"",0,"87862",6.7,0],[2,4,"Tundra",0,"6 1/2\"",0,"87888",7.3,0],[2,3,"Natural",0,"5\"",1,"44523",6.7,0],[2,3,"Natural",0,"6 1/2\"",1,"44264",7.3,0],[2,3,"Citrine",0,"5\"",1,"87850",6.7,0],[2,3,"Citrine",0,"6 1/2\"",1,"87895",7.3,0],[2,3,"Moonstone",0,"5\"",1,"80116",6.7,0],[2,3,"Moonstone",0,"6 1/2\"",1,"80455",7.3,0],[2,3,"Sahara",0,"5\"",1,"69896",6.7,0],[2,3,"Sahara",0,"6 1/2\"",1,"41210",7.3,0],[2,3,"Sparrow",0,"5\"",1,"87853",6.7,0],[2,3,"Sparrow",0,"6 1/2\"",1,"87897",7.3,0],[2,3,"Tundra",0,"5\"",1,"87863",6.7,0],[2,3,"Tundra",0,"6 1/2\"",1,"87894",7.3,0]];
 
-      <div class="req-field">
-        <label class="req-label">Additional notes <span style="opacity:.5;font-size:10px">optional</span></label>
-        <textarea class="req-textarea" id="req-notes" placeholder="Project address, timeline, builder program interest…"></textarea>
-      </div>
 
-      <button class="form-submit-btn" type="submit">Send request &nbsp;→</button>
-    </form>
-  </div>
-</section>
+    
+    function q(id) { return document.getElementById(id); }
+    function v(id) { return q(id).value.trim(); }
 
-<!-- FOOTER -->
-<footer>
-  <a href="/" class="footer-logo"><img src="logo.png" alt="Renew Homes Northwest"></a>
-  <span class="footer-copy">© 2026 Renew Homes Northwest LLC</span>
-  <ul class="footer-links">
-    <li><a href="/privacy">Privacy</a></li>
-    <li><a href="/terms">Terms</a></li>
-  </ul>
-</footer>
+    function filt(sp, tx, co, gr) {
+      return SKUS.filter(function(s) {
+        return (!sp || SP[s[0]] === sp)
+            && (!tx || TX[s[1]] === tx)
+            && (!co || s[2] === co)
+            && (!gr || GR[s[3]] === gr);
+      });
+    }
 
-<script>
-var SP=['Black Walnut','Hickory','Maple','Oak','White Oak'];
-var TX=['Blade','Brushed','Edgesawn','Sculpted','Smooth'];
-var GR=['Character','Character R&Q','Select','Select R&Q'];
-var ST_=['NSS','Solid'];
-var FN=['Pearl','UVF'];
-var WO_ORDER=['2 1/4"','3 1/4"','4 1/4"','5"','6 1/2"','7 3/4"','9"','Chevron 5"x24.4"','Herringbone 3 1/4"x16.54"','Herringbone 5"x30"'];
-var SKUS=[[3,4,"Natural",2,"2 1/4\"",0,"63161",4.5,1],[2,4,"Natural",2,"2 1/4\"",0,"63161",4.5,1],[1,4,"Natural",2,"2 1/4\"",0,"63161",4.85,1],[3,4,"Natural",2,"3 1/4\"",0,"63144",5.1,1],[2,4,"Natural",2,"3 1/4\"",0,"63144",5.1,1],[1,4,"Natural",2,"3 1/4\"",0,"63144",6.15,1],[3,4,"Natural",2,"4 1/4\"",0,"66093",5.3,1],[2,4,"Natural",2,"4 1/4\"",0,"66093",5.7,1],[1,4,"Natural",2,"4 1/4\"",0,"66093",6.45,1],[3,4,"Natural",2,"3 1/4\"",0,"68564",5.6,0],[2,4,"Natural",2,"3 1/4\"",0,"68564",5.7,0],[3,4,"Natural",2,"5\"",0,"59119",7.15,0],[2,4,"Natural",2,"5\"",0,"59119",0,0],[3,4,"Natural",2,"6 1/2\"",0,"89631",8.2,0],[3,4,"Natural",0,"5\"",0,"44344",6.65,0],[2,4,"Natural",0,"5\"",0,"44344",6.7,0],[1,4,"Natural",0,"5\"",0,"44344",7.3,0],[0,4,"Natural",0,"5\"",0,"44344",9.0,0],[3,4,"Natural",0,"6 1/2\"",0,"44353",7.15,0],[2,4,"Natural",0,"6 1/2\"",0,"44353",7.3,0],[1,4,"Natural",0,"6 1/2\"",0,"44353",8.0,0],[0,4,"Natural",0,"6 1/2\"",0,"44353",10.25,0],[3,4,"Natural",0,"7 3/4\"",0,"49294",7.35,0],[3,4,"Natural",2,"9\"",0,"88118",8.1,0],[3,4,"Algarve",2,"2 1/4\"",0,"87980",4.5,1],[2,4,"Algarve",2,"2 1/4\"",0,"87980",4.5,1],[1,4,"Algarve",2,"2 1/4\"",0,"87980",4.85,1],[3,4,"Algarve",2,"3 1/4\"",0,"87847",5.1,1],[2,4,"Algarve",2,"3 1/4\"",0,"87847",5.1,1],[1,4,"Algarve",2,"3 1/4\"",0,"87847",6.15,1],[3,4,"Algarve",2,"4 1/4\"",0,"87981",5.3,1],[2,4,"Algarve",2,"4 1/4\"",0,"87981",5.7,1],[1,4,"Algarve",2,"4 1/4\"",0,"87981",6.45,1],[3,4,"Algarve",2,"3 1/4\"",0,"87989",5.6,0],[2,4,"Algarve",2,"3 1/4\"",0,"87989",5.7,0],[3,4,"Algarve",2,"5\"",0,"87991",7.15,0],[2,4,"Algarve",2,"5\"",0,"87991",0,0],[3,4,"Algarve",2,"6 1/2\"",0,"89642",8.2,0],[3,4,"Algarve",0,"5\"",0,"87842",6.65,0],[2,4,"Algarve",0,"5\"",0,"87842",6.7,0],[1,4,"Algarve",0,"5\"",0,"87842",7.3,0],[0,4,"Algarve",0,"5\"",0,"87842",9.0,0],[3,4,"Algarve",0,"6 1/2\"",0,"87993",7.15,0],[2,4,"Algarve",0,"6 1/2\"",0,"87993",7.3,0],[1,4,"Algarve",0,"6 1/2\"",0,"87993",8.0,0],[0,4,"Algarve",0,"6 1/2\"",0,"87993",10.25,0],[3,4,"Algarve",0,"7 3/4\"",0,"87998",7.35,0],[3,4,"Algarve",2,"9\"",0,"87846",8.1,0],[3,4,"Angora",2,"2 1/4\"",0,"44785",4.5,1],[2,4,"Angora",2,"2 1/4\"",0,"44785",4.5,1],[1,4,"Angora",2,"2 1/4\"",0,"44785",4.85,1],[3,4,"Angora",2,"3 1/4\"",0,"44786",5.1,1],[2,4,"Angora",2,"3 1/4\"",0,"44786",5.1,1],[1,4,"Angora",2,"3 1/4\"",0,"44786",6.15,1],[3,4,"Angora",2,"4 1/4\"",0,"44787",5.3,1],[2,4,"Angora",2,"4 1/4\"",0,"44787",5.7,1],[1,4,"Angora",2,"4 1/4\"",0,"44787",6.45,1],[3,4,"Angora",2,"3 1/4\"",0,"47246",5.6,0],[2,4,"Angora",2,"3 1/4\"",0,"47246",5.7,0],[3,4,"Angora",2,"5\"",0,"55027",7.15,0],[2,4,"Angora",2,"5\"",0,"55027",0,0],[3,4,"Angora",2,"6 1/2\"",0,"89644",8.2,0],[3,4,"Angora",0,"5\"",0,"44790",6.65,0],[2,4,"Angora",0,"5\"",0,"44790",6.7,0],[1,4,"Angora",0,"5\"",0,"44790",7.3,0],[0,4,"Angora",0,"5\"",0,"44790",9.0,0],[3,4,"Angora",0,"6 1/2\"",0,"44791",7.15,0],[2,4,"Angora",0,"6 1/2\"",0,"44791",7.3,0],[1,4,"Angora",0,"6 1/2\"",0,"44791",8.0,0],[0,4,"Angora",0,"6 1/2\"",0,"44791",10.25,0],[3,4,"Angora",0,"7 3/4\"",0,"49295",7.35,0],[3,4,"Angora",2,"9\"",0,"88119",8.1,0],[3,4,"Baja",2,"2 1/4\"",0,"69828",4.5,1],[2,4,"Baja",2,"2 1/4\"",0,"69828",4.5,1],[1,4,"Baja",2,"2 1/4\"",0,"69828",4.85,1],[3,4,"Baja",2,"3 1/4\"",0,"69829",5.1,1],[2,4,"Baja",2,"3 1/4\"",0,"69829",5.1,1],[1,4,"Baja",2,"3 1/4\"",0,"69829",6.15,1],[3,4,"Baja",2,"4 1/4\"",0,"69830",5.3,1],[2,4,"Baja",2,"4 1/4\"",0,"69830",5.7,1],[1,4,"Baja",2,"4 1/4\"",0,"69830",6.45,1],[3,4,"Baja",2,"3 1/4\"",0,"69822",5.6,0],[2,4,"Baja",2,"3 1/4\"",0,"69822",5.7,0],[3,4,"Baja",2,"5\"",0,"54828",7.15,0],[2,4,"Baja",2,"5\"",0,"54828",0,0],[3,4,"Baja",2,"6 1/2\"",0,"89645",8.2,0],[3,4,"Baja",0,"5\"",0,"44345",6.65,0],[2,4,"Baja",0,"5\"",0,"44345",6.7,0],[1,4,"Baja",0,"5\"",0,"44345",7.3,0],[0,4,"Baja",0,"5\"",0,"44345",9.0,0],[3,4,"Baja",0,"6 1/2\"",0,"44354",7.15,0],[2,4,"Baja",0,"6 1/2\"",0,"44354",7.3,0],[1,4,"Baja",0,"6 1/2\"",0,"44354",8.0,0],[0,4,"Baja",0,"6 1/2\"",0,"44354",10.25,0],[3,4,"Baja",0,"7 3/4\"",0,"47397",7.35,0],[3,4,"Baja",2,"9\"",0,"88120",8.1,0],[3,4,"Barista",2,"2 1/4\"",0,"50528",4.5,1],[2,4,"Barista",2,"2 1/4\"",0,"50528",4.5,1],[1,4,"Barista",2,"2 1/4\"",0,"50528",4.85,1],[3,4,"Barista",2,"3 1/4\"",0,"50529",5.1,1],[2,4,"Barista",2,"3 1/4\"",0,"50529",5.1,1],[1,4,"Barista",2,"3 1/4\"",0,"50529",6.15,1],[3,4,"Barista",2,"4 1/4\"",0,"50530",5.3,1],[2,4,"Barista",2,"4 1/4\"",0,"50530",5.7,1],[1,4,"Barista",2,"4 1/4\"",0,"50530",6.45,1],[3,4,"Barista",2,"3 1/4\"",0,"50557",5.6,0],[2,4,"Barista",2,"3 1/4\"",0,"50557",5.7,0],[3,4,"Barista",2,"5\"",0,"55260",7.15,0],[2,4,"Barista",2,"5\"",0,"55260",0,0],[3,4,"Barista",2,"6 1/2\"",0,"89646",8.2,0],[3,4,"Barista",0,"5\"",0,"50188",6.65,0],[2,4,"Barista",0,"5\"",0,"50188",6.7,0],[1,4,"Barista",0,"5\"",0,"50188",7.3,0],[0,4,"Barista",0,"5\"",0,"50188",9.0,0],[3,4,"Barista",0,"6 1/2\"",0,"50198",7.15,0],[2,4,"Barista",0,"6 1/2\"",0,"50198",7.3,0],[1,4,"Barista",0,"6 1/2\"",0,"50198",8.0,0],[0,4,"Barista",0,"6 1/2\"",0,"50198",10.25,0],[3,4,"Barista",0,"7 3/4\"",0,"50245",7.35,0],[3,4,"Barista",2,"9\"",0,"88121",8.1,0],[3,4,"Brownstone",2,"2 1/4\"",0,"73030",4.5,1],[2,4,"Brownstone",2,"2 1/4\"",0,"73030",4.5,1],[1,4,"Brownstone",2,"2 1/4\"",0,"73030",4.85,1],[3,4,"Brownstone",2,"3 1/4\"",0,"72647",5.1,1],[2,4,"Brownstone",2,"3 1/4\"",0,"72647",5.1,1],[1,4,"Brownstone",2,"3 1/4\"",0,"72647",6.15,1],[3,4,"Brownstone",2,"4 1/4\"",0,"73031",5.3,1],[2,4,"Brownstone",2,"4 1/4\"",0,"73031",5.7,1],[1,4,"Brownstone",2,"4 1/4\"",0,"73031",6.45,1],[3,4,"Brownstone",2,"3 1/4\"",0,"72595",5.6,0],[2,4,"Brownstone",2,"3 1/4\"",0,"72595",5.7,0],[3,4,"Brownstone",2,"5\"",0,"88097",7.15,0],[2,4,"Brownstone",2,"5\"",0,"88097",0,0],[3,4,"Brownstone",2,"6 1/2\"",0,"89647",8.2,0],[3,4,"Brownstone",0,"5\"",0,"72646",6.65,0],[2,4,"Brownstone",0,"5\"",0,"72646",6.7,0],[1,4,"Brownstone",0,"5\"",0,"72646",7.3,0],[0,4,"Brownstone",0,"5\"",0,"72646",9.0,0],[3,4,"Brownstone",0,"6 1/2\"",0,"72679",7.15,0],[2,4,"Brownstone",0,"6 1/2\"",0,"72679",7.3,0],[1,4,"Brownstone",0,"6 1/2\"",0,"72679",8.0,0],[0,4,"Brownstone",0,"6 1/2\"",0,"72679",10.25,0],[3,4,"Brownstone",0,"7 3/4\"",0,"72678",7.35,0],[3,4,"Brownstone",2,"9\"",0,"88122",8.1,0],[3,4,"Cocoa",2,"2 1/4\"",0,"63750",4.5,1],[2,4,"Cocoa",2,"2 1/4\"",0,"63750",4.5,1],[1,4,"Cocoa",2,"2 1/4\"",0,"63750",4.85,1],[3,4,"Cocoa",2,"3 1/4\"",0,"62943",5.1,1],[2,4,"Cocoa",2,"3 1/4\"",0,"62943",5.1,1],[1,4,"Cocoa",2,"3 1/4\"",0,"62943",6.15,1],[3,4,"Cocoa",2,"4 1/4\"",0,"63155",5.3,1],[2,4,"Cocoa",2,"4 1/4\"",0,"63155",5.7,1],[1,4,"Cocoa",2,"4 1/4\"",0,"63155",6.45,1],[3,4,"Cocoa",2,"3 1/4\"",0,"46907",5.6,0],[2,4,"Cocoa",2,"3 1/4\"",0,"46907",5.7,0],[3,4,"Cocoa",2,"5\"",0,"55261",7.15,0],[2,4,"Cocoa",2,"5\"",0,"55261",0,0],[3,4,"Cocoa",2,"6 1/2\"",0,"89648",8.2,0],[3,4,"Cocoa",0,"5\"",0,"44348",6.65,0],[2,4,"Cocoa",0,"5\"",0,"44348",6.7,0],[1,4,"Cocoa",0,"5\"",0,"44348",7.3,0],[0,4,"Cocoa",0,"5\"",0,"44348",9.0,0],[3,4,"Cocoa",0,"6 1/2\"",0,"44357",7.15,0],[2,4,"Cocoa",0,"6 1/2\"",0,"44357",7.3,0],[1,4,"Cocoa",0,"6 1/2\"",0,"44357",8.0,0],[0,4,"Cocoa",0,"6 1/2\"",0,"44357",10.25,0],[3,4,"Cocoa",0,"7 3/4\"",0,"49296",7.35,0],[3,4,"Cocoa",2,"9\"",0,"88123",8.1,0],[3,4,"Dover",2,"2 1/4\"",0,"69645",4.5,1],[2,4,"Dover",2,"2 1/4\"",0,"69645",4.5,1],[1,4,"Dover",2,"2 1/4\"",0,"69645",4.85,1],[3,4,"Dover",2,"3 1/4\"",0,"69646",5.1,1],[2,4,"Dover",2,"3 1/4\"",0,"69646",5.1,1],[1,4,"Dover",2,"3 1/4\"",0,"69646",6.15,1],[3,4,"Dover",2,"4 1/4\"",0,"69647",5.3,1],[2,4,"Dover",2,"4 1/4\"",0,"69647",5.7,1],[1,4,"Dover",2,"4 1/4\"",0,"69647",6.45,1],[3,4,"Dover",2,"3 1/4\"",0,"40027",5.6,0],[2,4,"Dover",2,"3 1/4\"",0,"40027",5.7,0],[3,4,"Dover",2,"5\"",0,"55208",7.15,0],[2,4,"Dover",2,"5\"",0,"55208",0,0],[3,4,"Dover",2,"6 1/2\"",0,"89649",8.2,0],[3,4,"Dover",0,"5\"",0,"44349",6.65,0],[2,4,"Dover",0,"5\"",0,"44349",6.7,0],[1,4,"Dover",0,"5\"",0,"44349",7.3,0],[0,4,"Dover",0,"5\"",0,"44349",9.0,0],[3,4,"Dover",0,"6 1/2\"",0,"44358",7.15,0],[2,4,"Dover",0,"6 1/2\"",0,"44358",7.3,0],[1,4,"Dover",0,"6 1/2\"",0,"44358",8.0,0],[0,4,"Dover",0,"6 1/2\"",0,"44358",10.25,0],[3,4,"Dover",0,"7 3/4\"",0,"47394",7.35,0],[3,4,"Dover",2,"9\"",0,"88124",8.1,0],[3,4,"Faro",2,"2 1/4\"",0,"87789",4.5,1],[2,4,"Faro",2,"2 1/4\"",0,"87789",4.5,1],[1,4,"Faro",2,"2 1/4\"",0,"87789",4.85,1],[3,4,"Faro",2,"3 1/4\"",0,"87790",5.1,1],[2,4,"Faro",2,"3 1/4\"",0,"87790",5.1,1],[1,4,"Faro",2,"3 1/4\"",0,"87790",6.15,1],[3,4,"Faro",2,"4 1/4\"",0,"87791",5.3,1],[2,4,"Faro",2,"4 1/4\"",0,"87791",5.7,1],[1,4,"Faro",2,"4 1/4\"",0,"87791",6.45,1],[3,4,"Faro",2,"3 1/4\"",0,"87799",5.6,0],[2,4,"Faro",2,"3 1/4\"",0,"87799",5.7,0],[3,4,"Faro",2,"5\"",0,"87801",7.15,0],[2,4,"Faro",2,"5\"",0,"87801",0,0],[3,4,"Faro",2,"6 1/2\"",0,"89650",8.2,0],[3,4,"Faro",0,"5\"",0,"87802",6.65,0],[2,4,"Faro",0,"5\"",0,"87802",6.7,0],[1,4,"Faro",0,"5\"",0,"87802",7.3,0],[0,4,"Faro",0,"5\"",0,"87802",9.0,0],[3,4,"Faro",0,"6 1/2\"",0,"87808",7.15,0],[2,4,"Faro",0,"6 1/2\"",0,"87808",7.3,0],[1,4,"Faro",0,"6 1/2\"",0,"87808",8.0,0],[0,4,"Faro",0,"6 1/2\"",0,"87808",10.25,0],[3,4,"Faro",0,"7 3/4\"",0,"87812",7.35,0],[3,4,"Faro",2,"9\"",0,"87818",8.1,0],[3,4,"Gryphon",2,"2 1/4\"",0,"68313",4.5,1],[2,4,"Gryphon",2,"2 1/4\"",0,"68313",4.5,1],[1,4,"Gryphon",2,"2 1/4\"",0,"68313",4.85,1],[3,4,"Gryphon",2,"3 1/4\"",0,"66091",5.1,1],[2,4,"Gryphon",2,"3 1/4\"",0,"66091",5.1,1],[1,4,"Gryphon",2,"3 1/4\"",0,"66091",6.15,1],[3,4,"Gryphon",2,"4 1/4\"",0,"66097",5.3,1],[2,4,"Gryphon",2,"4 1/4\"",0,"66097",5.7,1],[1,4,"Gryphon",2,"4 1/4\"",0,"66097",6.45,1],[3,4,"Gryphon",2,"3 1/4\"",0,"68993",5.6,0],[2,4,"Gryphon",2,"3 1/4\"",0,"68993",5.7,0],[3,4,"Gryphon",2,"5\"",0,"55184",7.15,0],[2,4,"Gryphon",2,"5\"",0,"55184",0,0],[3,4,"Gryphon",2,"6 1/2\"",0,"89651",8.2,0],[3,4,"Gryphon",0,"5\"",0,"44350",6.65,0],[2,4,"Gryphon",0,"5\"",0,"44350",6.7,0],[1,4,"Gryphon",0,"5\"",0,"44350",7.3,0],[0,4,"Gryphon",0,"5\"",0,"44350",9.0,0],[3,4,"Gryphon",0,"6 1/2\"",0,"44359",7.15,0],[2,4,"Gryphon",0,"6 1/2\"",0,"44359",7.3,0],[1,4,"Gryphon",0,"6 1/2\"",0,"44359",8.0,0],[0,4,"Gryphon",0,"6 1/2\"",0,"44359",10.25,0],[3,4,"Gryphon",0,"7 3/4\"",0,"47403",7.35,0],[3,4,"Gryphon",2,"9\"",0,"88125",8.1,0],[3,4,"Kahlua",2,"2 1/4\"",0,"68314",4.5,1],[2,4,"Kahlua",2,"2 1/4\"",0,"68314",4.5,1],[1,4,"Kahlua",2,"2 1/4\"",0,"68314",4.85,1],[3,4,"Kahlua",2,"3 1/4\"",0,"65798",5.1,1],[2,4,"Kahlua",2,"3 1/4\"",0,"65798",5.1,1],[1,4,"Kahlua",2,"3 1/4\"",0,"65798",6.15,1],[3,4,"Kahlua",2,"4 1/4\"",0,"66096",5.3,1],[2,4,"Kahlua",2,"4 1/4\"",0,"66096",5.7,1],[1,4,"Kahlua",2,"4 1/4\"",0,"66096",6.45,1],[3,4,"Kahlua",2,"3 1/4\"",0,"46909",5.6,0],[2,4,"Kahlua",2,"3 1/4\"",0,"46909",5.7,0],[3,4,"Kahlua",2,"5\"",0,"55188",7.15,0],[2,4,"Kahlua",2,"5\"",0,"55188",0,0],[3,4,"Kahlua",2,"6 1/2\"",0,"89652",8.2,0],[3,4,"Kahlua",0,"5\"",0,"69696",6.65,0],[2,4,"Kahlua",0,"5\"",0,"69696",6.7,0],[1,4,"Kahlua",0,"5\"",0,"69696",7.3,0],[0,4,"Kahlua",0,"5\"",0,"69696",9.0,0],[3,4,"Kahlua",0,"6 1/2\"",0,"44360",7.15,0],[2,4,"Kahlua",0,"6 1/2\"",0,"44360",7.3,0],[1,4,"Kahlua",0,"6 1/2\"",0,"44360",8.0,0],[0,4,"Kahlua",0,"6 1/2\"",0,"44360",10.25,0],[3,4,"Kahlua",0,"7 3/4\"",0,"47402",7.35,0],[3,4,"Kahlua",2,"9\"",0,"88126",8.1,0],[3,4,"Mocha",2,"2 1/4\"",0,"64008",4.5,1],[2,4,"Mocha",2,"2 1/4\"",0,"64008",4.5,1],[1,4,"Mocha",2,"2 1/4\"",0,"64008",4.85,1],[3,4,"Mocha",2,"3 1/4\"",0,"64908",5.1,1],[2,4,"Mocha",2,"3 1/4\"",0,"64908",5.1,1],[1,4,"Mocha",2,"3 1/4\"",0,"64908",6.15,1],[3,4,"Mocha",2,"4 1/4\"",0,"66098",5.3,1],[2,4,"Mocha",2,"4 1/4\"",0,"66098",5.7,1],[1,4,"Mocha",2,"4 1/4\"",0,"66098",6.45,1],[3,4,"Mocha",2,"3 1/4\"",0,"46910",5.6,0],[2,4,"Mocha",2,"3 1/4\"",0,"46910",5.7,0],[3,4,"Mocha",2,"5\"",0,"55876",7.15,0],[2,4,"Mocha",2,"5\"",0,"55876",0,0],[3,4,"Mocha",2,"6 1/2\"",0,"89653",8.2,0],[3,4,"Mocha",0,"5\"",0,"44351",6.65,0],[2,4,"Mocha",0,"5\"",0,"44351",6.7,0],[1,4,"Mocha",0,"5\"",0,"44351",7.3,0],[0,4,"Mocha",0,"5\"",0,"44351",9.0,0],[3,4,"Mocha",0,"6 1/2\"",0,"44361",7.15,0],[2,4,"Mocha",0,"6 1/2\"",0,"44361",7.3,0],[1,4,"Mocha",0,"6 1/2\"",0,"44361",8.0,0],[0,4,"Mocha",0,"6 1/2\"",0,"44361",10.25,0],[3,4,"Mocha",0,"7 3/4\"",0,"49297",7.35,0],[3,4,"Mocha",2,"9\"",0,"88127",8.1,0],[3,4,"Oasis",2,"2 1/4\"",0,"44721",4.5,1],[2,4,"Oasis",2,"2 1/4\"",0,"44721",4.5,1],[1,4,"Oasis",2,"2 1/4\"",0,"44721",4.85,1],[3,4,"Oasis",2,"3 1/4\"",0,"44722",5.1,1],[2,4,"Oasis",2,"3 1/4\"",0,"44722",5.1,1],[1,4,"Oasis",2,"3 1/4\"",0,"44722",6.15,1],[3,4,"Oasis",2,"4 1/4\"",0,"44723",5.3,1],[2,4,"Oasis",2,"4 1/4\"",0,"44723",5.7,1],[1,4,"Oasis",2,"4 1/4\"",0,"44723",6.45,1],[3,4,"Oasis",2,"3 1/4\"",0,"46911",5.6,0],[2,4,"Oasis",2,"3 1/4\"",0,"46911",5.7,0],[3,4,"Oasis",2,"5\"",0,"53533",7.15,0],[2,4,"Oasis",2,"5\"",0,"53533",0,0],[3,4,"Oasis",2,"6 1/2\"",0,"89654",8.2,0],[3,4,"Oasis",0,"5\"",0,"44726",6.65,0],[2,4,"Oasis",0,"5\"",0,"44726",6.7,0],[1,4,"Oasis",0,"5\"",0,"44726",7.3,0],[0,4,"Oasis",0,"5\"",0,"44726",9.0,0],[3,4,"Oasis",0,"6 1/2\"",0,"44727",7.15,0],[2,4,"Oasis",0,"6 1/2\"",0,"44727",7.3,0],[1,4,"Oasis",0,"6 1/2\"",0,"44727",8.0,0],[0,4,"Oasis",0,"6 1/2\"",0,"44727",10.25,0],[3,4,"Oasis",0,"7 3/4\"",0,"47401",7.35,0],[3,4,"Oasis",2,"9\"",0,"88128",8.1,0],[3,4,"Ophelia",2,"2 1/4\"",0,"44743",4.5,1],[2,4,"Ophelia",2,"2 1/4\"",0,"44743",4.5,1],[1,4,"Ophelia",2,"2 1/4\"",0,"44743",4.85,1],[3,4,"Ophelia",2,"3 1/4\"",0,"44744",5.1,1],[2,4,"Ophelia",2,"3 1/4\"",0,"44744",5.1,1],[1,4,"Ophelia",2,"3 1/4\"",0,"44744",6.15,1],[3,4,"Ophelia",2,"4 1/4\"",0,"44745",5.3,1],[2,4,"Ophelia",2,"4 1/4\"",0,"44745",5.7,1],[1,4,"Ophelia",2,"4 1/4\"",0,"44745",6.45,1],[3,4,"Ophelia",2,"3 1/4\"",0,"46888",5.6,0],[2,4,"Ophelia",2,"3 1/4\"",0,"46888",5.7,0],[3,4,"Ophelia",2,"5\"",0,"55036",7.15,0],[2,4,"Ophelia",2,"5\"",0,"55036",0,0],[3,4,"Ophelia",2,"6 1/2\"",0,"89655",8.2,0],[3,4,"Ophelia",0,"5\"",0,"44751",6.65,0],[2,4,"Ophelia",0,"5\"",0,"44751",6.7,0],[1,4,"Ophelia",0,"5\"",0,"44751",7.3,0],[0,4,"Ophelia",0,"5\"",0,"44751",9.0,0],[3,4,"Ophelia",0,"6 1/2\"",0,"44752",7.15,0],[2,4,"Ophelia",0,"6 1/2\"",0,"44752",7.3,0],[1,4,"Ophelia",0,"6 1/2\"",0,"44752",8.0,0],[0,4,"Ophelia",0,"6 1/2\"",0,"44752",10.25,0],[3,4,"Ophelia",0,"7 3/4\"",0,"47400",7.35,0],[3,4,"Ophelia",2,"9\"",0,"88129",8.1,0],[3,4,"Pewter",2,"2 1/4\"",0,"63714",4.5,1],[2,4,"Pewter",2,"2 1/4\"",0,"63714",4.5,1],[1,4,"Pewter",2,"2 1/4\"",0,"63714",4.85,1],[3,4,"Pewter",2,"3 1/4\"",0,"66092",5.1,1],[2,4,"Pewter",2,"3 1/4\"",0,"66092",5.1,1],[1,4,"Pewter",2,"3 1/4\"",0,"66092",6.15,1],[3,4,"Pewter",2,"4 1/4\"",0,"66099",5.3,1],[2,4,"Pewter",2,"4 1/4\"",0,"66099",5.7,1],[1,4,"Pewter",2,"4 1/4\"",0,"66099",6.45,1],[3,4,"Pewter",2,"3 1/4\"",0,"46913",5.6,0],[2,4,"Pewter",2,"3 1/4\"",0,"46913",5.7,0],[3,4,"Pewter",2,"5\"",0,"55076",7.15,0],[2,4,"Pewter",2,"5\"",0,"55076",0,0],[3,4,"Pewter",2,"6 1/2\"",0,"89656",8.2,0],[3,4,"Pewter",0,"5\"",0,"44352",6.65,0],[2,4,"Pewter",0,"5\"",0,"44352",6.7,0],[1,4,"Pewter",0,"5\"",0,"44352",7.3,0],[0,4,"Pewter",0,"5\"",0,"44352",9.0,0],[3,4,"Pewter",0,"6 1/2\"",0,"44362",7.15,0],[2,4,"Pewter",0,"6 1/2\"",0,"44362",7.3,0],[1,4,"Pewter",0,"6 1/2\"",0,"44362",8.0,0],[0,4,"Pewter",0,"6 1/2\"",0,"44362",10.25,0],[3,4,"Pewter",0,"7 3/4\"",0,"47399",7.35,0],[3,4,"Pewter",2,"9\"",0,"88130",8.1,0],[3,4,"Serengeti",2,"2 1/4\"",0,"88154",4.5,1],[2,4,"Serengeti",2,"2 1/4\"",0,"88154",4.5,1],[1,4,"Serengeti",2,"2 1/4\"",0,"88154",4.85,1],[3,4,"Serengeti",2,"3 1/4\"",0,"80506",5.1,1],[2,4,"Serengeti",2,"3 1/4\"",0,"80506",5.1,1],[1,4,"Serengeti",2,"3 1/4\"",0,"80506",6.15,1],[3,4,"Serengeti",2,"4 1/4\"",0,"86376",5.3,1],[2,4,"Serengeti",2,"4 1/4\"",0,"86376",5.7,1],[1,4,"Serengeti",2,"4 1/4\"",0,"86376",6.45,1],[3,4,"Serengeti",2,"3 1/4\"",0,"80485",5.6,0],[2,4,"Serengeti",2,"3 1/4\"",0,"80485",5.7,0],[3,4,"Serengeti",2,"5\"",0,"88098",7.15,0],[2,4,"Serengeti",2,"5\"",0,"88098",0,0],[3,4,"Serengeti",2,"6 1/2\"",0,"89657",8.2,0],[3,4,"Serengeti",0,"5\"",0,"80117",6.65,0],[2,4,"Serengeti",0,"5\"",0,"80117",6.7,0],[1,4,"Serengeti",0,"5\"",0,"80117",7.3,0],[0,4,"Serengeti",0,"5\"",0,"80117",9.0,0],[3,4,"Serengeti",0,"6 1/2\"",0,"80487",7.15,0],[2,4,"Serengeti",0,"6 1/2\"",0,"80487",7.3,0],[1,4,"Serengeti",0,"6 1/2\"",0,"80487",8.0,0],[0,4,"Serengeti",0,"6 1/2\"",0,"80487",10.25,0],[3,4,"Serengeti",0,"7 3/4\"",0,"80494",7.35,0],[3,4,"Serengeti",2,"9\"",0,"88131",8.1,0],[3,4,"Shale",2,"2 1/4\"",0,"70257",4.5,1],[2,4,"Shale",2,"2 1/4\"",0,"70257",4.5,1],[1,4,"Shale",2,"2 1/4\"",0,"70257",4.85,1],[3,4,"Shale",2,"3 1/4\"",0,"56338",5.1,1],[2,4,"Shale",2,"3 1/4\"",0,"56338",5.1,1],[1,4,"Shale",2,"3 1/4\"",0,"56338",6.15,1],[3,4,"Shale",2,"4 1/4\"",0,"88155",5.3,1],[2,4,"Shale",2,"4 1/4\"",0,"88155",5.7,1],[1,4,"Shale",2,"4 1/4\"",0,"88155",6.45,1],[3,4,"Shale",2,"3 1/4\"",0,"56339",5.6,0],[2,4,"Shale",2,"3 1/4\"",0,"56339",5.7,0],[3,4,"Shale",2,"5\"",0,"71833",7.15,0],[2,4,"Shale",2,"5\"",0,"71833",0,0],[3,4,"Shale",2,"6 1/2\"",0,"89658",8.2,0],[3,4,"Shale",0,"5\"",0,"56090",6.65,0],[2,4,"Shale",0,"5\"",0,"56090",6.7,0],[1,4,"Shale",0,"5\"",0,"56090",7.3,0],[0,4,"Shale",0,"5\"",0,"56090",9.0,0],[3,4,"Shale",0,"6 1/2\"",0,"56340",7.15,0],[2,4,"Shale",0,"6 1/2\"",0,"56340",7.3,0],[1,4,"Shale",0,"6 1/2\"",0,"56340",8.0,0],[0,4,"Shale",0,"6 1/2\"",0,"56340",10.25,0],[3,4,"Shale",0,"7 3/4\"",0,"56341",7.35,0],[3,4,"Shale",2,"9\"",0,"88132",8.1,0],[3,4,"Titanium",2,"2 1/4\"",0,"41538",4.5,1],[2,4,"Titanium",2,"2 1/4\"",0,"41538",4.5,1],[1,4,"Titanium",2,"2 1/4\"",0,"41538",4.85,1],[3,4,"Titanium",2,"3 1/4\"",0,"41539",5.1,1],[2,4,"Titanium",2,"3 1/4\"",0,"41539",5.1,1],[1,4,"Titanium",2,"3 1/4\"",0,"41539",6.15,1],[3,4,"Titanium",2,"4 1/4\"",0,"41540",5.3,1],[2,4,"Titanium",2,"4 1/4\"",0,"41540",5.7,1],[1,4,"Titanium",2,"4 1/4\"",0,"41540",6.45,1],[3,4,"Titanium",2,"3 1/4\"",0,"46914",5.6,0],[2,4,"Titanium",2,"3 1/4\"",0,"46914",5.7,0],[3,4,"Titanium",2,"5\"",0,"53592",7.15,0],[2,4,"Titanium",2,"5\"",0,"53592",0,0],[3,4,"Titanium",2,"6 1/2\"",0,"89659",8.2,0],[3,4,"Titanium",0,"5\"",0,"44173",6.65,0],[2,4,"Titanium",0,"5\"",0,"44173",6.7,0],[1,4,"Titanium",0,"5\"",0,"44173",7.3,0],[0,4,"Titanium",0,"5\"",0,"44173",9.0,0],[3,4,"Titanium",0,"6 1/2\"",0,"44363",7.15,0],[2,4,"Titanium",0,"6 1/2\"",0,"44363",7.3,0],[1,4,"Titanium",0,"6 1/2\"",0,"44363",8.0,0],[0,4,"Titanium",0,"6 1/2\"",0,"44363",10.25,0],[3,4,"Titanium",0,"7 3/4\"",0,"47398",7.35,0],[3,4,"Titanium",2,"9\"",0,"88133",8.1,0],[3,1,"Natural",2,"3 1/4\"",1,"49258",5.1,1],[2,1,"Natural",2,"3 1/4\"",1,"49258",5.1,1],[1,1,"Natural",2,"3 1/4\"",1,"49258",6.15,1],[3,1,"Natural",2,"3 1/4\"",1,"49436",5.6,0],[2,1,"Natural",2,"3 1/4\"",1,"49436",5.7,0],[3,1,"Natural",2,"5\"",1,"88099",7.15,0],[2,1,"Natural",2,"5\"",1,"88099",0,0],[3,1,"Natural",2,"6 1/2\"",1,"89660",8.2,0],[3,1,"Natural",0,"5\"",1,"49445",6.65,0],[2,1,"Natural",0,"5\"",1,"49445",6.7,0],[1,1,"Natural",0,"5\"",1,"49445",7.3,0],[0,1,"Natural",0,"5\"",1,"49445",9.0,0],[3,1,"Natural",0,"6 1/2\"",1,"49453",7.15,0],[2,1,"Natural",0,"6 1/2\"",1,"49453",7.3,0],[1,1,"Natural",0,"6 1/2\"",1,"49453",8.0,0],[0,1,"Natural",0,"6 1/2\"",1,"49453",10.25,0],[3,1,"Natural",0,"7 3/4\"",1,"49304",7.35,0],[3,1,"Natural",2,"9\"",1,"88106",8.1,0],[3,1,"Algarve",2,"3 1/4\"",1,"87982",5.1,1],[2,1,"Algarve",2,"3 1/4\"",1,"87982",5.1,1],[1,1,"Algarve",2,"3 1/4\"",1,"87982",6.15,1],[3,1,"Algarve",2,"3 1/4\"",1,"87990",5.6,0],[2,1,"Algarve",2,"3 1/4\"",1,"87990",5.7,0],[3,1,"Algarve",2,"5\"",1,"87843",7.15,0],[2,1,"Algarve",2,"5\"",1,"87843",0,0],[3,1,"Algarve",2,"6 1/2\"",1,"89661",8.2,0],[3,1,"Algarve",0,"5\"",1,"87844",6.65,0],[2,1,"Algarve",0,"5\"",1,"87844",6.7,0],[1,1,"Algarve",0,"5\"",1,"87844",7.3,0],[0,1,"Algarve",0,"5\"",1,"87844",9.0,0],[3,1,"Algarve",0,"6 1/2\"",1,"87994",7.15,0],[2,1,"Algarve",0,"6 1/2\"",1,"87994",7.3,0],[1,1,"Algarve",0,"6 1/2\"",1,"87994",8.0,0],[0,1,"Algarve",0,"6 1/2\"",1,"87994",10.25,0],[3,1,"Algarve",0,"7 3/4\"",1,"87999",7.35,0],[3,1,"Algarve",2,"9\"",1,"88002",8.1,0],[3,1,"Angora",2,"3 1/4\"",1,"49259",5.1,1],[2,1,"Angora",2,"3 1/4\"",1,"49259",5.1,1],[1,1,"Angora",2,"3 1/4\"",1,"49259",6.15,1],[3,1,"Angora",2,"3 1/4\"",1,"44763",5.6,0],[2,1,"Angora",2,"3 1/4\"",1,"44763",5.7,0],[3,1,"Angora",2,"5\"",1,"54380",7.15,0],[2,1,"Angora",2,"5\"",1,"54380",0,0],[3,1,"Angora",2,"6 1/2\"",1,"89662",8.2,0],[3,1,"Angora",0,"5\"",1,"44765",6.65,0],[2,1,"Angora",0,"5\"",1,"44765",6.7,0],[1,1,"Angora",0,"5\"",1,"44765",7.3,0],[0,1,"Angora",0,"5\"",1,"44765",9.0,0],[3,1,"Angora",0,"6 1/2\"",1,"44779",7.15,0],[2,1,"Angora",0,"6 1/2\"",1,"44779",7.3,0],[1,1,"Angora",0,"6 1/2\"",1,"44779",8.0,0],[0,1,"Angora",0,"6 1/2\"",1,"44779",10.25,0],[3,1,"Angora",0,"7 3/4\"",1,"49311",7.35,0],[3,1,"Angora",2,"9\"",1,"88107",8.1,0],[3,1,"Barista",2,"3 1/4\"",1,"50564",5.1,1],[2,1,"Barista",2,"3 1/4\"",1,"50564",5.1,1],[1,1,"Barista",2,"3 1/4\"",1,"50564",6.15,1],[3,1,"Barista",2,"3 1/4\"",1,"50559",5.6,0],[2,1,"Barista",2,"3 1/4\"",1,"50559",5.7,0],[3,1,"Barista",2,"5\"",1,"88101",7.15,0],[2,1,"Barista",2,"5\"",1,"88101",0,0],[3,1,"Barista",2,"6 1/2\"",1,"89663",8.2,0],[3,1,"Barista",0,"5\"",1,"50189",6.65,0],[2,1,"Barista",0,"5\"",1,"50189",6.7,0],[1,1,"Barista",0,"5\"",1,"50189",7.3,0],[0,1,"Barista",0,"5\"",1,"50189",9.0,0],[3,1,"Barista",0,"6 1/2\"",1,"50196",7.15,0],[2,1,"Barista",0,"6 1/2\"",1,"50196",7.3,0],[1,1,"Barista",0,"6 1/2\"",1,"50196",8.0,0],[0,1,"Barista",0,"6 1/2\"",1,"50196",10.25,0],[3,1,"Barista",0,"7 3/4\"",1,"50246",7.35,0],[3,1,"Barista",2,"9\"",1,"88108",8.1,0],[3,1,"Brownstone",2,"3 1/4\"",1,"72597",5.1,1],[2,1,"Brownstone",2,"3 1/4\"",1,"72597",5.1,1],[1,1,"Brownstone",2,"3 1/4\"",1,"72597",6.15,1],[3,1,"Brownstone",2,"3 1/4\"",1,"73032",5.6,0],[2,1,"Brownstone",2,"3 1/4\"",1,"73032",5.7,0],[3,1,"Brownstone",2,"5\"",1,"74624",7.15,0],[2,1,"Brownstone",2,"5\"",1,"74624",0,0],[3,1,"Brownstone",2,"6 1/2\"",1,"89664",8.2,0],[3,1,"Brownstone",0,"5\"",1,"72596",6.65,0],[2,1,"Brownstone",0,"5\"",1,"72596",6.7,0],[1,1,"Brownstone",0,"5\"",1,"72596",7.3,0],[0,1,"Brownstone",0,"5\"",1,"72596",9.0,0],[3,1,"Brownstone",0,"6 1/2\"",1,"72680",7.15,0],[2,1,"Brownstone",0,"6 1/2\"",1,"72680",7.3,0],[1,1,"Brownstone",0,"6 1/2\"",1,"72680",8.0,0],[0,1,"Brownstone",0,"6 1/2\"",1,"72680",10.25,0],[3,1,"Brownstone",0,"7 3/4\"",1,"72681",7.35,0],[3,1,"Brownstone",2,"9\"",1,"88109",8.1,0],[3,1,"Dover",2,"3 1/4\"",1,"49261",5.1,1],[2,1,"Dover",2,"3 1/4\"",1,"49261",5.1,1],[1,1,"Dover",2,"3 1/4\"",1,"49261",6.15,1],[3,1,"Dover",2,"3 1/4\"",1,"49440",5.6,0],[2,1,"Dover",2,"3 1/4\"",1,"49440",5.7,0],[3,1,"Dover",2,"5\"",1,"88102",7.15,0],[2,1,"Dover",2,"5\"",1,"88102",0,0],[3,1,"Dover",2,"6 1/2\"",1,"89665",8.2,0],[3,1,"Dover",0,"5\"",1,"49450",6.65,0],[2,1,"Dover",0,"5\"",1,"49450",6.7,0],[1,1,"Dover",0,"5\"",1,"49450",7.3,0],[0,1,"Dover",0,"5\"",1,"49450",9.0,0],[3,1,"Dover",0,"6 1/2\"",1,"49458",7.15,0],[2,1,"Dover",0,"6 1/2\"",1,"49458",7.3,0],[1,1,"Dover",0,"6 1/2\"",1,"49458",8.0,0],[0,1,"Dover",0,"6 1/2\"",1,"49458",10.25,0],[3,1,"Dover",0,"7 3/4\"",1,"49309",7.35,0],[3,1,"Dover",2,"9\"",1,"88110",8.1,0],[3,1,"Faro",2,"3 1/4\"",1,"87792",5.1,1],[2,1,"Faro",2,"3 1/4\"",1,"87792",5.1,1],[1,1,"Faro",2,"3 1/4\"",1,"87792",6.15,1],[3,1,"Faro",2,"3 1/4\"",1,"87800",5.6,0],[2,1,"Faro",2,"3 1/4\"",1,"87800",5.7,0],[3,1,"Faro",2,"5\"",1,"87803",7.15,0],[2,1,"Faro",2,"5\"",1,"87803",0,0],[3,1,"Faro",2,"6 1/2\"",1,"89666",8.2,0],[3,1,"Faro",0,"5\"",1,"87804",6.65,0],[2,1,"Faro",0,"5\"",1,"87804",6.7,0],[1,1,"Faro",0,"5\"",1,"87804",7.3,0],[0,1,"Faro",0,"5\"",1,"87804",9.0,0],[3,1,"Faro",0,"6 1/2\"",1,"87809",7.15,0],[2,1,"Faro",0,"6 1/2\"",1,"87809",7.3,0],[1,1,"Faro",0,"6 1/2\"",1,"87809",8.0,0],[0,1,"Faro",0,"6 1/2\"",1,"87809",10.25,0],[3,1,"Faro",0,"7 3/4\"",1,"87813",7.35,0],[3,1,"Faro",2,"9\"",1,"87819",8.1,0],[3,1,"Gryphon",2,"3 1/4\"",1,"49262",5.1,1],[2,1,"Gryphon",2,"3 1/4\"",1,"49262",5.1,1],[1,1,"Gryphon",2,"3 1/4\"",1,"49262",6.15,1],[3,1,"Gryphon",2,"3 1/4\"",1,"49437",5.6,0],[2,1,"Gryphon",2,"3 1/4\"",1,"49437",5.7,0],[3,1,"Gryphon",2,"5\"",1,"53425",7.15,0],[2,1,"Gryphon",2,"5\"",1,"53425",0,0],[3,1,"Gryphon",2,"6 1/2\"",1,"89667",8.2,0],[3,1,"Gryphon",0,"5\"",1,"49447",6.65,0],[2,1,"Gryphon",0,"5\"",1,"49447",6.7,0],[1,1,"Gryphon",0,"5\"",1,"49447",7.3,0],[0,1,"Gryphon",0,"5\"",1,"49447",9.0,0],[3,1,"Gryphon",0,"6 1/2\"",1,"49455",7.15,0],[2,1,"Gryphon",0,"6 1/2\"",1,"49455",7.3,0],[1,1,"Gryphon",0,"6 1/2\"",1,"49455",8.0,0],[0,1,"Gryphon",0,"6 1/2\"",1,"49455",10.25,0],[3,1,"Gryphon",0,"7 3/4\"",1,"49306",7.35,0],[3,1,"Gryphon",2,"9\"",1,"88111",8.1,0],[3,1,"Hillside",2,"3 1/4\"",1,"50565",5.1,1],[2,1,"Hillside",2,"3 1/4\"",1,"50565",5.1,1],[1,1,"Hillside",2,"3 1/4\"",1,"50565",6.15,1],[3,1,"Hillside",2,"3 1/4\"",1,"50533",5.6,0],[2,1,"Hillside",2,"3 1/4\"",1,"50533",5.7,0],[3,1,"Hillside",2,"5\"",1,"76112",7.15,0],[2,1,"Hillside",2,"5\"",1,"76112",0,0],[3,1,"Hillside",2,"6 1/2\"",1,"89668",8.2,0],[3,1,"Hillside",0,"5\"",1,"50190",6.65,0],[2,1,"Hillside",0,"5\"",1,"50190",6.7,0],[1,1,"Hillside",0,"5\"",1,"50190",7.3,0],[0,1,"Hillside",0,"5\"",1,"50190",9.0,0],[3,1,"Hillside",0,"6 1/2\"",1,"50197",7.15,0],[2,1,"Hillside",0,"6 1/2\"",1,"50197",7.3,0],[1,1,"Hillside",0,"6 1/2\"",1,"50197",8.0,0],[0,1,"Hillside",0,"6 1/2\"",1,"50197",10.25,0],[3,1,"Hillside",0,"7 3/4\"",1,"50247",7.35,0],[3,1,"Hillside",2,"9\"",1,"88112",8.1,0],[3,1,"Oasis",2,"3 1/4\"",1,"49263",5.1,1],[2,1,"Oasis",2,"3 1/4\"",1,"49263",5.1,1],[1,1,"Oasis",2,"3 1/4\"",1,"49263",6.15,1],[3,1,"Oasis",2,"3 1/4\"",1,"44714",5.6,0],[2,1,"Oasis",2,"3 1/4\"",1,"44714",5.7,0],[3,1,"Oasis",2,"5\"",1,"52045",7.15,0],[2,1,"Oasis",2,"5\"",1,"52045",0,0],[3,1,"Oasis",2,"6 1/2\"",1,"74151",8.2,0],[3,1,"Oasis",0,"5\"",1,"44715",6.65,0],[2,1,"Oasis",0,"5\"",1,"44715",6.7,0],[1,1,"Oasis",0,"5\"",1,"44715",7.3,0],[0,1,"Oasis",0,"5\"",1,"44715",9.0,0],[3,1,"Oasis",0,"6 1/2\"",1,"44716",7.15,0],[2,1,"Oasis",0,"6 1/2\"",1,"44716",7.3,0],[1,1,"Oasis",0,"6 1/2\"",1,"44716",8.0,0],[0,1,"Oasis",0,"6 1/2\"",1,"44716",10.25,0],[3,1,"Oasis",0,"7 3/4\"",1,"49312",7.35,0],[3,1,"Oasis",2,"9\"",1,"88113",8.1,0],[3,1,"Ophelia",2,"3 1/4\"",1,"49264",5.1,1],[2,1,"Ophelia",2,"3 1/4\"",1,"49264",5.1,1],[1,1,"Ophelia",2,"3 1/4\"",1,"49264",6.15,1],[3,1,"Ophelia",2,"3 1/4\"",1,"44736",5.6,0],[2,1,"Ophelia",2,"3 1/4\"",1,"44736",5.7,0],[3,1,"Ophelia",2,"5\"",1,"54349",7.15,0],[2,1,"Ophelia",2,"5\"",1,"54349",0,0],[3,1,"Ophelia",2,"6 1/2\"",1,"89669",8.2,0],[3,1,"Ophelia",0,"5\"",1,"44737",6.65,0],[2,1,"Ophelia",0,"5\"",1,"44737",6.7,0],[1,1,"Ophelia",0,"5\"",1,"44737",7.3,0],[0,1,"Ophelia",0,"5\"",1,"44737",9.0,0],[3,1,"Ophelia",0,"6 1/2\"",1,"44738",7.15,0],[2,1,"Ophelia",0,"6 1/2\"",1,"44738",7.3,0],[1,1,"Ophelia",0,"6 1/2\"",1,"44738",8.0,0],[0,1,"Ophelia",0,"6 1/2\"",1,"44738",10.25,0],[3,1,"Ophelia",0,"7 3/4\"",1,"49313",7.35,0],[3,1,"Ophelia",2,"9\"",1,"88114",8.1,0],[3,1,"Pewter",2,"3 1/4\"",1,"49265",5.1,1],[2,1,"Pewter",2,"3 1/4\"",1,"49265",5.1,1],[1,1,"Pewter",2,"3 1/4\"",1,"49265",6.15,1],[3,1,"Pewter",2,"3 1/4\"",1,"49438",5.6,0],[2,1,"Pewter",2,"3 1/4\"",1,"49438",5.7,0],[3,1,"Pewter",2,"5\"",1,"53495",7.15,0],[2,1,"Pewter",2,"5\"",1,"53495",0,0],[3,1,"Pewter",2,"6 1/2\"",1,"89670",8.2,0],[3,1,"Pewter",0,"5\"",1,"49448",6.65,0],[2,1,"Pewter",0,"5\"",1,"49448",6.7,0],[1,1,"Pewter",0,"5\"",1,"49448",7.3,0],[0,1,"Pewter",0,"5\"",1,"49448",9.0,0],[3,1,"Pewter",0,"6 1/2\"",1,"49456",7.15,0],[2,1,"Pewter",0,"6 1/2\"",1,"49456",7.3,0],[1,1,"Pewter",0,"6 1/2\"",1,"49456",8.0,0],[0,1,"Pewter",0,"6 1/2\"",1,"49456",10.25,0],[3,1,"Pewter",0,"7 3/4\"",1,"49307",7.35,0],[3,1,"Pewter",2,"9\"",1,"88115",8.1,0],[3,1,"Serengeti",2,"3 1/4\"",1,"84674",5.1,1],[2,1,"Serengeti",2,"3 1/4\"",1,"84674",5.1,1],[1,1,"Serengeti",2,"3 1/4\"",1,"84674",6.15,1],[3,1,"Serengeti",2,"3 1/4\"",1,"88272",5.6,0],[2,1,"Serengeti",2,"3 1/4\"",1,"88272",5.7,0],[3,1,"Serengeti",2,"5\"",1,"88105",7.15,0],[2,1,"Serengeti",2,"5\"",1,"88105",0,0],[3,1,"Serengeti",2,"6 1/2\"",1,"89671",8.2,0],[3,1,"Serengeti",0,"5\"",1,"80118",6.65,0],[2,1,"Serengeti",0,"5\"",1,"80118",6.7,0],[1,1,"Serengeti",0,"5\"",1,"80118",7.3,0],[0,1,"Serengeti",0,"5\"",1,"80118",9.0,0],[3,1,"Serengeti",0,"6 1/2\"",1,"80490",7.15,0],[2,1,"Serengeti",0,"6 1/2\"",1,"80490",7.3,0],[1,1,"Serengeti",0,"6 1/2\"",1,"80490",8.0,0],[0,1,"Serengeti",0,"6 1/2\"",1,"80490",10.25,0],[3,1,"Serengeti",0,"7 3/4\"",1,"80495",7.35,0],[3,1,"Serengeti",2,"9\"",1,"87860",8.1,0],[3,1,"Shale",2,"3 1/4\"",1,"88271",5.1,1],[2,1,"Shale",2,"3 1/4\"",1,"88271",5.1,1],[1,1,"Shale",2,"3 1/4\"",1,"88271",6.15,1],[3,1,"Shale",2,"3 1/4\"",1,"59207",5.6,0],[2,1,"Shale",2,"3 1/4\"",1,"59207",5.7,0],[3,1,"Shale",2,"5\"",1,"74625",7.15,0],[2,1,"Shale",2,"5\"",1,"74625",0,0],[3,1,"Shale",2,"6 1/2\"",1,"89672",8.2,0],[3,1,"Shale",0,"5\"",1,"56367",6.65,0],[2,1,"Shale",0,"5\"",1,"56367",6.7,0],[1,1,"Shale",0,"5\"",1,"56367",7.3,0],[0,1,"Shale",0,"5\"",1,"56367",9.0,0],[3,1,"Shale",0,"6 1/2\"",1,"56369",7.15,0],[2,1,"Shale",0,"6 1/2\"",1,"56369",7.3,0],[1,1,"Shale",0,"6 1/2\"",1,"56369",8.0,0],[0,1,"Shale",0,"6 1/2\"",1,"56369",10.25,0],[3,1,"Shale",0,"7 3/4\"",1,"56370",7.35,0],[3,1,"Shale",2,"9\"",1,"88116",8.1,0],[3,1,"Titanium",2,"3 1/4\"",1,"49432",5.1,1],[2,1,"Titanium",2,"3 1/4\"",1,"49432",5.1,1],[1,1,"Titanium",2,"3 1/4\"",1,"49432",6.15,1],[3,1,"Titanium",2,"3 1/4\"",1,"49443",5.6,0],[2,1,"Titanium",2,"3 1/4\"",1,"49443",5.7,0],[3,1,"Titanium",2,"5\"",1,"55957",7.15,0],[2,1,"Titanium",2,"5\"",1,"55957",0,0],[3,1,"Titanium",2,"6 1/2\"",1,"89673",8.2,0],[3,1,"Titanium",0,"5\"",1,"49452",6.65,0],[2,1,"Titanium",0,"5\"",1,"49452",6.7,0],[1,1,"Titanium",0,"5\"",1,"49452",7.3,0],[0,1,"Titanium",0,"5\"",1,"49452",9.0,0],[3,1,"Titanium",0,"6 1/2\"",1,"49461",7.15,0],[2,1,"Titanium",0,"6 1/2\"",1,"49461",7.3,0],[1,1,"Titanium",0,"6 1/2\"",1,"49461",8.0,0],[0,1,"Titanium",0,"6 1/2\"",1,"49461",10.25,0],[3,1,"Titanium",0,"7 3/4\"",1,"49314",7.35,0],[3,1,"Titanium",2,"9\"",1,"88117",8.1,0],[3,3,"Natural",0,"4 1/4\"",1,"45611",5.2,1],[3,3,"Natural",0,"5\"",1,"44525",7.05,0],[2,3,"Natural",0,"5\"",1,"44525",6.7,0],[1,3,"Natural",0,"5\"",1,"44525",7.3,0],[0,3,"Natural",0,"5\"",1,"44525",9.0,0],[3,3,"Natural",0,"6 1/2\"",1,"44533",7.55,0],[2,3,"Natural",0,"6 1/2\"",1,"44533",7.3,0],[1,3,"Natural",0,"6 1/2\"",1,"44533",8.0,0],[0,3,"Natural",0,"6 1/2\"",1,"44533",10.25,0],[3,3,"Natural",0,"7 3/4\"",1,"49333",7.75,0],[3,3,"Algarve",0,"4 1/4\"",1,"87983",5.2,1],[3,3,"Algarve",0,"5\"",1,"87845",7.05,0],[2,3,"Algarve",0,"5\"",1,"87845",6.7,0],[1,3,"Algarve",0,"5\"",1,"87845",7.3,0],[0,3,"Algarve",0,"5\"",1,"87845",9.0,0],[3,3,"Algarve",0,"6 1/2\"",1,"87995",7.55,0],[2,3,"Algarve",0,"6 1/2\"",1,"87995",7.3,0],[1,3,"Algarve",0,"6 1/2\"",1,"87995",8.0,0],[0,3,"Algarve",0,"6 1/2\"",1,"87995",10.25,0],[3,3,"Algarve",0,"7 3/4\"",1,"88000",7.75,0],[3,3,"Angora",0,"4 1/4\"",1,"44760",5.2,1],[3,3,"Angora",0,"5\"",1,"44755",7.05,0],[2,3,"Angora",0,"5\"",1,"44755",6.7,0],[1,3,"Angora",0,"5\"",1,"44755",7.3,0],[0,3,"Angora",0,"5\"",1,"44755",9.0,0],[3,3,"Angora",0,"6 1/2\"",1,"44758",7.55,0],[2,3,"Angora",0,"6 1/2\"",1,"44758",7.3,0],[1,3,"Angora",0,"6 1/2\"",1,"44758",8.0,0],[0,3,"Angora",0,"6 1/2\"",1,"44758",10.25,0],[3,3,"Angora",0,"7 3/4\"",1,"49334",7.75,0],[3,3,"Barista",0,"4 1/4\"",1,"50525",5.2,1],[3,3,"Barista",0,"5\"",1,"50191",7.05,0],[2,3,"Barista",0,"5\"",1,"50191",6.7,0],[1,3,"Barista",0,"5\"",1,"50191",7.3,0],[0,3,"Barista",0,"5\"",1,"50191",9.0,0],[3,3,"Barista",0,"6 1/2\"",1,"50199",7.55,0],[2,3,"Barista",0,"6 1/2\"",1,"50199",7.3,0],[1,3,"Barista",0,"6 1/2\"",1,"50199",8.0,0],[0,3,"Barista",0,"6 1/2\"",1,"50199",10.25,0],[3,3,"Barista",0,"7 3/4\"",1,"50244",7.75,0],[3,3,"Brownstone",0,"4 1/4\"",1,"72676",5.2,1],[3,3,"Brownstone",0,"5\"",1,"72682",7.05,0],[2,3,"Brownstone",0,"5\"",1,"72682",6.7,0],[1,3,"Brownstone",0,"5\"",1,"72682",7.3,0],[0,3,"Brownstone",0,"5\"",1,"72682",9.0,0],[3,3,"Brownstone",0,"6 1/2\"",1,"72683",7.55,0],[2,3,"Brownstone",0,"6 1/2\"",1,"72683",7.3,0],[1,3,"Brownstone",0,"6 1/2\"",1,"72683",8.0,0],[0,3,"Brownstone",0,"6 1/2\"",1,"72683",10.25,0],[3,3,"Brownstone",0,"7 3/4\"",1,"72684",7.75,0],[3,3,"Dover",0,"4 1/4\"",1,"69837",5.2,1],[3,3,"Dover",0,"5\"",1,"69840",7.05,0],[2,3,"Dover",0,"5\"",1,"69840",6.7,0],[1,3,"Dover",0,"5\"",1,"69840",7.3,0],[0,3,"Dover",0,"5\"",1,"69840",9.0,0],[3,3,"Dover",0,"6 1/2\"",1,"69949",7.55,0],[2,3,"Dover",0,"6 1/2\"",1,"69949",7.3,0],[1,3,"Dover",0,"6 1/2\"",1,"69949",8.0,0],[0,3,"Dover",0,"6 1/2\"",1,"69949",10.25,0],[3,3,"Dover",0,"7 3/4\"",1,"49335",7.75,0],[3,3,"Faro",0,"4 1/4\"",1,"87793",5.2,1],[3,3,"Faro",0,"5\"",1,"87805",7.05,0],[2,3,"Faro",0,"5\"",1,"87805",6.7,0],[1,3,"Faro",0,"5\"",1,"87805",7.3,0],[0,3,"Faro",0,"5\"",1,"87805",9.0,0],[3,3,"Faro",0,"6 1/2\"",1,"87810",7.55,0],[2,3,"Faro",0,"6 1/2\"",1,"87810",7.3,0],[1,3,"Faro",0,"6 1/2\"",1,"87810",8.0,0],[0,3,"Faro",0,"6 1/2\"",1,"87810",10.25,0],[3,3,"Faro",0,"7 3/4\"",1,"87814",7.75,0],[3,3,"Hillside",0,"4 1/4\"",1,"69182",5.2,1],[3,3,"Hillside",0,"5\"",1,"69406",7.05,0],[2,3,"Hillside",0,"5\"",1,"69406",6.7,0],[1,3,"Hillside",0,"5\"",1,"69406",7.3,0],[0,3,"Hillside",0,"5\"",1,"69406",9.0,0],[3,3,"Hillside",0,"6 1/2\"",1,"69967",7.55,0],[2,3,"Hillside",0,"6 1/2\"",1,"69967",7.3,0],[1,3,"Hillside",0,"6 1/2\"",1,"69967",8.0,0],[0,3,"Hillside",0,"6 1/2\"",1,"69967",10.25,0],[3,3,"Hillside",0,"7 3/4\"",1,"49338",7.75,0],[3,3,"Oasis",0,"4 1/4\"",1,"44712",5.2,1],[3,3,"Oasis",0,"5\"",1,"44708",7.05,0],[2,3,"Oasis",0,"5\"",1,"44708",6.7,0],[1,3,"Oasis",0,"5\"",1,"44708",7.3,0],[0,3,"Oasis",0,"5\"",1,"44708",9.0,0],[3,3,"Oasis",0,"6 1/2\"",1,"44710",7.55,0],[2,3,"Oasis",0,"6 1/2\"",1,"44710",7.3,0],[1,3,"Oasis",0,"6 1/2\"",1,"44710",8.0,0],[0,3,"Oasis",0,"6 1/2\"",1,"44710",10.25,0],[3,3,"Oasis",0,"7 3/4\"",1,"49339",7.75,0],[3,3,"Ophelia",0,"4 1/4\"",1,"44734",5.2,1],[3,3,"Ophelia",0,"5\"",1,"44730",7.05,0],[2,3,"Ophelia",0,"5\"",1,"44730",6.7,0],[1,3,"Ophelia",0,"5\"",1,"44730",7.3,0],[0,3,"Ophelia",0,"5\"",1,"44730",9.0,0],[3,3,"Ophelia",0,"6 1/2\"",1,"44732",7.55,0],[2,3,"Ophelia",0,"6 1/2\"",1,"44732",7.3,0],[1,3,"Ophelia",0,"6 1/2\"",1,"44732",8.0,0],[0,3,"Ophelia",0,"6 1/2\"",1,"44732",10.25,0],[3,3,"Ophelia",0,"7 3/4\"",1,"49340",7.75,0],[3,3,"Pewter",0,"4 1/4\"",1,"69187",5.2,1],[3,3,"Pewter",0,"5\"",1,"69414",7.05,0],[2,3,"Pewter",0,"5\"",1,"69414",6.7,0],[1,3,"Pewter",0,"5\"",1,"69414",7.3,0],[0,3,"Pewter",0,"5\"",1,"69414",9.0,0],[3,3,"Pewter",0,"6 1/2\"",1,"69968",7.55,0],[2,3,"Pewter",0,"6 1/2\"",1,"69968",7.3,0],[1,3,"Pewter",0,"6 1/2\"",1,"69968",8.0,0],[0,3,"Pewter",0,"6 1/2\"",1,"69968",10.25,0],[3,3,"Pewter",0,"7 3/4\"",1,"49341",7.75,0],[3,3,"Serengeti",0,"4 1/4\"",1,"80508",5.2,1],[3,3,"Serengeti",0,"5\"",1,"80120",7.05,0],[2,3,"Serengeti",0,"5\"",1,"80120",6.7,0],[1,3,"Serengeti",0,"5\"",1,"80120",7.3,0],[0,3,"Serengeti",0,"5\"",1,"80120",9.0,0],[3,3,"Serengeti",0,"6 1/2\"",1,"80491",7.55,0],[2,3,"Serengeti",0,"6 1/2\"",1,"80491",7.3,0],[1,3,"Serengeti",0,"6 1/2\"",1,"80491",8.0,0],[0,3,"Serengeti",0,"6 1/2\"",1,"80491",10.25,0],[3,3,"Serengeti",0,"7 3/4\"",1,"80497",7.75,0],[3,3,"Shale",0,"4 1/4\"",1,"71908",5.2,1],[3,3,"Shale",0,"5\"",1,"71698",7.05,0],[2,3,"Shale",0,"5\"",1,"71698",6.7,0],[1,3,"Shale",0,"5\"",1,"71698",7.3,0],[0,3,"Shale",0,"5\"",1,"71698",9.0,0],[3,3,"Shale",0,"6 1/2\"",1,"71697",7.55,0],[2,3,"Shale",0,"6 1/2\"",1,"71697",7.3,0],[1,3,"Shale",0,"6 1/2\"",1,"71697",8.0,0],[0,3,"Shale",0,"6 1/2\"",1,"71697",10.25,0],[3,3,"Shale",0,"7 3/4\"",1,"71699",7.75,0],[3,3,"Titanium",0,"4 1/4\"",1,"56315",5.2,1],[3,3,"Titanium",0,"5\"",1,"56317",7.05,0],[2,3,"Titanium",0,"5\"",1,"56317",6.7,0],[1,3,"Titanium",0,"5\"",1,"56317",7.3,0],[0,3,"Titanium",0,"5\"",1,"56317",9.0,0],[3,3,"Titanium",0,"6 1/2\"",1,"56318",7.55,0],[2,3,"Titanium",0,"6 1/2\"",1,"56318",7.3,0],[1,3,"Titanium",0,"6 1/2\"",1,"56318",8.0,0],[0,3,"Titanium",0,"6 1/2\"",1,"56318",10.25,0],[3,3,"Titanium",0,"7 3/4\"",1,"56319",7.75,0],[3,0,"Barista",0,"4 1/4\"",1,"50520",5.2,1],[3,0,"Barista",0,"5\"",1,"50249",7.05,0],[2,0,"Barista",0,"5\"",1,"50249",6.7,0],[1,0,"Barista",0,"5\"",1,"50249",7.3,0],[0,0,"Barista",0,"5\"",1,"50249",9.0,0],[3,0,"Barista",0,"6 1/2\"",1,"50252",7.55,0],[2,0,"Barista",0,"6 1/2\"",1,"50252",7.3,0],[1,0,"Barista",0,"6 1/2\"",1,"50252",8.0,0],[0,0,"Barista",0,"6 1/2\"",1,"50252",10.25,0],[3,0,"Hillside",0,"4 1/4\"",1,"50521",5.2,1],[3,0,"Hillside",0,"5\"",1,"50250",7.05,0],[2,0,"Hillside",0,"5\"",1,"50250",6.7,0],[1,0,"Hillside",0,"5\"",1,"50250",7.3,0],[0,0,"Hillside",0,"5\"",1,"50250",9.0,0],[3,0,"Hillside",0,"6 1/2\"",1,"50253",7.55,0],[2,0,"Hillside",0,"6 1/2\"",1,"50253",7.3,0],[1,0,"Hillside",0,"6 1/2\"",1,"50253",8.0,0],[0,0,"Hillside",0,"6 1/2\"",1,"50253",10.25,0],[3,0,"Pewter",0,"4 1/4\"",1,"50522",5.2,1],[3,0,"Pewter",0,"5\"",1,"48929",7.05,0],[2,0,"Pewter",0,"5\"",1,"48929",6.7,0],[1,0,"Pewter",0,"5\"",1,"48929",7.3,0],[0,0,"Pewter",0,"5\"",1,"48929",9.0,0],[3,0,"Pewter",0,"6 1/2\"",1,"48934",7.55,0],[2,0,"Pewter",0,"6 1/2\"",1,"48934",7.3,0],[1,0,"Pewter",0,"6 1/2\"",1,"48934",8.0,0],[0,0,"Pewter",0,"6 1/2\"",1,"48934",10.25,0],[3,0,"Titanium",0,"4 1/4\"",1,"50524",5.2,1],[3,0,"Titanium",0,"5\"",1,"48930",7.05,0],[2,0,"Titanium",0,"5\"",1,"48930",6.7,0],[1,0,"Titanium",0,"5\"",1,"48930",7.3,0],[0,0,"Titanium",0,"5\"",1,"48930",9.0,0],[3,0,"Titanium",0,"6 1/2\"",1,"48935",7.55,0],[2,0,"Titanium",0,"6 1/2\"",1,"48935",7.3,0],[1,0,"Titanium",0,"6 1/2\"",1,"48935",8.0,0],[0,0,"Titanium",0,"6 1/2\"",1,"48935",10.25,0],[3,2,"Barista",0,"5\"",1,"89040",7.05,0],[2,2,"Barista",0,"5\"",1,"89040",6.7,0],[1,2,"Barista",0,"5\"",1,"89040",7.3,0],[0,2,"Barista",0,"5\"",1,"89040",9.0,0],[3,2,"Barista",0,"6 1/2\"",1,"89048",7.55,0],[2,2,"Barista",0,"6 1/2\"",1,"89048",7.3,0],[1,2,"Barista",0,"6 1/2\"",1,"89048",8.0,0],[0,2,"Barista",0,"6 1/2\"",1,"89048",10.25,0],[3,2,"Brownstone",0,"5\"",1,"89042",7.05,0],[2,2,"Brownstone",0,"5\"",1,"89042",6.7,0],[1,2,"Brownstone",0,"5\"",1,"89042",7.3,0],[0,2,"Brownstone",0,"5\"",1,"89042",9.0,0],[3,2,"Brownstone",0,"6 1/2\"",1,"89050",7.55,0],[2,2,"Brownstone",0,"6 1/2\"",1,"89050",7.3,0],[1,2,"Brownstone",0,"6 1/2\"",1,"89050",8.0,0],[0,2,"Brownstone",0,"6 1/2\"",1,"89050",10.25,0],[3,2,"Faro",0,"5\"",1,"89041",7.05,0],[2,2,"Faro",0,"5\"",1,"89041",6.7,0],[1,2,"Faro",0,"5\"",1,"89041",7.3,0],[0,2,"Faro",0,"5\"",1,"89041",9.0,0],[3,2,"Faro",0,"6 1/2\"",1,"89049",7.55,0],[2,2,"Faro",0,"6 1/2\"",1,"89049",7.3,0],[1,2,"Faro",0,"6 1/2\"",1,"89049",8.0,0],[0,2,"Faro",0,"6 1/2\"",1,"89049",10.25,0],[4,4,"Natural",2,"3 1/4\"",0,"68268",6.3,0],[4,4,"Natural",2,"5\"",0,"43258",8.75,0],[4,4,"Natural",2,"6 1/2\"",0,"46188",10.0,0],[4,4,"Natural",0,"5\"",0,"64659",7.75,0],[4,4,"Natural",0,"6 1/2\"",0,"69992",8.3,0],[4,4,"Natural",0,"7 3/4\"",0,"48942",8.55,0],[4,4,"Natural",0,"Chevron 5\"x24.4\"",0,"56410",10.75,0],[4,4,"Natural",2,"Herringbone 3 1/4\"x16.54\"",0,"88885",8.3,0],[4,4,"Natural",0,"Herringbone 5\"x30\"",0,"68416",9.75,0],[4,4,"Natural",2,"3 1/4\"",1,"80537",6.3,0],[4,4,"Natural",2,"5\"",1,"84306",8.75,0],[4,4,"Natural",2,"6 1/2\"",1,"89679",10.0,0],[4,4,"Natural",0,"5\"",1,"45463",7.75,0],[4,4,"Natural",0,"6 1/2\"",1,"49380",8.3,0],[4,4,"Natural",0,"7 3/4\"",1,"48818",8.55,0],[4,4,"Natural",0,"Chevron 5\"x24.4\"",1,"56411",10.75,0],[4,4,"Natural",2,"Herringbone 3 1/4\"x16.54\"",1,"88832",8.3,0],[4,4,"Natural",0,"Herringbone 5\"x30\"",1,"49383",9.75,0],[4,4,"Alabaster",2,"3 1/4\"",1,"80538",6.3,0],[4,4,"Alabaster",2,"5\"",1,"88150",8.75,0],[4,4,"Alabaster",2,"6 1/2\"",1,"89681",10.0,0],[4,4,"Alabaster",0,"5\"",1,"56373",7.75,0],[4,4,"Alabaster",0,"6 1/2\"",1,"56382",8.3,0],[4,4,"Alabaster",0,"7 3/4\"",1,"56383",8.55,0],[4,4,"Alabaster",0,"Chevron 5\"x24.4\"",1,"56412",10.75,0],[4,4,"Alabaster",2,"Herringbone 3 1/4\"x16.54\"",1,"88842",8.3,0],[4,4,"Alabaster",0,"Herringbone 5\"x30\"",1,"56386",9.75,0],[4,4,"Apollo",2,"3 1/4\"",1,"80539",6.3,0],[4,4,"Apollo",2,"5\"",1,"54820",8.75,0],[4,4,"Apollo",2,"6 1/2\"",1,"48909",10.0,0],[4,4,"Apollo",0,"5\"",1,"49152",7.75,0],[4,4,"Apollo",0,"6 1/2\"",1,"49382",8.3,0],[4,4,"Apollo",0,"7 3/4\"",1,"49300",8.55,0],[4,4,"Apollo",0,"Chevron 5\"x24.4\"",1,"56460",10.75,0],[4,4,"Apollo",2,"Herringbone 3 1/4\"x16.54\"",1,"88843",8.3,0],[4,4,"Apollo",0,"Herringbone 5\"x30\"",1,"49151",9.75,0],[4,4,"Athena",2,"3 1/4\"",1,"80540",6.3,0],[4,4,"Athena",2,"5\"",1,"56302",8.75,0],[4,4,"Athena",2,"6 1/2\"",1,"72556",10.0,0],[4,4,"Athena",0,"5\"",1,"49379",7.75,0],[4,4,"Athena",0,"6 1/2\"",1,"42376",8.3,0],[4,4,"Athena",0,"7 3/4\"",1,"49301",8.55,0],[4,4,"Athena",0,"Chevron 5\"x24.4\"",1,"56463",10.75,0],[4,4,"Athena",2,"Herringbone 3 1/4\"x16.54\"",1,"88844",8.3,0],[4,4,"Athena",0,"Herringbone 5\"x30\"",1,"49384",9.75,0],[4,4,"Baroque",2,"3 1/4\"",0,"68372",6.3,0],[4,4,"Baroque",2,"5\"",0,"51815",8.75,0],[4,4,"Baroque",2,"6 1/2\"",0,"89675",10.0,0],[4,4,"Baroque",0,"5\"",0,"64660",7.75,0],[4,4,"Baroque",0,"6 1/2\"",0,"69993",8.3,0],[4,4,"Baroque",0,"7 3/4\"",0,"47632",8.55,0],[4,4,"Baroque",0,"Chevron 5\"x24.4\"",0,"56464",10.75,0],[4,4,"Baroque",2,"Herringbone 3 1/4\"x16.54\"",0,"88886",8.3,0],[4,4,"Baroque",0,"Herringbone 5\"x30\"",0,"68418",9.75,0],[4,4,"Buckingham",2,"3 1/4\"",0,"68373",6.3,0],[4,4,"Buckingham",2,"5\"",0,"41522",8.75,0],[4,4,"Buckingham",2,"6 1/2\"",0,"86441",10.0,0],[4,4,"Buckingham",0,"5\"",0,"64661",7.75,0],[4,4,"Buckingham",0,"6 1/2\"",0,"69994",8.3,0],[4,4,"Buckingham",0,"7 3/4\"",0,"48945",8.55,0],[4,4,"Buckingham",0,"Chevron 5\"x24.4\"",0,"56466",10.75,0],[4,4,"Buckingham",2,"Herringbone 3 1/4\"x16.54\"",0,"88887",8.3,0],[4,4,"Buckingham",0,"Herringbone 5\"x30\"",0,"69795",9.75,0],[4,4,"Canvas",2,"3 1/4\"",0,"50531",6.3,0],[4,4,"Canvas",2,"5\"",0,"71619",8.75,0],[4,4,"Canvas",2,"6 1/2\"",0,"89676",10.0,0],[4,4,"Canvas",0,"5\"",0,"50176",7.75,0],[4,4,"Canvas",0,"6 1/2\"",0,"50183",8.3,0],[4,4,"Canvas",0,"7 3/4\"",0,"50184",8.55,0],[4,4,"Canvas",0,"Chevron 5\"x24.4\"",0,"56467",10.75,0],[4,4,"Canvas",2,"Herringbone 3 1/4\"x16.54\"",0,"88888",8.3,0],[4,4,"Canvas",0,"Herringbone 5\"x30\"",0,"50545",9.75,0],[4,4,"Gotham",2,"3 1/4\"",0,"66147",6.3,0],[4,4,"Gotham",2,"5\"",0,"51812",8.75,0],[4,4,"Gotham",2,"6 1/2\"",0,"89678",10.0,0],[4,4,"Gotham",0,"5\"",0,"64662",7.75,0],[4,4,"Gotham",0,"6 1/2\"",0,"69995",8.3,0],[4,4,"Gotham",0,"7 3/4\"",0,"48946",8.55,0],[4,4,"Gotham",0,"Chevron 5\"x24.4\"",0,"56468",10.75,0],[4,4,"Gotham",2,"Herringbone 3 1/4\"x16.54\"",0,"88889",8.3,0],[4,4,"Gotham",0,"Herringbone 5\"x30\"",0,"68420",9.75,0],[4,4,"Nautilus",2,"3 1/4\"",0,"68371",6.3,0],[4,4,"Nautilus",2,"5\"",0,"69383",8.75,0],[4,4,"Nautilus",2,"6 1/2\"",0,"48865",10.0,0],[4,4,"Nautilus",0,"5\"",0,"68379",7.75,0],[4,4,"Nautilus",0,"6 1/2\"",0,"69996",8.3,0],[4,4,"Nautilus",0,"7 3/4\"",0,"47635",8.55,0],[4,4,"Nautilus",0,"Chevron 5\"x24.4\"",0,"56469",10.75,0],[4,4,"Nautilus",2,"Herringbone 3 1/4\"x16.54\"",0,"88890",8.3,0],[4,4,"Nautilus",0,"Herringbone 5\"x30\"",0,"68417",9.75,0],[4,4,"Nautilus",2,"3 1/4\"",1,"80541",6.3,0],[4,4,"Nautilus",2,"5\"",1,"70173",8.75,0],[4,4,"Nautilus",2,"6 1/2\"",1,"54404",10.0,0],[4,4,"Nautilus",0,"5\"",1,"47963",7.75,0],[4,4,"Nautilus",0,"6 1/2\"",1,"49381",8.3,0],[4,4,"Nautilus",0,"7 3/4\"",1,"49299",8.55,0],[4,4,"Nautilus",0,"Chevron 5\"x24.4\"",1,"56470",10.75,0],[4,4,"Nautilus",2,"Herringbone 3 1/4\"x16.54\"",1,"88845",8.3,0],[4,4,"Nautilus",0,"Herringbone 5\"x30\"",1,"47965",9.75,0],[4,4,"Oracle",2,"3 1/4\"",0,"68374",6.3,0],[4,4,"Oracle",2,"5\"",0,"53213",8.75,0],[4,4,"Oracle",2,"6 1/2\"",0,"72010",10.0,0],[4,4,"Oracle",0,"5\"",0,"64663",7.75,0],[4,4,"Oracle",0,"6 1/2\"",0,"69997",8.3,0],[4,4,"Oracle",0,"7 3/4\"",0,"48947",8.55,0],[4,4,"Oracle",0,"Chevron 5\"x24.4\"",0,"56471",10.75,0],[4,4,"Oracle",2,"Herringbone 3 1/4\"x16.54\"",0,"88891",8.3,0],[4,4,"Oracle",0,"Herringbone 5\"x30\"",0,"68421",9.75,0],[4,4,"Safari",2,"3 1/4\"",1,"72527",6.3,0],[4,4,"Safari",2,"5\"",1,"75803",8.75,0],[4,4,"Safari",2,"6 1/2\"",1,"89682",10.0,0],[4,4,"Safari",0,"5\"",1,"72505",7.75,0],[4,4,"Safari",0,"6 1/2\"",1,"72522",8.3,0],[4,4,"Safari",0,"7 3/4\"",1,"72524",8.55,0],[4,4,"Safari",0,"Chevron 5\"x24.4\"",1,"72518",10.75,0],[4,4,"Safari",2,"Herringbone 3 1/4\"x16.54\"",1,"88831",8.3,0],[4,4,"Safari",0,"Herringbone 5\"x30\"",1,"72520",9.75,0],[4,4,"Sandbar",2,"3 1/4\"",1,"80542",6.3,0],[4,4,"Sandbar",2,"5\"",1,"73843",8.75,0],[4,4,"Sandbar",2,"6 1/2\"",1,"70251",10.0,0],[4,4,"Sandbar",0,"5\"",1,"56387",7.75,0],[4,4,"Sandbar",0,"6 1/2\"",1,"56388",8.3,0],[4,4,"Sandbar",0,"7 3/4\"",1,"56389",8.55,0],[4,4,"Sandbar",0,"Chevron 5\"x24.4\"",1,"56472",10.75,0],[4,4,"Sandbar",2,"Herringbone 3 1/4\"x16.54\"",1,"88846",8.3,0],[4,4,"Sandbar",0,"Herringbone 5\"x30\"",1,"56398",9.75,0],[4,4,"Thatch",2,"3 1/4\"",1,"80426",6.3,0],[4,4,"Thatch",2,"5\"",1,"88151",8.75,0],[4,4,"Thatch",2,"6 1/2\"",1,"89683",10.0,0],[4,4,"Thatch",0,"5\"",1,"80060",7.75,0],[4,4,"Thatch",0,"6 1/2\"",1,"80444",8.3,0],[4,4,"Thatch",0,"7 3/4\"",1,"80464",8.55,0],[4,4,"Thatch",0,"Chevron 5\"x24.4\"",1,"80441",10.75,0],[4,4,"Thatch",2,"Herringbone 3 1/4\"x16.54\"",1,"88847",8.3,0],[4,4,"Thatch",0,"Herringbone 5\"x30\"",1,"80442",9.75,0],[4,1,"Natural",2,"3 1/4\"",1,"49513",6.3,0],[4,1,"Natural",2,"5\"",1,"57008",8.75,0],[4,1,"Natural",2,"6 1/2\"",1,"89685",10.0,0],[4,1,"Natural",3,"5\"",1,"44289",10.4,0],[4,1,"Natural",3,"6 1/2\"",1,"44297",11.05,0],[4,1,"Natural",0,"5\"",1,"49525",7.75,0],[4,1,"Natural",0,"6 1/2\"",1,"49536",8.3,0],[4,1,"Natural",0,"7 3/4\"",1,"49321",8.55,0],[4,1,"Natural",1,"5\"",1,"49582",8.35,0],[4,1,"Natural",1,"6 1/2\"",1,"49590",8.9,0],[4,1,"Natural",0,"Chevron 5\"x24.4\"",1,"56473",10.75,0],[4,1,"Natural",2,"Herringbone 3 1/4\"x16.54\"",1,"88848",8.3,0],[4,1,"Natural",0,"Herringbone 5\"x30\"",1,"49569",9.75,0],[4,1,"Alabaster",2,"3 1/4\"",1,"72574",6.3,0],[4,1,"Alabaster",2,"5\"",1,"75502",8.75,0],[4,1,"Alabaster",2,"6 1/2\"",1,"83219",10.0,0],[4,1,"Alabaster",0,"5\"",1,"59076",7.75,0],[4,1,"Alabaster",0,"6 1/2\"",1,"71909",8.3,0],[4,1,"Alabaster",0,"7 3/4\"",1,"71910",8.55,0],[4,1,"Alabaster",0,"Chevron 5\"x24.4\"",1,"72106",10.75,0],[4,1,"Alabaster",2,"Herringbone 3 1/4\"x16.54\"",1,"88849",8.3,0],[4,1,"Alabaster",0,"Herringbone 5\"x30\"",1,"72110",9.75,0],[4,1,"Atlantis",2,"3 1/4\"",1,"49514",6.3,0],[4,1,"Atlantis",2,"5\"",1,"73540",8.75,0],[4,1,"Atlantis",2,"6 1/2\"",1,"72593",10.0,0],[4,1,"Atlantis",3,"5\"",1,"44294",10.4,0],[4,1,"Atlantis",3,"6 1/2\"",1,"44302",11.05,0],[4,1,"Atlantis",0,"5\"",1,"49405",7.75,0],[4,1,"Atlantis",0,"6 1/2\"",1,"48727",8.3,0],[4,1,"Atlantis",0,"7 3/4\"",1,"49322",8.55,0],[4,1,"Atlantis",1,"5\"",1,"49585",8.35,0],[4,1,"Atlantis",1,"6 1/2\"",1,"49592",8.9,0],[4,1,"Atlantis",0,"Chevron 5\"x24.4\"",1,"56475",10.75,0],[4,1,"Atlantis",2,"Herringbone 3 1/4\"x16.54\"",1,"88850",8.3,0],[4,1,"Atlantis",0,"Herringbone 5\"x30\"",1,"49570",9.75,0],[4,1,"Baroque",2,"3 1/4\"",1,"49516",6.3,0],[4,1,"Baroque",2,"5\"",1,"73542",8.75,0],[4,1,"Baroque",2,"6 1/2\"",1,"89686",10.0,0],[4,1,"Baroque",0,"5\"",1,"49526",7.75,0],[4,1,"Baroque",0,"6 1/2\"",1,"49539",8.3,0],[4,1,"Baroque",0,"7 3/4\"",1,"49323",8.55,0],[4,1,"Baroque",0,"Chevron 5\"x24.4\"",1,"56476",10.75,0],[4,1,"Baroque",2,"Herringbone 3 1/4\"x16.54\"",1,"88851",8.3,0],[4,1,"Baroque",0,"Herringbone 5\"x30\"",1,"49571",9.75,0],[4,1,"Canvas",2,"3 1/4\"",1,"50560",6.3,0],[4,1,"Canvas",2,"5\"",1,"56293",8.75,0],[4,1,"Canvas",2,"6 1/2\"",1,"89687",10.0,0],[4,1,"Canvas",3,"5\"",1,"80523",10.4,0],[4,1,"Canvas",3,"6 1/2\"",1,"80527",11.05,0],[4,1,"Canvas",0,"5\"",1,"50173",7.75,0],[4,1,"Canvas",0,"6 1/2\"",1,"50179",8.3,0],[4,1,"Canvas",0,"7 3/4\"",1,"50185",8.55,0],[4,1,"Canvas",1,"5\"",1,"53118",8.35,0],[4,1,"Canvas",1,"6 1/2\"",1,"80530",8.9,0],[4,1,"Canvas",0,"Chevron 5\"x24.4\"",1,"56478",10.75,0],[4,1,"Canvas",2,"Herringbone 3 1/4\"x16.54\"",1,"88852",8.3,0],[4,1,"Canvas",0,"Herringbone 5\"x30\"",1,"50547",9.75,0],[4,1,"Gotham",2,"3 1/4\"",1,"49517",6.3,0],[4,1,"Gotham",2,"5\"",1,"73541",8.75,0],[4,1,"Gotham",2,"6 1/2\"",1,"89312",10.0,0],[4,1,"Gotham",3,"5\"",1,"44292",10.4,0],[4,1,"Gotham",3,"6 1/2\"",1,"44300",11.05,0],[4,1,"Gotham",0,"5\"",1,"49527",7.75,0],[4,1,"Gotham",0,"6 1/2\"",1,"49540",8.3,0],[4,1,"Gotham",0,"7 3/4\"",1,"49325",8.55,0],[4,1,"Gotham",1,"5\"",1,"49586",8.35,0],[4,1,"Gotham",1,"6 1/2\"",1,"49593",8.9,0],[4,1,"Gotham",0,"Chevron 5\"x24.4\"",1,"56479",10.75,0],[4,1,"Gotham",2,"Herringbone 3 1/4\"x16.54\"",1,"88853",8.3,0],[4,1,"Gotham",0,"Herringbone 5\"x30\"",1,"49572",9.75,0],[4,1,"Nautilus",2,"3 1/4\"",1,"49518",6.3,0],[4,1,"Nautilus",2,"5\"",1,"54881",8.75,0],[4,1,"Nautilus",2,"6 1/2\"",1,"53505",10.0,0],[4,1,"Nautilus",3,"5\"",1,"44293",10.4,0],[4,1,"Nautilus",3,"6 1/2\"",1,"44301",11.05,0],[4,1,"Nautilus",0,"5\"",1,"47810",7.75,0],[4,1,"Nautilus",0,"6 1/2\"",1,"49541",8.3,0],[4,1,"Nautilus",0,"7 3/4\"",1,"49326",8.55,0],[4,1,"Nautilus",1,"5\"",1,"49587",8.35,0],[4,1,"Nautilus",1,"6 1/2\"",1,"49594",8.9,0],[4,1,"Nautilus",0,"Chevron 5\"x24.4\"",1,"56480",10.75,0],[4,1,"Nautilus",2,"Herringbone 3 1/4\"x16.54\"",1,"88854",8.3,0],[4,1,"Nautilus",0,"Herringbone 5\"x30\"",1,"70117",9.75,0],[4,1,"Orion",2,"3 1/4\"",1,"49519",6.3,0],[4,1,"Orion",2,"5\"",1,"59058",8.75,0],[4,1,"Orion",2,"6 1/2\"",1,"50602",10.0,0],[4,1,"Orion",3,"5\"",1,"44295",10.4,0],[4,1,"Orion",3,"6 1/2\"",1,"44303",11.05,0],[4,1,"Orion",0,"5\"",1,"49528",7.75,0],[4,1,"Orion",0,"6 1/2\"",1,"49542",8.3,0],[4,1,"Orion",0,"7 3/4\"",1,"49327",8.55,0],[4,1,"Orion",1,"5\"",1,"49588",8.35,0],[4,1,"Orion",1,"6 1/2\"",1,"49595",8.9,0],[4,1,"Orion",0,"Chevron 5\"x24.4\"",1,"56481",10.75,0],[4,1,"Orion",2,"Herringbone 3 1/4\"x16.54\"",1,"88855",8.3,0],[4,1,"Orion",0,"Herringbone 5\"x30\"",1,"49574",9.75,0],[4,1,"Safari",2,"3 1/4\"",1,"72531",6.3,0],[4,1,"Safari",2,"5\"",1,"74623",8.75,0],[4,1,"Safari",2,"6 1/2\"",1,"89688",10.0,0],[4,1,"Safari",3,"5\"",1,"80524",10.4,0],[4,1,"Safari",3,"6 1/2\"",1,"80528",11.05,0],[4,1,"Safari",0,"5\"",1,"72506",7.75,0],[4,1,"Safari",0,"6 1/2\"",1,"72523",8.3,0],[4,1,"Safari",0,"7 3/4\"",1,"72528",8.55,0],[4,1,"Safari",1,"5\"",1,"74930",8.35,0],[4,1,"Safari",1,"6 1/2\"",1,"80531",8.9,0],[4,1,"Safari",0,"Chevron 5\"x24.4\"",1,"72519",10.75,0],[4,1,"Safari",2,"Herringbone 3 1/4\"x16.54\"",1,"88856",8.3,0],[4,1,"Safari",0,"Herringbone 5\"x30\"",1,"72521",9.75,0],[4,1,"Sandbar",2,"3 1/4\"",1,"73034",6.3,0],[4,1,"Sandbar",2,"5\"",1,"74622",8.75,0],[4,1,"Sandbar",2,"6 1/2\"",1,"80162",10.0,0],[4,1,"Sandbar",3,"5\"",1,"80525",10.4,0],[4,1,"Sandbar",3,"6 1/2\"",1,"80529",11.05,0],[4,1,"Sandbar",0,"5\"",1,"71911",7.75,0],[4,1,"Sandbar",0,"6 1/2\"",1,"70624",8.3,0],[4,1,"Sandbar",0,"7 3/4\"",1,"59448",8.55,0],[4,1,"Sandbar",1,"5\"",1,"80526",8.35,0],[4,1,"Sandbar",1,"6 1/2\"",1,"80532",8.9,0],[4,1,"Sandbar",0,"Chevron 5\"x24.4\"",1,"72107",10.75,0],[4,1,"Sandbar",2,"Herringbone 3 1/4\"x16.54\"",1,"88857",8.3,0],[4,1,"Sandbar",0,"Herringbone 5\"x30\"",1,"59483",9.75,0],[4,1,"Thatch",2,"3 1/4\"",1,"80430",6.3,0],[4,1,"Thatch",2,"5\"",1,"86366",8.75,0],[4,1,"Thatch",2,"6 1/2\"",1,"89689",10.0,0],[4,1,"Thatch",3,"5\"",1,"80125",10.4,0],[4,1,"Thatch",3,"6 1/2\"",1,"80449",11.05,0],[4,1,"Thatch",0,"5\"",1,"80061",7.75,0],[4,1,"Thatch",0,"6 1/2\"",1,"80447",8.3,0],[4,1,"Thatch",0,"7 3/4\"",1,"80466",8.55,0],[4,1,"Thatch",1,"5\"",1,"80126",8.35,0],[4,1,"Thatch",1,"6 1/2\"",1,"80450",8.9,0],[4,1,"Thatch",0,"Chevron 5\"x24.4\"",1,"80119",10.75,0],[4,1,"Thatch",2,"Herringbone 3 1/4\"x16.54\"",1,"88858",8.3,0],[4,1,"Thatch",0,"Herringbone 5\"x30\"",1,"80124",9.75,0],[4,1,"Zeus",2,"3 1/4\"",1,"49521",6.3,0],[4,1,"Zeus",2,"5\"",1,"53082",8.75,0],[4,1,"Zeus",2,"6 1/2\"",1,"89690",10.0,0],[4,1,"Zeus",0,"5\"",1,"39139",7.75,0],[4,1,"Zeus",0,"6 1/2\"",1,"49544",8.3,0],[4,1,"Zeus",0,"7 3/4\"",1,"49329",8.55,0],[4,1,"Zeus",0,"Chevron 5\"x24.4\"",1,"56483",10.75,0],[4,1,"Zeus",2,"Herringbone 3 1/4\"x16.54\"",1,"88859",8.3,0],[4,1,"Zeus",0,"Herringbone 5\"x30\"",1,"49575",9.75,0],[4,3,"Natural",0,"5\"",1,"44527",7.75,0],[4,3,"Natural",0,"6 1/2\"",1,"44535",8.3,0],[4,3,"Natural",0,"7 3/4\"",1,"49356",8.55,0],[4,3,"Natural",0,"Herringbone 5\"x30\"",1,"44618",9.75,0],[4,3,"Alabaster",0,"5\"",1,"71702",7.75,0],[4,3,"Alabaster",0,"6 1/2\"",1,"71309",8.3,0],[4,3,"Alabaster",0,"7 3/4\"",1,"71700",8.55,0],[4,3,"Alabaster",0,"Herringbone 5\"x30\"",1,"72108",9.75,0],[4,3,"Apollo",0,"5\"",1,"41200",7.75,0],[4,3,"Apollo",0,"6 1/2\"",1,"41198",8.3,0],[4,3,"Apollo",0,"7 3/4\"",1,"49079",8.55,0],[4,3,"Apollo",0,"Herringbone 5\"x30\"",1,"44619",9.75,0],[4,3,"Athena",0,"5\"",1,"41195",7.75,0],[4,3,"Athena",0,"6 1/2\"",1,"41193",8.3,0],[4,3,"Athena",0,"7 3/4\"",1,"49357",8.55,0],[4,3,"Athena",0,"Herringbone 5\"x30\"",1,"44620",9.75,0],[4,3,"Baroque",0,"5\"",1,"69545",7.75,0],[4,3,"Baroque",0,"6 1/2\"",1,"69978",8.3,0],[4,3,"Baroque",0,"7 3/4\"",1,"49358",8.55,0],[4,3,"Baroque",0,"Herringbone 5\"x30\"",1,"44621",9.75,0],[4,3,"Buckingham",0,"5\"",1,"69544",7.75,0],[4,3,"Buckingham",0,"6 1/2\"",1,"69980",8.3,0],[4,3,"Buckingham",0,"7 3/4\"",1,"49360",8.55,0],[4,3,"Buckingham",0,"Herringbone 5\"x30\"",1,"44623",9.75,0],[4,3,"Canvas",0,"5\"",1,"50177",7.75,0],[4,3,"Canvas",0,"6 1/2\"",1,"50181",8.3,0],[4,3,"Canvas",0,"7 3/4\"",1,"50187",8.55,0],[4,3,"Canvas",0,"Herringbone 5\"x30\"",1,"50542",9.75,0],[4,3,"Gotham",0,"5\"",1,"69546",7.75,0],[4,3,"Gotham",0,"6 1/2\"",1,"69981",8.3,0],[4,3,"Gotham",0,"7 3/4\"",1,"49361",8.55,0],[4,3,"Gotham",0,"Herringbone 5\"x30\"",1,"44624",9.75,0],[4,3,"Nautilus",0,"5\"",1,"69542",7.75,0],[4,3,"Nautilus",0,"6 1/2\"",1,"69982",8.3,0],[4,3,"Nautilus",0,"7 3/4\"",1,"49163",8.55,0],[4,3,"Nautilus",0,"Herringbone 5\"x30\"",1,"44625",9.75,0],[4,3,"Safari",0,"5\"",1,"72507",7.75,0],[4,3,"Safari",0,"6 1/2\"",1,"72536",8.3,0],[4,3,"Safari",0,"7 3/4\"",1,"72537",8.55,0],[4,3,"Safari",0,"Herringbone 5\"x30\"",1,"72535",9.75,0],[4,3,"Sandbar",0,"5\"",1,"71444",7.75,0],[4,3,"Sandbar",0,"6 1/2\"",1,"71446",8.3,0],[4,3,"Sandbar",0,"7 3/4\"",1,"71701",8.55,0],[4,3,"Sandbar",0,"Herringbone 5\"x30\"",1,"72109",9.75,0],[4,3,"Thatch",0,"5\"",1,"80123",7.75,0],[4,3,"Thatch",0,"6 1/2\"",1,"80452",8.3,0],[4,3,"Thatch",0,"7 3/4\"",1,"80468",8.55,0],[4,3,"Thatch",0,"Herringbone 5\"x30\"",1,"80443",9.75,0],[4,2,"Buckingham",0,"5\"",1,"89047",7.75,0],[4,2,"Buckingham",0,"6 1/2\"",1,"89055",8.3,0],[4,2,"Safari",0,"5\"",1,"89046",7.75,0],[4,2,"Safari",0,"6 1/2\"",1,"89054",8.3,0],[1,4,"Natural",2,"2 1/4\"",0,"54534",4.85,1],[1,4,"Natural",2,"3 1/4\"",0,"54547",6.15,1],[1,4,"Natural",2,"4 1/4\"",0,"54561",6.45,1],[1,4,"Natural",2,"5\"",0,"48150",7.3,1],[1,4,"Natural",2,"6 1/2\"",0,"48139",8.0,1],[1,1,"Bronzite",2,"2 1/4\"",0,"80448",4.85,1],[1,1,"Bronzite",2,"3 1/4\"",0,"80451",6.15,1],[1,1,"Bronzite",2,"4 1/4\"",0,"80453",6.45,1],[1,1,"Bronzite",2,"5\"",0,"80062",7.3,1],[1,1,"Bronzite",2,"6 1/2\"",0,"80445",8.0,1],[1,3,"Winchester",2,"2 1/4\"",0,"54543",4.85,1],[1,3,"Winchester",2,"3 1/4\"",0,"54556",6.15,1],[1,3,"Winchester",2,"4 1/4\"",0,"54570",6.45,1],[1,3,"Winchester",2,"5\"",0,"48158",7.3,1],[1,3,"Winchester",2,"6 1/2\"",0,"48146",8.0,1],[0,4,"Natural",0,"5\"",0,"64724",9.0,0],[0,4,"Natural",0,"6 1/2\"",0,"41257",10.25,0],[0,1,"Natural",0,"5\"",1,"50725",9.0,0],[0,1,"Natural",0,"6 1/2\"",1,"50726",10.25,0],[0,3,"Natural",0,"5\"",1,"69905",9.0,0],[0,3,"Natural",0,"6 1/2\"",1,"41218",10.25,0],[2,4,"Natural",2,"2 1/4\"",0,"67086",4.5,1],[2,4,"Natural",2,"3 1/4\"",0,"64364",5.1,1],[2,4,"Natural",2,"4 1/4\"",0,"64355",5.7,1],[2,4,"Natural",2,"3 1/4\"",0,"64522",5.7,0],[2,4,"Natural",0,"5\"",0,"64526",6.7,0],[2,4,"Natural",0,"6 1/2\"",0,"42054",7.3,0],[2,4,"Citrine",2,"2 1/4\"",0,"87876",4.5,1],[2,4,"Citrine",2,"3 1/4\"",0,"87848",5.1,1],[2,4,"Citrine",2,"4 1/4\"",0,"87881",5.7,1],[2,4,"Citrine",2,"3 1/4\"",0,"87885",5.7,0],[2,4,"Citrine",0,"5\"",0,"87849",6.7,0],[2,4,"Citrine",0,"6 1/2\"",0,"87890",7.3,0],[2,4,"Moonstone",2,"2 1/4\"",0,"80456",4.5,1],[2,4,"Moonstone",2,"3 1/4\"",0,"80457",5.1,1],[2,4,"Moonstone",2,"4 1/4\"",0,"80458",5.7,1],[2,4,"Moonstone",2,"3 1/4\"",0,"80437",5.7,0],[2,4,"Moonstone",0,"5\"",0,"80115",6.7,0],[2,4,"Moonstone",0,"6 1/2\"",0,"80446",7.3,0],[2,4,"Sahara",2,"2 1/4\"",0,"69807",4.5,1],[2,4,"Sahara",2,"3 1/4\"",0,"69808",5.1,1],[2,4,"Sahara",2,"4 1/4\"",0,"69809",5.7,1],[2,4,"Sahara",2,"3 1/4\"",0,"69800",5.7,0],[2,4,"Sahara",0,"5\"",0,"69802",6.7,0],[2,4,"Sahara",0,"6 1/2\"",0,"41255",7.3,0],[2,4,"Sparrow",2,"2 1/4\"",0,"87877",4.5,1],[2,4,"Sparrow",2,"3 1/4\"",0,"87851",5.1,1],[2,4,"Sparrow",2,"4 1/4\"",0,"87882",5.7,1],[2,4,"Sparrow",2,"3 1/4\"",0,"87886",5.7,0],[2,4,"Sparrow",0,"5\"",0,"87852",6.7,0],[2,4,"Sparrow",0,"6 1/2\"",0,"87891",7.3,0],[2,4,"Tundra",2,"2 1/4\"",0,"87875",4.5,1],[2,4,"Tundra",2,"3 1/4\"",0,"87861",5.1,1],[2,4,"Tundra",2,"4 1/4\"",0,"87880",5.7,1],[2,4,"Tundra",2,"3 1/4\"",0,"87884",5.7,0],[2,4,"Tundra",0,"5\"",0,"87862",6.7,0],[2,4,"Tundra",0,"6 1/2\"",0,"87888",7.3,0],[2,3,"Natural",0,"5\"",1,"44523",6.7,0],[2,3,"Natural",0,"6 1/2\"",1,"44264",7.3,0],[2,3,"Citrine",0,"5\"",1,"87850",6.7,0],[2,3,"Citrine",0,"6 1/2\"",1,"87895",7.3,0],[2,3,"Moonstone",0,"5\"",1,"80116",6.7,0],[2,3,"Moonstone",0,"6 1/2\"",1,"80455",7.3,0],[2,3,"Sahara",0,"5\"",1,"69896",6.7,0],[2,3,"Sahara",0,"6 1/2\"",1,"41210",7.3,0],[2,3,"Sparrow",0,"5\"",1,"87853",6.7,0],[2,3,"Sparrow",0,"6 1/2\"",1,"87897",7.3,0],[2,3,"Tundra",0,"5\"",1,"87863",6.7,0],[2,3,"Tundra",0,"6 1/2\"",1,"87894",7.3,0]];
+    function unique(rows, fn) {
+      var seen = {}, out = [];
+      rows.forEach(function(r) {
+        var k = fn(r);
+        if (!seen[k]) { seen[k] = 1; out.push(k); }
+      });
+      return out;
+    }
 
-function q(id){return document.getElementById(id);}
-function v(id){return q(id).value.trim();}
+    function pop(sel, opts, placeholder, cur) {
+      sel.innerHTML = '<option value="">' + placeholder + '</option>';
+      opts.forEach(function(o) {
+        var el = document.createElement('option');
+        el.value = o;
+        el.textContent = o;
+        if (o === cur) el.selected = true;
+        sel.appendChild(el);
+      });
+    }
 
-function filt(sp,tx,co,gr){
-  return SKUS.filter(function(s){
-    return (!sp||SP[s[0]]===sp)&&(!tx||TX[s[1]]===tx)&&(!co||s[2]===co)&&(!gr||GR[s[3]]===gr);
-  });
-}
-function unique(rows,fn){var seen={},out=[];rows.forEach(function(r){var k=fn(r);if(!seen[k]){seen[k]=1;out.push(k);}});return out;}
-function pop(sel,opts,placeholder,cur){
-  sel.innerHTML='<option value="">'+placeholder+'</option>';
-  opts.forEach(function(o){var el=document.createElement('option');el.value=o;el.textContent=o;if(o===cur)el.selected=true;sel.appendChild(el);});
-}
+    function cascade(changed) {
+      var sp = v('req-sp'), tx = v('req-tx'), co = v('req-co'), gr = v('req-gr');
+      if (changed === 'sp') {
+        var txOpts = sp ? unique(filt(sp, null, null, null), function(s) { return TX[s[1]]; }).sort() : [];
+        pop(q('req-tx'), txOpts, '— Select texture —');
+        pop(q('req-co'), [], '— Select texture first —');
+        pop(q('req-gr'), [], '— Select color first —');
+        pop(q('req-wi'), [], '— Select grade first —');
+        q('autofill-block').style.display = 'none';
+        return;
+      }
+      if (changed === 'tx') {
+        tx = v('req-tx');
+        var coOpts = sp && tx ? unique(filt(sp, tx, null, null), function(s) { return s[2]; }).sort() : [];
+        pop(q('req-co'), coOpts, '— Select color —');
+        pop(q('req-gr'), [], '— Select color first —');
+        pop(q('req-wi'), [], '— Select grade first —');
+        q('autofill-block').style.display = 'none';
+        return;
+      }
+      if (changed === 'co') {
+        co = v('req-co');
+        var grOpts = sp && tx && co ? unique(filt(sp, tx, co, null), function(s) { return GR[s[3]]; }).sort() : [];
+        pop(q('req-gr'), grOpts, '— Select grade —');
+        pop(q('req-wi'), [], '— Select grade first —');
+        q('autofill-block').style.display = 'none';
+        return;
+      }
+      if (changed === 'gr') {
+        gr = v('req-gr');
+        var wiRows = filt(sp, tx, co, gr);
+        var wiOpts = unique(wiRows, function(s) { return s[4]; });
+        wiOpts.sort(function(a, b) {
+          var ia = WO_ORDER.indexOf(a), ib = WO_ORDER.indexOf(b);
+          return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+        });
+        pop(q('req-wi'), wiOpts, '— Select width —');
+        q('autofill-block').style.display = 'none';
+      }
+    }
 
-function cascade(changed){
-  var sp=v('req-sp'),tx=v('req-tx'),co=v('req-co'),gr=v('req-gr');
-  if(changed==='sp'){
-    var txOpts=sp?unique(filt(sp,null,null,null),function(s){return TX[s[1]];}).sort():[];
-    pop(q('req-tx'),txOpts,'— Select texture —');
-    pop(q('req-co'),[],'— Select texture first —');
-    pop(q('req-gr'),[],'— Select color first —');
-    pop(q('req-wi'),[],'— Select grade first —');
-    q('autofill-block').style.display='none'; return;
-  }
-  if(changed==='tx'){
-    tx=v('req-tx');
-    var coOpts=sp&&tx?unique(filt(sp,tx,null,null),function(s){return s[2];}).sort():[];
-    pop(q('req-co'),coOpts,'— Select color —');
-    pop(q('req-gr'),[],'— Select color first —');
-    pop(q('req-wi'),[],'— Select grade first —');
-    q('autofill-block').style.display='none'; return;
-  }
-  if(changed==='co'){
-    co=v('req-co');
-    var grOpts=sp&&tx&&co?unique(filt(sp,tx,co,null),function(s){return GR[s[3]];}).sort():[];
-    pop(q('req-gr'),grOpts,'— Select grade —');
-    pop(q('req-wi'),[],'— Select grade first —');
-    q('autofill-block').style.display='none'; return;
-  }
-  if(changed==='gr'){
-    gr=v('req-gr');
-    var wiRows=filt(sp,tx,co,gr);
-    var wiOpts=unique(wiRows,function(s){return s[4];});
-    wiOpts.sort(function(a,b){var ia=WO_ORDER.indexOf(a),ib=WO_ORDER.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib);});
-    pop(q('req-wi'),wiOpts,'— Select width —');
-    q('autofill-block').style.display='none';
-  }
-}
+    function autofill() {
+      var sp = v('req-sp'), tx = v('req-tx'), co = v('req-co'), gr = v('req-gr'), wi = v('req-wi');
+      var m = SKUS.filter(function(s) {
+        return SP[s[0]] === sp && TX[s[1]] === tx && s[2] === co && GR[s[3]] === gr && s[4] === wi;
+      });
+      var block = q('autofill-block');
+      if (m.length && wi) {
+        q('af-fin').textContent = FN[m[0][5]];
+        q('af-cod').textContent = m[0][6];
+        q('af-str').textContent = ST_[m[0][8]];
+        block.style.display = 'grid';
+      } else {
+        block.style.display = 'none';
+      }
+    }
 
-function autofill(){
-  var sp=v('req-sp'),tx=v('req-tx'),co=v('req-co'),gr=v('req-gr'),wi=v('req-wi');
-  var m=SKUS.filter(function(s){return SP[s[0]]===sp&&TX[s[1]]===tx&&s[2]===co&&GR[s[3]]===gr&&s[4]===wi;});
-  var block=q('autofill-block');
-  if(m.length&&wi){
-    q('af-fin').textContent=FN[m[0][5]];
-    q('af-cod').textContent=m[0][6];
-    q('af-str').textContent=ST_[m[0][8]];
-    block.style.display='grid';
-  } else {
-    block.style.display='none';
-  }
-}
+    // Init species dropdown
+    var allSp = unique(SKUS, function(s) { return SP[s[0]]; }).sort();
+    pop(q('req-sp'), allSp, '— Select species —');
 
-// Init species dropdown
-var allSp=unique(SKUS,function(s){return SP[s[0]];}).sort();
-pop(q('req-sp'),allSp,'— Select species —');
+    // Nav scroll
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-// Nav scroll
-window.addEventListener('scroll',function(){q('nav').classList.toggle('scrolled',window.scrollY>40);});
+    // Hamburger toggle
+    var navToggle = document.getElementById('navToggle');
+    var navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', function() {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var target=document.querySelector(this.getAttribute('href'));
-    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
-  });
-});
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
 
-// Form submit
-q('requestForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var sp=v('req-sp'),tx=v('req-tx'),co=v('req-co'),gr=v('req-gr'),wi=v('req-wi');
-  var subject=encodeURIComponent('Flooring Quote Request — '+[sp,tx,co,gr,wi].filter(Boolean).join(' · ')||'General Inquiry');
-  var body=encodeURIComponent(
-    'Name: '+v('req-name')+'\n'+
-    'Email: '+v('req-email')+'\n'+
-    'Company: '+(v('req-company')||'—')+'\n'+
-    'Square footage: '+(v('req-sqft')||'—')+'\n\n'+
-    'Product selection:\n'+
-    '  Species: '+(sp||'—')+'\n'+
-    '  Texture: '+(tx||'—')+'\n'+
-    '  Color: '+(co||'—')+'\n'+
-    '  Grade: '+(gr||'—')+'\n'+
-    '  Width: '+(wi||'—')+'\n\n'+
-    'Notes: '+(v('req-notes')||'—')
-  );
-  window.location.href='mailto:flooring@renew.design?subject='+subject+'&body='+body;
-  setTimeout(function(){
-    alert('Thank you — we will be in touch shortly.');
-    q('requestForm').reset();
-    q('autofill-block').style.display='none';
-  },500);
-});
-</script>
+    // Form submit
+    q('requestForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var sp = v('req-sp'), tx = v('req-tx'), co = v('req-co'), gr = v('req-gr'), wi = v('req-wi');
+      var subject = encodeURIComponent('Flooring Quote Request — ' + ([sp, tx, co, gr, wi].filter(Boolean).join(' · ') || 'General Inquiry'));
+      var body = encodeURIComponent(
+        'Name: '           + v('req-name')                      + '\n' +
+        'Email: '          + v('req-email')                     + '\n' +
+        'Company: '        + (v('req-company') || '—')          + '\n' +
+        'Square footage: ' + (v('req-sqft')    || '—')          + '\n\n' +
+        'Product selection:\n' +
+        '  Species: '      + (sp || '—')                        + '\n' +
+        '  Texture: '      + (tx || '—')                        + '\n' +
+        '  Color: '        + (co || '—')                        + '\n' +
+        '  Grade: '        + (gr || '—')                        + '\n' +
+        '  Width: '        + (wi || '—')                        + '\n\n' +
+        'Notes: '          + (v('req-notes') || '—')
+      );
+      window.location.href = 'mailto:flooring@renew.design?subject=' + subject + '&body=' + body;
+      setTimeout(function() {
+        alert('Thank you — we will be in touch shortly.');
+        q('requestForm').reset();
+        q('autofill-block').style.display = 'none';
+      }, 500);
+    });
+  </script>
+
 </body>
 </html>
