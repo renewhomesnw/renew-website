@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homes for Sale — Renew Homes Northwest</title>
+  <meta name="description" content="New construction homes for sale by the builder, Renew Homes Northwest, in Seattle.">
+  <link rel="canonical" href="https://www.renew.design/for-sale">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CG0BTVK3V3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CG0BTVK3V3');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1916;
+      --paper: #f5f3ef;
+      --warm: #c8b89a;
+      --muted: #8a8680;
+      --line: #e0ddd8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid var(--line);
+    }
+    nav img { height: 64px; width: auto; display: block; }
+    .nav-back {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    /* INTRO */
+    .intro { padding: 80px 60px 56px; max-width: 900px; }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    h1 em { font-style: italic; color: var(--muted); }
+    .intro-body { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: 520px; }
+
+    /* LISTINGS */
+    .listings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding: 0 60px;
+    }
+    .listing {
+      background: linear-gradient(135deg, #2a2926, #3a3835);
+      color: var(--paper);
+      padding: 40px 36px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .listing-status {
+      align-self: flex-start;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--warm);
+      padding: 6px 12px;
+    }
+    .listing-address {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .listing-meta { font-size: 12px; letter-spacing: 0.06em; color: rgba(245,243,239,0.7); }
+    .listing-note { font-size: 13px; color: var(--warm); margin-top: 16px; }
+
+    /* CONTACT */
+    .contact {
+      margin: 64px 60px 80px;
+      padding-top: 48px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.5vw, 44px);
+      font-weight: 300;
+      line-height: 1.15;
+    }
+    h2 em { font-style: italic; color: var(--muted); }
+    .contact-body { font-size: 15px; color: var(--muted); margin-top: 16px; max-width: 420px; }
+    .contact-actions { display: flex; flex-direction: column; gap: 12px; }
+    .btn {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 24px;
+      border: 1px solid var(--ink);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary:hover { background: transparent; color: var(--ink); }
+    .btn-secondary { color: var(--ink); }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 60px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer a { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      body { font-weight: 400; }
+      :root { --muted: #6b6864; }
+      nav { padding: 16px 24px; }
+      nav img { height: 52px; }
+      .intro { padding: 48px 24px 40px; }
+      .listings { grid-template-columns: 1fr; padding: 0 24px; }
+      .listing { min-height: 220px; padding: 32px 24px; }
+      .contact { grid-template-columns: 1fr; margin: 48px 24px 56px; padding-top: 40px; gap: 28px; }
+      footer { padding: 24px; text-align: center; line-height: 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/"><img src="logo.png" alt="Renew Homes Northwest"></a>
+    <a href="/" class="nav-back">renew.design &nbsp;→</a>
+  </nav>
+
+  <section class="intro">
+    <p class="eyebrow">New construction &nbsp;·&nbsp; For sale by builder</p>
+    <h1>Two new homes in<br><em>Columbia City</em></h1>
+    <p class="intro-body">
+      Designed and built by Renew Homes Northwest, and sold directly by the builder.
+      Both homes are available for pre-sale now.
+    </p>
+  </section>
+
+  <section class="listings">
+    <div class="listing">
+      <span class="listing-status">Pre-sale</span>
+      <div>
+        <div class="listing-address">4504 S Dawson St</div>
+        <div class="listing-meta">Front home &nbsp;·&nbsp; Seattle, WA 98118</div>
+        <div class="listing-note">Photos, floor plans and pricing coming soon.</div>
+      </div>
+    </div>
+    <div class="listing">
+      <span class="listing-status">Pre-sale</span>
+      <div>
+        <div class="listing-address">4502 S Dawson St</div>
+        <div class="listing-meta">Rear home &nbsp;·&nbsp; Seattle, WA 98118</div>
+        <div class="listing-note">Photos, floor plans and pricing coming soon.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div>
+      <h2>Talk to the <em>builder</em></h2>
+      <p class="contact-body">Call or email for details, pricing and a walkthrough.</p>
+    </div>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="tel:+12062890381">Call (206) 289-0381</a>
+      <a class="btn btn-secondary" href="mailto:team@renew.design?subject=4502%20%2F%204504%20S%20Dawson%20St">Email team@renew.design</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Renew Homes Northwest LLC &nbsp;·&nbsp; 4500 S Dawson St, Seattle, WA 98118 &nbsp;·&nbsp; (206) 289-0381 &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a></footer>
+
+</body>
+</html>

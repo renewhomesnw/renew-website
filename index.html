@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renew Homes Northwest</title>
+  <title>Renew Homes Northwest — Seattle Infill Home Builder</title>
+  <meta name="description" content="Renew Homes Northwest designs and builds infill homes in Seattle's Columbia City, Seward Park and Rainier Beach neighborhoods.">
+  <link rel="canonical" href="https://www.renew.design/">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CG0BTVK3V3"></script>
@@ -410,6 +412,10 @@
       margin-top: -16px;
     }
 
+    .form-status { font-size: 14px; display: none; margin-top: -8px; }
+    .form-status.ok { display: block; color: #2d6a4f; }
+    .form-status.err { display: block; color: #c0392b; }
+
     /* SMS consent */
     .sms-consent {
       display: flex;
@@ -550,6 +556,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="/for-sale">For Sale</a></li>
       <li><a href="/flooring">Flooring</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -739,6 +746,8 @@
         </div>
         <div class="g-recaptcha" data-sitekey="6LeipOMsAAAAAPE4_R0U1QTICE0b4wrxDhIlcVtz"></div>
         <p class="form-error" id="recaptchaError">Please complete the reCAPTCHA before submitting.</p>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+        <p class="form-status" id="formStatus" role="status"></p>
         <button class="form-submit" type="submit">Send message &nbsp;→</button>
       </form>
     </div>
@@ -777,20 +786,54 @@
       });
     });
 
-    // Form submit with reCAPTCHA validation
+    // Form submit: reCAPTCHA check, then POST the lead to the website-lead function
+    var LEAD_ENDPOINT = 'https://eppxouqimswwqzqrwuab.supabase.co/functions/v1/website-lead';
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const recaptchaResponse = grecaptcha.getResponse();
-      const errorEl = document.getElementById('recaptchaError');
+      var form = this;
+      var errorEl = document.getElementById('recaptchaError');
+      var statusEl = document.getElementById('formStatus');
+      var submitBtn = form.querySelector('.form-submit');
+      var recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         errorEl.style.display = 'block';
         return;
       }
       errorEl.style.display = 'none';
-      gtag('event', 'form_submit', { event_category: 'contact', event_label: 'contact_form' });
-      alert('Thank you — we will be in touch shortly.');
-      this.reset();
-      grecaptcha.reset();
+      statusEl.className = 'form-status';
+      submitBtn.disabled = true;
+
+      function fail() {
+        statusEl.textContent = 'Sorry, that did not go through. Please call us at (206) 289-0381.';
+        statusEl.className = 'form-status err';
+        submitBtn.disabled = false;
+        grecaptcha.reset();
+      }
+
+      fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source_page: 'home',
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          message: document.getElementById('message').value,
+          sms_consent: document.getElementById('sms-consent').checked,
+          website: document.getElementById('website').value,
+          recaptcha: recaptchaResponse
+        })
+      }).then(function(res) {
+        return res.json().then(function(data) { return res.ok && data.ok; });
+      }).then(function(ok) {
+        if (!ok) { fail(); return; }
+        gtag('event', 'form_submit', { event_category: 'contact', event_label: 'contact_form' });
+        statusEl.textContent = 'Thank you. We will be in touch shortly.';
+        statusEl.className = 'form-status ok';
+        form.reset();
+        grecaptcha.reset();
+        submitBtn.disabled = false;
+      }).catch(fail);
     });
   </script>
 
