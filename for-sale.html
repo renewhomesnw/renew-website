@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap" rel="stylesheet">
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -119,7 +121,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      align-items: end;
+      align-items: start;
     }
     h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -145,6 +147,42 @@
     .btn-primary:hover { background: transparent; color: var(--ink); }
     .btn-secondary { color: var(--ink); }
     .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+    .contact-actions { margin-top: 32px; max-width: 420px; }
+    .contact-direct { font-size: 14px; color: var(--muted); margin-top: 16px; line-height: 1.8; }
+    .contact-direct a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+
+    /* LEAD FORM (same look as the home page form) */
+    .contact-form { display: flex; flex-direction: column; gap: 24px; }
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .form-input, .form-textarea, .form-select {
+      background: transparent; border: none; border-bottom: 1px solid var(--line);
+      padding: 12px 0; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300;
+      color: var(--ink); outline: none; transition: border-color 0.2s; width: 100%; border-radius: 0;
+    }
+    .form-select {
+      appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238a8680' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 4px center;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--ink); }
+    .form-textarea { resize: none; height: 100px; }
+    .form-error { font-size: 12px; color: #c0392b; display: none; margin-top: -12px; }
+    .form-status { font-size: 14px; display: none; }
+    .form-status.ok { display: block; color: #2d6a4f; }
+    .form-status.err { display: block; color: #c0392b; }
+    .sms-consent { display: flex; align-items: flex-start; gap: 12px; }
+    .sms-consent input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; accent-color: var(--ink); }
+    .sms-consent label { font-size: 12px; color: var(--muted); line-height: 1.6; cursor: pointer; }
+    .sms-consent label a { color: var(--ink); border-bottom: 1px solid var(--line); text-decoration: none; }
+    .form-submit {
+      align-self: stretch; font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 18px 24px; border: 1px solid var(--ink);
+      background: var(--ink); color: var(--paper); cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .form-submit:hover { background: transparent; color: var(--ink); }
+    .form-submit:disabled { opacity: 0.5; cursor: default; }
 
     /* FOOTER */
     footer {
@@ -203,18 +241,112 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <div>
       <h2>Talk to the <em>builder</em></h2>
-      <p class="contact-body">Call or email for details, pricing and a walkthrough.</p>
+      <p class="contact-body">Send a note for details, pricing and a private walkthrough.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:+12062890381">Call (206) 289-0381</a>
+      </div>
+      <p class="contact-direct">
+        Phone <a href="tel:+12062890381">(206) 289-0381</a><br>
+        Email <a href="mailto:team@renew.design?subject=4502%20%2F%204504%20S%20Dawson%20St">team@renew.design</a>
+      </p>
     </div>
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="tel:+12062890381">Call (206) 289-0381</a>
-      <a class="btn btn-secondary" href="mailto:team@renew.design?subject=4502%20%2F%204504%20S%20Dawson%20St">Email team@renew.design</a>
-    </div>
+    <form class="contact-form" id="leadForm">
+      <div class="form-field">
+        <label class="form-label" for="interest">Interested in</label>
+        <select class="form-select" id="interest">
+          <option value="both">Both homes</option>
+          <option value="4504">4504 S Dawson St — front home</option>
+          <option value="4502">4502 S Dawson St — rear home</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-input" type="text" id="name" placeholder="Your name" required>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="phone">Phone <span style="font-size:10px;letter-spacing:0.08em;text-transform:none;">optional</span></label>
+        <input class="form-input" type="tel" id="phone" placeholder="+1 (206) 555-0000">
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" required>I'd like details and a walkthrough.</textarea>
+      </div>
+      <div class="sms-consent">
+        <input type="checkbox" id="sms-consent" name="sms-consent">
+        <label for="sms-consent">
+          I agree to receive SMS text messages from Renew Homes Northwest LLC regarding my inquiry.
+          Message and data rates may apply. Message frequency varies.
+          Reply STOP to unsubscribe. Reply HELP for assistance.
+          See our <a href="/terms">Terms</a> for details.
+        </label>
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LeipOMsAAAAAPE4_R0U1QTICE0b4wrxDhIlcVtz"></div>
+      <p class="form-error" id="recaptchaError">Please complete the reCAPTCHA before submitting.</p>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+      <p class="form-status" id="formStatus" role="status"></p>
+      <button class="form-submit" type="submit">Request details &nbsp;→</button>
+    </form>
   </section>
 
   <footer>© 2026 Renew Homes Northwest LLC &nbsp;·&nbsp; 4500 S Dawson St, Seattle, WA 98118 &nbsp;·&nbsp; (206) 289-0381 &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a></footer>
+
+  <script>
+    // Lead form: same website-lead edge function as the home page.
+    // source_page carries the house (for-sale:4502 / 4504 / both).
+    var LEAD_ENDPOINT = 'https://eppxouqimswwqzqrwuab.supabase.co/functions/v1/website-lead';
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var errorEl = document.getElementById('recaptchaError');
+      var statusEl = document.getElementById('formStatus');
+      var submitBtn = form.querySelector('.form-submit');
+      var recaptchaResponse = (window.grecaptcha && grecaptcha.getResponse()) || '';
+      if (!recaptchaResponse) { errorEl.style.display = 'block'; return; }
+      errorEl.style.display = 'none';
+      statusEl.className = 'form-status';
+      submitBtn.disabled = true;
+      var interest = document.getElementById('interest').value;
+
+      function fail() {
+        statusEl.textContent = 'Sorry, that did not go through. Please call us at (206) 289-0381.';
+        statusEl.className = 'form-status err';
+        submitBtn.disabled = false;
+        grecaptcha.reset();
+      }
+
+      fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source_page: 'for-sale:' + interest,
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          message: document.getElementById('message').value,
+          sms_consent: document.getElementById('sms-consent').checked,
+          website: document.getElementById('website').value,
+          recaptcha: recaptchaResponse
+        })
+      }).then(function(res) {
+        return res.json().then(function(data) { return res.ok && data.ok; });
+      }).then(function(ok) {
+        if (!ok) { fail(); return; }
+        if (typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'for_sale', event_label: interest });
+        statusEl.textContent = 'Thank you. We will be in touch shortly.';
+        statusEl.className = 'form-status ok';
+        form.reset();
+        grecaptcha.reset();
+        submitBtn.disabled = false;
+      }).catch(fail);
+    });
+  </script>
 
 </body>
 </html>
